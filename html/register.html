@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Εγγραφή Χρήστη</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- Πλοήγηση -->
+<nav class="navigation">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="about.html">Σχετικά</a></li>
+    <li><a href="lessons.html">Μαθήματα</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+  </ul>
+
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Περιεχόμενο Σελίδας -->
+<main class="main-content">
+  <h1>Εγγραφή Χρήστη</h1>
+  <p>Συμπληρώστε την παρακάτω φόρμα για να εγγραφείτε στο εκπαιδευτικό μας πρόγραμμα.</p>
+
+  <!-- Φόρμα Εγγραφής -->
+  <section class="contact-form-section">
+    <h2>Φόρμα Εγγραφής</h2>
+
+    <form id="register-form" method="POST">
+      <p>
+        <label for="first_name">Όνομα:</label><br>
+        <input type="text" id="first_name" name="first_name" required>
+      </p>
+
+      <p>
+        <label for="last_name">Επώνυμο:</label><br>
+        <input type="text" id="last_name" name="last_name" required>
+      </p>
+
+      <p>
+        <label for="birth_date">Ημερομηνία Γέννησης:</label><br>
+        <input type="date" id="birth_date" name="birth_date" required>
+      </p>
+
+      <p>
+        <label for="street_address">Διεύθυνση (Οδός & Αριθμός):</label><br>
+        <input type="text" id="street_address" name="street_address" required>
+      </p>
+
+      <p>
+        <label for="city">Πόλη:</label><br>
+        <input type="text" id="city" name="city" required>
+      </p>
+
+      <p>
+        <label for="region">Νομός:</label><br>
+        <input type="text" id="region" name="region" required>
+      </p>
+
+      <p>
+        <label for="mobile">Κινητό Τηλέφωνο:</label><br>
+        <input type="tel" id="mobile" name="mobile" required>
+      </p>
+
+      <p>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <p>
+        <label for="occupation">Επάγγελμα:</label><br>
+        <input type="text" id="occupation" name="occupation" required>
+      </p>
+
+      <p class="button">
+        <button type="submit">Ολοκλήρωση Εγγραφής</button>
+      </p>
+    </form>
+
+    <div id="registerMessageBox" style="display:none;"></div>
+  </section>
+</main>
+
+<!-- Υποσέλιδο -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

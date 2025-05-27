@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 & Flexbox - Μορφοποίηση και Διάταξη Ιστοσελίδων</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <!-- Λογότυπο -->
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+
+    <!-- Λίστα Συνδέσμων Πλοήγησης -->
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+
+    <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+    <h1>CSS3 & Flexbox - Μορφοποίηση και Διάταξη Ιστοσελίδων</h1>
+    <p>
+        Σε αυτή την ενότητα θα μάθετε τα βασικά της <strong>CSS3</strong> για τη μορφοποίηση ιστοσελίδων και θα γνωρίσετε το <strong>Flexbox</strong> για ευέλικτη και μοντέρνα διάταξη περιεχομένου.
+    </p>
+
+    <!-- Ενότητα: Τι είναι η CSS -->
+    <section class="topic-content">
+        <h2>Τι είναι η CSS;</h2>
+        <p>
+            Η <strong>CSS</strong> (Cascading Style Sheets) είναι η γλώσσα που χρησιμοποιούμε για να δίνουμε μορφή και στυλ στις ιστοσελίδες μας: χρώματα, γραμματοσειρές, αποστάσεις, σκιές, στρογγυλεμένες γωνίες και πολλά άλλα.
+        </p>
+        <ul>
+            <li>Διαχωρίζει το περιεχόμενο (HTML) από την εμφάνιση (CSS).</li>
+            <li>Κάνει τις ιστοσελίδες πιο όμορφες και ευανάγνωστες.</li>
+            <li>Επιτρέπει την προσαρμογή της εμφάνισης σε κινητά, tablet και υπολογιστές.</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Παράδειγμα CSS -->
+    <section class="topic-content">
+        <h2>Παράδειγμα Βασικού CSS</h2>
+        <pre class="code-sample">
+&lt;style&gt;
+body {
+  background-color: #f0f8ff;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  color: #0077cc;
+}
+.button {
+  background: #ff9800;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.button:hover {
+  background: #e65100;
+}
+&lt;/style&gt;
+        </pre>
+        <p>
+            Το CSS μπορεί να γραφτεί μέσα σε ένα αρχείο <code>.css</code>, σε ένα <code>&lt;style&gt;</code> στο <code>&lt;head&gt;</code> ή απευθείας σε κάθε στοιχείο (συνήθως αποφεύγεται).
+        </p>
+    </section>
+
+    <!-- Ενότητα: Συχνές Ιδιότητες CSS -->
+    <section class="topic-content">
+        <h2>Συχνές Ιδιότητες CSS</h2>
+        <ul>
+            <li><code>color</code>: Χρώμα κειμένου</li>
+            <li><code>background-color</code>: Χρώμα φόντου</li>
+            <li><code>font-size</code>: Μέγεθος γραμματοσειράς</li>
+            <li><code>padding</code>: Εσωτερικό περιθώριο</li>
+            <li><code>margin</code>: Εξωτερικό περιθώριο</li>
+            <li><code>border</code>: Περιγράμματα</li>
+            <li><code>border-radius</code>: Στρογγυλεμένες γωνίες</li>
+            <li><code>box-shadow</code>: Σκιά</li>
+            <li><code>text-align</code>: Στοίχιση κειμένου</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Συχνά Λάθη Αρχαρίων στη CSS -->
+    <section class="topic-content">
+        <h2>Συχνά Λάθη Αρχαρίων στη CSS</h2>
+        <ul>
+            <li>Ξεχνούν να βάλουν το σωστό selector (π.χ. .button αντί για button).</li>
+            <li>Χρησιμοποιούν λάθος συντακτικό (π.χ. ξεχνούν το ; στο τέλος κάθε γραμμής).</li>
+            <li>Δεν συνδέουν σωστά το CSS αρχείο με το HTML.</li>
+            <li>Γράφουν CSS απευθείας σε κάθε στοιχείο (inline style).</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Άσκηση για Εξάσκηση -->
+    <section class="topic-content">
+        <h2>Άσκηση για Εξάσκηση</h2>
+        <ol>
+            <li>Δημιούργησε ένα αρχείο <strong>style.css</strong> και σύνδεσέ το με το HTML σου.</li>
+            <li>Δώσε χρώμα φόντου στη σελίδα και άλλαξε το χρώμα στους τίτλους.</li>
+            <li>Φτιάξε ένα κουμπί με δικό σου στυλ και δοκίμασε να αλλάζει χρώμα όταν το ποντίκι περνάει από πάνω.</li>
+        </ol>
+    </section>
+
+    <!-- Ενότητα: Χρήσιμες Πηγές για CSS -->
+    <section class="topic-content">
+        <h2>Χρήσιμες Πηγές για CSS</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/el/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+            <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools - CSS Tutorial</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/" target="_blank">CSS-Tricks - Snippets</a></li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Flexbox -->
+    <section class="topic-content" style="border-top:2px solid #0077cc; margin-top:40px;">
+        <h2>Flexbox - Ευέλικτη Διάταξη με CSS3</h2>
+        <p>
+            Το <strong>Flexbox</strong> είναι ένα μοντέρνο σύστημα διάταξης που επιτρέπει τη δημιουργία ευέλικτων και δυναμικών διατάξεων χωρίς floats ή positioning. Είναι ιδανικό για στοίχιση στοιχείων στη σειρά ή σε στήλες και για responsive σχεδίαση.
+        </p>
+    </section>
+
+    <!-- Ενότητα: Παράδειγμα Flexbox -->
+    <section class="topic-content">
+        <h3>Παράδειγμα Flexbox</h3>
+        <pre class="code-sample">
+&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item"&gt;1&lt;/div&gt;
+  &lt;div class="flex-item"&gt;2&lt;/div&gt;
+  &lt;div class="flex-item"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        <pre class="code-sample">
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background: #e3f2fd;
+  padding: 20px;
+}
+.flex-item {
+  background: #90caf9;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 1.2em;
+}
+        </pre>
+        <ul>
+            <li><strong>display: flex</strong> – Δηλώνει το κοντέινερ ως flexbox.</li>
+            <li><strong>justify-content</strong> – Στοίχιση στον κύριο άξονα (οριζόντια).</li>
+            <li><strong>align-items</strong> – Στοίχιση στον εγκάρσιο άξονα (κάθετα).</li>
+            <li><strong>gap</strong> – Απόσταση μεταξύ των flex items.</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Συχνά Λάθη με Flexbox -->
+    <section class="topic-content">
+        <h3>Συχνά Λάθη με Flexbox</h3>
+        <ul>
+            <li>Ξεχνούν να ορίσουν <code>display: flex</code> στον γονικό κοντέινερ.</li>
+            <li>Χρησιμοποιούν λάθος ιδιότητες (π.χ. <code>align-items</code> αντί για <code>align-content</code>).</li>
+            <li>Δεν χρησιμοποιούν το <code>gap</code> για αποστάσεις μεταξύ στοιχείων.</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Άσκηση Flexbox -->
+    <section class="topic-content">
+        <h3>Άσκηση Flexbox</h3>
+        <ol>
+            <li>Δημιούργησε ένα <code>div</code> με κλάση <strong>flex-container</strong> και τρία <code>div</code> με κλάση <strong>flex-item</strong> μέσα του.</li>
+            <li>Εφάρμοσε το CSS για να τα στοιχίσεις οριζόντια και να έχουν αποστάσεις μεταξύ τους.</li>
+            <li>Δοκίμασε να αλλάξεις το <code>justify-content</code> σε <code>space-between</code> ή <code>flex-end</code> και παρατήρησε τη διαφορά.</li>
+        </ol>
+    </section>
+
+    <!-- Ενότητα: Χρήσιμες Πηγές για Flexbox -->
+    <section class="topic-content">
+        <h3>Χρήσιμες Πηγές για Flexbox</h3>
+        <ul>
+            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Οδηγός Flexbox</a></li>
+            <li><a href="https://flexboxfroggy.com/#el" target="_blank" rel="noopener noreferrer">Flexbox Froggy (διαδραστικό παιχνίδι)</a></li>
+            <li><a href="https://developer.mozilla.org/el/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener noreferrer">MDN Web Docs - Flexbox</a></li>
+        </ul>
+    </section>
+
+    <!-- Ενσωματωμένο Εκπαιδευτικό Βίντεο Flexbox -->
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/JJSoEo8JSnc?si=bsm3GH9W8MFrQf7v"
+                title="Εκμάθηση CSS Flexbox Βασικά"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

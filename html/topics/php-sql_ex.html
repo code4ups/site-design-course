@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαδραστική Άσκηση PHP & SQL</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* Ειδικό στυλ για το demo PHP/SQL */
+        .php-demo-section {
+            background: #f8fafd;
+            border-left: 4px solid #009688;
+            padding: 18px 18px 8px 18px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+        .btn-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .php-demo-section p {
+            margin-bottom: 0.5em;
+        }
+        .highlight {
+            background: #ffe082;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .removed {
+            text-decoration: line-through;
+            color: #b71c1c;
+        }
+        /* Στυλ για τη φόρμα και τη λίστα χρηστών */
+        .user-form {
+            margin: 20px 0 16px 0;
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .user-form input[type="text"] {
+            flex: 1 1 160px;
+            padding: 6px 10px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .user-form button {
+            padding: 6px 18px;
+            background: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .user-form button:hover {
+            background: #00796b;
+        }
+        .user-list {
+            margin: 18px 0 10px 0;
+            padding: 14px 10px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            min-height: 36px;
+            font-size: 1.08em;
+        }
+        /* Πίνακας εννοιών */
+        .concept-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #fff;
+            font-size: 1em;
+        }
+        .concept-table th, .concept-table td {
+            border: 1px solid #e0e0e0;
+            padding: 10px 6px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .concept-table th {
+            background: #e0f7fa;
+            color: #009688;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .concept-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        @media (max-width: 700px) {
+            .btn-row { flex-direction: column; gap: 10px; }
+            .concept-table, .concept-table th, .concept-table td { font-size: 0.94em; }
+            .user-form { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<main class="main-content">
+    <h1>Διαδραστική Άσκηση PHP & SQL</h1>
+
+    <p style="text-align:right; margin-bottom: 24px;">
+        <a href="../glossary.html" class="main-button fancy-btn" target="_blank" role="button" rel="noopener noreferrer">
+      <span class="btn-icon">
+        <!-- SVG εικονίδιο βιβλίου -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+        </svg>
+      </span>
+            <span class="btn-text">Δες το Γλωσσάρι</span>
+        </a>
+    </p>
+
+    <section>
+        <h2>Τι θα μάθεις με αυτή την άσκηση</h2>
+        <ul>
+            <li>Πώς να δημιουργείς πίνακα στη βάση δεδομένων MySQL.</li>
+            <li>Πώς να προσθέτεις νέους χρήστες με PHP.</li>
+            <li>Πώς να εμφανίζεις όλους τους χρήστες από τη βάση.</li>
+            <li>Πώς να χρησιμοποιείς προετοιμασμένες δηλώσεις (prepared statements) για ασφάλεια.</li>
+            <li>Πώς να κάνεις διαδραστική επικοινωνία PHP & JavaScript με AJAX.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Παράδειγμα: Εφαρμογή PHP & SQL</h2>
+        <div class="php-demo-section">
+            <h3>1. Πρόσθεσε νέο χρήστη στη βάση</h3>
+            <form class="user-form" id="addUserForm" autocomplete="off">
+                <label for="userNameInput">Όνομα χρήστη:</label>
+                <input type="text" id="userNameInput" name="name" placeholder="Όνομα χρήστη" required>
+                <button type="submit">Προσθήκη</button>
+            </form>
+            <h3>2. Λίστα Χρηστών από τη Βάση</h3>
+            <div class="user-list" id="userList">
+                <!-- Οι χρήστες θα εμφανίζονται εδώ -->
+            </div>
+        </div>
+    </section>
+    <!-- Πρώτα το απλό παράδειγμα -->
+    <section>
+        <h3>3. Προσθήκη χρήστη με απλή SQL εντολή (χωρίς prepared statement)</h3>
+        <p>
+            Μπορούμε να προσθέσουμε νέο χρήστη στη βάση χρησιμοποιώντας μια απλή εντολή SQL. Προσοχή όμως: αυτή η μέθοδος <strong>δεν είναι ασφαλής</strong> αν τα δεδομένα προέρχονται απευθείας από τον χρήστη, γιατί μπορεί να επιτρέψει κακόβουλο κώδικα (SQL injection).
+        </p>
+        <pre><code>
+&lt;?php
+// Σύνδεση στη βάση δεδομένων
+$conn = new mysqli("localhost", "root", "", "my_database");
+
+// Το όνομα που θέλουμε να προσθέσουμε
+$name = "Maria";
+
+// Δημιουργία της SQL εντολής
+$sql = "INSERT INTO users (name) VALUES ('$name')";
+
+// Εκτέλεση της εντολής
+$conn->query($sql);
+
+// Κλείσιμο της σύνδεσης
+$conn->close();
+?&gt;
+  </code></pre>
+        <p>
+            <strong>Σημείωση:</strong> Για πραγματικές εφαρμογές, προτίμησε πάντα τις προετοιμασμένες δηλώσεις (prepared statements) για ασφάλεια!
+        </p>
+    </section>
+    <!-- Μετά το ασφαλές παράδειγμα -->
+    <section>
+        <h3>3. Προσθήκη χρήστη με Προετοιμασμένη Δήλωση (Prepared Statement)</h3>
+        <p>
+            Για μεγαλύτερη ασφάλεια, ειδικά όταν τα δεδομένα προέρχονται από φόρμα χρήστη, χρησιμοποιούμε προετοιμασμένες δηλώσεις (prepared statements). Έτσι αποφεύγουμε επιθέσεις τύπου SQL injection.
+        </p>
+        <pre><code>
+&lt;?php
+// Σύνδεση στη βάση δεδομένων
+$conn = new mysqli("localhost", "root", "", "my_database");
+
+// Προετοιμασμένη δήλωση για εισαγωγή χρήστη
+$stmt = $conn->prepare("INSERT INTO users (name) VALUES (?)");
+$stmt->bind_param("s", $name);
+
+// Τιμή προς εισαγωγή
+$name = "Nikos";
+
+// Εκτέλεση της δήλωσης
+$stmt->execute();
+
+// Κλείσιμο της δήλωσης και της σύνδεσης
+$stmt->close();
+$conn->close();
+?&gt;
+  </code></pre>
+        <p>
+            Με αυτό τον τρόπο, το όνομα του χρήστη περνάει με ασφάλεια στη βάση χωρίς να κινδυνεύουμε από κακόβουλο κώδικα.
+        </p>
+    </section>
+    <section>
+        <h2>Λύση Άσκησης με Καθαρό SQL στο phpMyAdmin</h2>
+        <p>
+            Παρακάτω θα δεις όλα τα βήματα για να δουλέψεις μόνο με SQL εντολές μέσα στο περιβάλλον του phpMyAdmin, χωρίς να γράψεις καθόλου PHP. Κάθε βήμα συνοδεύεται από επεξήγηση.
+        </p>
+        <ol>
+            <li>
+                <strong>Δημιουργία βάσης δεδομένων:</strong>
+                <pre><code>CREATE DATABASE my_database;</code></pre>
+                <span style="color:#555;">Αυτή η εντολή δημιουργεί μια νέα βάση δεδομένων με όνομα <b>my_database</b>.</span>
+            </li>
+            <li>
+                <strong>Επιλογή της βάσης δεδομένων:</strong>
+                <pre><code>USE my_database;</code></pre>
+                <span style="color:#555;">Με αυτή την εντολή δηλώνεις ότι θες να δουλέψεις στην <b>my_database</b>.</span>
+            </li>
+            <li>
+                <strong>Δημιουργία πίνακα users:</strong>
+                <pre><code>
+CREATE TABLE users (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) NOT NULL
+);
+      </code></pre>
+                <span style="color:#555;">Δημιουργεί τον πίνακα <b>users</b> με δύο πεδία: <b>id</b> (αυτόματη αύξηση) και <b>name</b> (κείμενο έως 30 χαρακτήρες).</span>
+            </li>
+            <li>
+                <strong>Εισαγωγή νέου χρήστη:</strong>
+                <pre><code>INSERT INTO users (name) VALUES ('Maria');</code></pre>
+                <span style="color:#555;">Προσθέτει έναν νέο χρήστη με όνομα "Maria".</span>
+            </li>
+            <li>
+                <strong>Εμφάνιση όλων των χρηστών:</strong>
+                <pre><code>SELECT * FROM users;</code></pre>
+                <span style="color:#555;">Επιστρέφει όλα τα δεδομένα του πίνακα <b>users</b>.</span>
+            </li>
+            <li>
+                <strong>Εισαγωγή νέου χρήστη με χρήση παραμέτρου (προσομοίωση prepared statement):</strong>
+                <pre><code>INSERT INTO users (name) VALUES ('Nikos');</code></pre>
+                <span style="color:#555;">Στο phpMyAdmin δεν υπάρχουν prepared statements όπως στην PHP, αλλά μπορείς να εισάγεις με ασφάλεια δεδομένα αν τα περνάς σωστά (χωρίς επικίνδυνα σύμβολα).</span>
+            </li>
+        </ol>
+        <p>
+            <strong>Συμπέρασμα:</strong> Όλες οι βασικές λειτουργίες (δημιουργία βάσης, πίνακα, εισαγωγή και εμφάνιση δεδομένων) μπορούν να γίνουν απευθείας στο phpMyAdmin, στην καρτέλα SQL, εκτελώντας τις παραπάνω εντολές.
+        </p>
+    </section>
+
+    <section>
+        <h2>Αναλυτική σκέψη για κάθε έννοια</h2>
+        <div class="learning-table">
+            <table class="concept-table">
+                <tr>
+                    <th>Έννοια</th>
+                    <th>Περιγραφή / Ρόλος</th>
+                    <th>Παράδειγμα</th>
+                </tr>
+                <tr>
+                    <td><strong>MySQL</strong></td>
+                    <td>Σύστημα διαχείρισης βάσεων δεδομένων.</td>
+                    <td>CREATE DATABASE my_database;</td>
+                </tr>
+                <tr>
+                    <td><strong>Πίνακας (table)</strong></td>
+                    <td>Δομή αποθήκευσης δεδομένων με γραμμές και στήλες.</td>
+                    <td>CREATE TABLE users (...);</td>
+                </tr>
+                <tr>
+                    <td><strong>id (AUTO_INCREMENT)</strong></td>
+                    <td>Μοναδικός αριθμός που αυξάνεται αυτόματα για κάθε νέα εγγραφή.</td>
+                    <td>id INT AUTO_INCREMENT PRIMARY KEY</td>
+                </tr>
+                <tr>
+                    <td><strong>VARCHAR</strong></td>
+                    <td>Τύπος πεδίου για αποθήκευση κειμένου μεταβλητού μήκους.</td>
+                    <td>name VARCHAR(30)</td>
+                </tr>
+                <tr>
+                    <td><strong>mysqli</strong></td>
+                    <td>Επέκταση PHP για σύνδεση και επικοινωνία με MySQL.</td>
+                    <td>new mysqli(...)</td>
+                </tr>
+                <tr>
+                    <td><strong>prepare()</strong></td>
+                    <td>Δημιουργεί προετοιμασμένη δήλωση για ασφαλείς SQL εντολές.</td>
+                    <td>$stmt = $conn->prepare("INSERT INTO users (name) VALUES (?)");</td>
+                </tr>
+                <tr>
+                    <td><strong>bind_param()</strong></td>
+                    <td>Δένει μεταβλητές σε παραμέτρους της προετοιμασμένης δήλωσης.</td>
+                    <td>$stmt->bind_param("s", $name);</td>
+                </tr>
+                <tr>
+                    <td><strong>execute()</strong></td>
+                    <td>Εκτελεί την προετοιμασμένη δήλωση.</td>
+                    <td>$stmt->execute();</td>
+                </tr>
+                <tr>
+                    <td><strong>fetch_assoc()</strong></td>
+                    <td>Επιστρέφει το επόμενο αποτέλεσμα ως συσχετισμένο πίνακα (array).</td>
+                    <td>$row = $result->fetch_assoc();</td>
+                </tr>
+                <tr>
+                    <td><strong>AJAX (fetch)</strong></td>
+                    <td>Επιτρέπει στη JavaScript να επικοινωνεί με PHP χωρίς ανανέωση σελίδας.</td>
+                    <td>fetch('add_user.php', { method: 'POST', body: formData })</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Σύνοψη</h2>
+        <ul>
+            <li>Η PHP επιτρέπει την επικοινωνία με τη βάση δεδομένων για αποθήκευση και ανάκτηση δεδομένων.</li>
+            <li>Οι προετοιμασμένες δηλώσεις αυξάνουν την ασφάλεια (προστασία από SQL injection).</li>
+            <li>Η χρήση AJAX κάνει την εμπειρία του χρήστη πιο διαδραστική χωρίς επαναφόρτωση σελίδας.</li>
+        </ul>
+    </section>
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<script>
+    // AJAX για προσθήκη χρήστη
+    document.getElementById('addUserForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Ακυρώνει την προεπιλεγμένη συμπεριφορά της φόρμας (reload)
+        const formData = new FormData(this); // Παίρνει τα δεδομένα της φόρμας
+
+        fetch('add_user.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Ενημερώνει τον χρήστη για το αποτέλεσμα
+                this.reset(); // <-- Καθαρίζει όλα τα πεδία της φόρμας
+                loadUsers(); // Ανανέωση λίστας μετά την προσθήκη
+            });
+    });
+
+    // Φόρτωση χρηστών κατά τη φόρτωση σελίδας
+    function loadUsers() {
+        fetch('get_users.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('userList').innerHTML = data;
+            });
+    }
+
+    loadUsers(); // Αρχική φόρτωση
+</script>
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript αν υπάρχει -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

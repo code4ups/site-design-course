@@ -1,0 +1,793 @@
+/* ------------------ Γενικές Ρυθμίσεις ------------------ */
+
+/* Εφαρμογή βασικών ρυθμίσεων σε όλο το έγγραφο */
+* {
+    margin: 0; /* Αφαίρεση εξωτερικών περιθωρίων (margin) */
+    padding: 0; /* Αφαίρεση εσωτερικών περιθωρίων (padding) */
+    box-sizing: border-box; /* Συμπερίληψη περιθωρίων και περιγραμμάτων στον υπολογισμό του μεγέθους */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ορισμός γραμματοσειράς */
+}
+
+/* Ρύθμιση βασικού φόντου και χρώματος κειμένου */
+body {
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6; /* Απόσταση μεταξύ γραμμών */
+}
+
+h1 {
+    color: #0077b6;
+    margin-bottom: 1rem; /* Απόσταση κάτω από τους τίτλους */
+}
+
+/* Καθολικό στυλ για όλες τις unordered lists */
+ul {
+    padding-left: 1.8rem;  /* Εσοχή για να μετακινηθούν οι κουκίδες δεξιότερα */
+    list-style-position: outside;  /* Οι κουκίδες να εμφανίζονται έξω από το περιεχόμενο */
+    margin-bottom: 1.5rem;  /* Απόσταση από επόμενα στοιχεία */
+}
+
+/* Προαιρετικά: προσαρμογή για όλα τα li */
+ul li {
+    margin-bottom: 0.8rem;  /* Απόσταση μεταξύ των στοιχείων της λίστας */
+    padding-left: 0.3rem;   /* Ελαφρά εσοχή ώστε να μην ακουμπά το κείμενο την κουκκίδα */
+    line-height: 1.6;       /* Αυξημένο ύψος γραμμής για αναγνωσιμότητα */
+}
+
+ol {
+    padding-left: 1.8rem;
+    list-style-position: outside;
+    margin-bottom: 1.5rem;
+}
+
+ol li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+/*Για να μην εμφανίζονται υπογραμμισμένοι οι σύνδεσμοι (links) αλλά να είναι έντονοι (bold)*/
+ul li > a {
+    text-decoration: none;    /* Καταργεί την υπογράμμιση */
+    font-weight: bold;        /* Κάνει το κείμενο έντονο */
+    color: #005599;           /* Προαιρετικά: δίνει ένα ωραίο μπλε χρώμα, άλλαξέ το αν θες */
+    transition: color 0.2s;
+}
+
+ul li > a:hover,
+ul li > a:focus {
+    color: #007bff;           /* Προαιρετικά: αλλάζει χρώμα στο hover για να φαίνεται διαδραστικό */
+    text-decoration: underline; /* Προαιρετικά: προσθέτει διακριτική υπογράμμιση στο hover */
+}
+
+
+button {
+    background: linear-gradient(90deg, #007BFF 0%, #00c6ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 0.7em 1.6em;
+    font-size: 1.08rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 123, 255, 0.14);
+    transition: background 0.3s, transform 0.14s;
+}
+
+button:hover, button:focus {
+    background: linear-gradient(90deg, #0056b3 0%, #00b894 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+pre, .code-sample {
+    white-space: pre-wrap;    /* Επιτρέπει την αναδίπλωση γραμμών */
+    word-break: break-word;   /* Σπάει μεγάλες λέξεις/κομμάτια κώδικα για να μην ξεφεύγουν από το πλάτος */
+    overflow-x: auto;         /* Αν ο κώδικας είναι υπερβολικά μεγάλος, εμφανίζει scroll bar */
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+    font-size: 1em;
+    background: #f5f7fa;
+    border-radius: 6px;
+    padding: 12px 8px;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    pre, .code-sample {
+        font-size: 0.97em;
+        padding: 10px 4px;
+        /* Προαιρετικά: αφαιρείς το overflow-x αν θες να μην έχει καθόλου scroll bar */
+        /* overflow-x: hidden; */
+    }
+}
+
+/* ------------------ Πλοήγηση (Navigation) ------------------ */
+
+/* Στυλ για το επάνω μενού */
+.navigation {
+    display: flex; /* Χρήση Flexbox για στοίχιση στοιχείων σε γραμμή */
+    justify-content: space-between; /* Απόσταση μεταξύ στοιχείων */
+    align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+    background-color: #005f73; /* Σκούρο γαλάζιο χρώμα */
+    padding: 1rem 2rem; /* Εσωτερικά περιθώρια */
+}
+
+/* Λογότυπο */
+.logo {
+    display: flex;
+    align-items: center; /* Κάθετη στοίχιση στο κέντρο */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+}
+.logo-image {
+    height: 100px;
+    width: auto;
+    margin-right: 15px; /* Απόσταση μεταξύ εικόνας και κειμένου */
+    border-radius: 8px; /* Μικρή στρογγύλευση πάντα */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Προσαρμόσιμο */
+}
+
+.logo-link:hover .logo-image {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px; /* Στρογγυλά άκρα */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.logo-link:hover .logo-text {
+    color: #02a7f0; /* Έντονο πορτοκαλί ή προσαρμογή */
+    transition: color 0.3s ease;
+}
+
+/* Λίστα συνδέσμων */
+.nav-links {
+    display: flex;
+    list-style: none; /* Αφαίρεση κουκίδων λίστας */
+}
+
+/* Κάθε στοιχείο λίστας */
+.nav-links li {
+    margin-left: 20px;
+}
+
+/* Σύνδεσμοι */
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Ομαλή αλλαγή χρώματος */
+}
+
+/* Hover effect στους συνδέσμους */
+.nav-links a:hover {
+    color: #94d2bd; /* Ανοιχτό χρώμα όταν περνάμε το ποντίκι */
+}
+
+/* Εικονίδιο Hamburger (αρχικά κρυφό σε μεγάλες οθόνες) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+/* ------------------ Κεντρική Ηρωική Ενότητα (Hero Section) ------------------ */
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #e0fbfc;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Εικόνα στην Ηρωική Ενότητα */
+.hero-image {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ------------------ Ενότητα "Τι θα μάθετε" ------------------ */
+
+.what-you-learn {
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+}
+
+.what-you-learn h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0077b6;
+}
+
+/* Flexbox για τις θεματικές ενότητες topics */
+.learning-topics {
+    display: flex;
+    flex-wrap: wrap; /* Επιτρέπει την αναδίπλωση σε μικρότερες οθόνες */
+    gap: 2rem; /* Απόσταση μεταξύ κουτιών */
+    justify-content: center;
+}
+
+.topic {
+    background-color: #caf0f8;
+    padding: 2rem;
+    border-radius: 10px;
+    flex: 1 1 250px; /* Ελάχιστο πλάτος 250px */
+    max-width: 300px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Χεράκι στο ποντίκι */
+}
+
+.topics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.topic-link {
+    text-decoration: none; /* Αφαιρεί την υπογράμμιση από το link */
+}
+
+.topic:hover {
+    background-color: #e0e0e0; /* Αλλαγή χρώματος όταν περνάς από πάνω */
+}
+
+/* ------------------ Ενότητα "Ποιοι είμαστε" ------------------ */
+
+.about {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.about h2 {
+    color: #0077b6;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    margin-bottom: 2rem;
+}
+
+/* Εικόνα Σχετικά */
+.about-image {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ------------------ Υποσέλιδο (Footer) ------------------ */
+
+.footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem; /* Μειώνουμε το μέγεθος της γραμματοσειράς για το υποσέλιδο */
+}
+
+.footer-links p {
+    margin: 0;
+    font-size: 0.85rem; /* Μικρότερο μέγεθος γραμματοσειράς για τους νομικούς συνδέσμους */
+}
+
+.footer-links .legal-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem; /* Απόσταση μεταξύ των νομικών συνδέσμων */
+}
+
+.footer-links .legal-link:hover {
+    color: #94d2bd; /* Ανοιχτό χρώμα όταν περνάμε το ποντίκι */
+}
+
+.social-media-links {
+    margin-top: 1.5rem; /* Απόσταση από τους νομικούς συνδέσμους */
+}
+
+.social-link {
+    margin: 0 1.5rem; /* Μεγαλύτερη απόσταση μεταξύ των εικονιδίων των social media */
+    color: transparent;
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease; /* Ομαλή μετάβαση για τα εικονίδια */
+    color: yellow;
+}
+
+.social-icon:hover {
+    transform: scale(1.5); /* Ελαφρά μεγέθυνση όταν περνάμε το ποντίκι πάνω από το εικονίδιο */
+}
+
+.social-media-links p {
+    font-size: 0.75rem; /* Μικρότερο μέγεθος για το κείμενο των social media */
+    margin-top: 1rem;
+}
+
+/* Στυλ για το μικρό κείμενο του υποσέλιδου */
+.footer p {
+    font-size: 0.75rem; /* Μικρότερο μέγεθος γραμματοσειράς για το κείμενο του υποσέλιδου */
+    color: white; /* Χρώμα για το κείμενο */
+    margin-top: 1rem;
+}
+
+/* ------------------ Responsive Σχεδίαση ------------------ */
+
+/* Για οθόνες πλάτους μικρότερου από 768px (κινητά/tablets) */
+@media (max-width: 768px) {
+
+    /* Κρύβουμε τη λίστα συνδέσμων */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #005f73;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        text-align: center;
+    }
+
+    /* Όταν το μενού είναι ενεργό (μέσω JavaScript), θα εμφανίζεται */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Το hamburger menu εμφανίζεται */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Κεντρική Ηρωική Ενότητα */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    /* Flex στοιχεία "Τι θα μάθετε" προσαρμόζονται καλύτερα */
+    .learning-topics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        padding-left: 2rem;
+    }
+}
+
+/* Τυλίγει τον πίνακα και του δίνει δυνατότητα οριζόντιας κύλισης μόνο όταν χρειάζεται (π.χ. σε κινητά). */
+.learning-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.learning-table table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.learning-table th,
+.learning-table td {
+    padding: 10px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Η πρώτη στήλη (Έννοια) να μην αναδιπλώνει το περιεχόμενο, να κρατάει το κελί σε μία γραμμή */
+.learning-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.learning-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.learning-table th,
+.learning-table td {
+    padding: 10px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.learning-table th:first-child,
+.learning-table td:first-child {
+    white-space: nowrap;
+    width: 1%;
+    min-width: 90px;
+    max-width: 180px;
+}
+
+.learning-table th:not(:first-child),
+.learning-table td:not(:first-child) {
+    word-break: break-word;
+    white-space: pre-line;
+}
+
+.learning-table th:last-child,
+.learning-table td:last-child {
+    max-width: 320px;
+    min-width: 120px;
+    word-break: break-all;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .learning-table {
+        margin: 0 -10px;
+    }
+    .learning-table table {
+        font-size: 0.98em;
+    }
+    .learning-table th,
+    .learning-table td {
+        font-size: 0.97em;
+        padding: 8px 4px;
+    }
+    .learning-table th:last-child,
+    .learning-table td:last-child {
+        max-width: 60vw;
+    }
+}
+
+
+
+
+/* Στυλ κουμπιού για γρήγορη επαναφορά στην κορυφή */
+.scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    font-size: 2.3rem; /* Μεγαλύτερο μέγεθος συμβόλου */
+    color: lightgray;
+    background-color: transparent;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 30%;
+    opacity: 0.7;
+    text-decoration: none;
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* ===== Στυλ για το Section της Φόρμας ===== */
+.main-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;           /* πιο στρογγυλεμένες γωνίες */
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+            background-color 0.3s ease,
+            box-shadow 0.2s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18), 0 2px 4px rgba(0,0,0,0.10); /* σκιά κουμπιού */
+}
+
+.main-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(0, 86, 179, 0.22), 0 2px 8px rgba(0,0,0,0.13); /* πιο έντονη σκιά στο hover */
+    transform: translateY(-2px) scale(1.03); /* μικρή "ανύψωση" */
+}
+.fancy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7em;
+    padding: 0.9rem 2.1rem;
+    background: linear-gradient(90deg, #007BFF 0%, #00c6ff 100%);
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18), 0 2px 4px rgba(0,0,0,0.10);
+    transition:
+            background 0.4s cubic-bezier(.4,2,.6,1),
+            box-shadow 0.25s,
+            transform 0.16s;
+    overflow: hidden;
+    position: relative;
+}
+
+.fancy-btn .btn-icon {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.fancy-btn .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.fancy-btn:hover, .fancy-btn:focus {
+    background: linear-gradient(90deg, #0056b3 0%, #00b894 100%);
+    box-shadow: 0 8px 32px rgba(0, 86, 179, 0.22), 0 2px 8px rgba(0,0,0,0.13);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.fancy-btn:hover .btn-icon, .fancy-btn:focus .btn-icon {
+    transform: rotate(-8deg) scale(1.18);
+}
+
+.fancy-btn:active {
+    transform: scale(0.98);
+}
+
+
+.contact-form-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9; /* ανοιχτό γκρι φόντο */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* ===== Στυλ Φόρμας ===== */
+#register-form,
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-form p,
+#contact-form p {
+    margin-bottom: 1rem;
+}
+
+#register-form label,
+#contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #555;
+}
+
+#register-form input,
+#register-form textarea,
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#register-form input:focus,
+#register-form textarea:focus,
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #007BFF; /* Μπλε χρώμα στο focus */
+    outline: none;
+}
+
+#register-form .button,
+#contact-form .button {
+    margin-top: 1.5rem;
+}
+
+#register-form button,
+#contact-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#register-form button:hover,
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ------------------ Κύριο Περιεχόμενο ------------------ */
+main {
+    padding: 2rem; /* Εσωτερικά περιθώρια */
+    background-color: #ffffff; /* Λευκό φόντο για το κύριο περιεχόμενο */
+    margin-top: 2rem; /* Απόσταση από το επάνω μέρος της σελίδας */
+    max-width: 1200px; /* Μέγιστο πλάτος για να μην απλώνει σε μεγάλες οθόνες */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά γύρω από το περιεχόμενο */
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες */
+}
+
+main h2, main h3 {
+    color: #333333; /* Σκούρο χρώμα για τους τίτλους */
+    margin-bottom: 1rem; /* Απόσταση κάτω από τους τίτλους */
+}
+
+main p {
+    font-size: 1rem; /* Μέγεθος κειμένου για παραγράφους */
+    color: #666666; /* Χρώμα για το κανονικό κείμενο */
+    line-height: 1.6; /* Απόσταση μεταξύ γραμμών */
+    margin-bottom: 1.5rem; /* Απόσταση κάτω από τις παραγράφους */
+}
+
+/* Για μικρές οθόνες, π.χ. κινητά */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem; /* Μικρότερη απόσταση για κινητές συσκευές */
+    }
+
+    main h1 {
+        font-size: 1.8rem; /* Μικρότερος τίτλος για κινητά */
+    }
+
+    main p {
+        font-size: 0.9rem; /* Μικρότερη γραμματοσειρά για παραγράφους */
+    }
+}
+
+/* Βίντεο Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Αναλογία */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#message-box,
+#registerMessageBox {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Accordion panel στη σελιδα των μαθηματων */
+/* Accordion */
+.accordion-lessons {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+.accordion-item {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.accordion-btn {
+    width: 100%;
+    text-align: left;
+    padding: 16px 20px;
+    font-size: 1.1em;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s, padding 0.2s;
+}
+.accordion-btn::after {
+    content: "▼";
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+.accordion-btn.active::after {
+    transform: rotate(180deg);
+}
+.accordion-btn:hover {
+    background: #145ca8;
+    padding-left: 24px;
+}
+.accordion-panel {
+    display: none;
+    padding: 16px 20px;
+    background: #fff;
+    color: #444;
+    line-height: 1.6;
+}
+.lesson-link {
+    display: inline-flex;
+    align-items: center;
+    color: #1976d2;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: color 0.2s, text-decoration 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+.lesson-link:hover {
+    color: #145ca8;
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+
+
+
+

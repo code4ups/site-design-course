@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript - Εισαγωγή στη Δυναμική Συμπεριφορά Ιστοσελίδων</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<!-- Πλοήγηση -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image" />
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+    <h1>JavaScript - Εισαγωγή στη Δυναμική Συμπεριφορά Ιστοσελίδων</h1>
+    <p>
+        Η <strong>JavaScript</strong> είναι η γλώσσα προγραμματισμού που δίνει ζωή και διαδραστικότητα στις ιστοσελίδες. Με τη JavaScript μπορείτε να δημιουργήσετε δυναμικό περιεχόμενο, να αντιδράτε σε ενέργειες του χρήστη και να επικοινωνείτε με εξυπηρετητές χωρίς να φορτώνετε ξανά τη σελίδα.
+    </p>
+
+    <section class="topic-content">
+        <h2>Τι είναι η JavaScript;</h2>
+        <p>
+            Η <strong>JavaScript</strong> είναι μια <em>γλώσσα σεναρίων</em> (scripting language) που εκτελείται στον φυλλομετρητή (browser) του χρήστη. Είναι βασικό εργαλείο για την ανάπτυξη σύγχρονων ιστοσελίδων και web εφαρμογών.
+        </p>
+        <ul>
+            <li>Τροποποιεί το HTML και CSS σε πραγματικό χρόνο.</li>
+            <li>Αντιδρά σε ενέργειες όπως κλικ, πληκτρολόγηση, μετακινήσεις ποντικιού.</li>
+            <li>Επιτρέπει επικοινωνία με διακομιστές (AJAX, Fetch API).</li>
+            <li>Υποστηρίζει προγραμματιστικές έννοιες όπως μεταβλητές, συναρτήσεις, βρόχους, αντικείμενα.</li>
+        </ul>
+    </section>
+
+    <section class="topic-content">
+        <h2>Απλό Παράδειγμα JavaScript</h2>
+        <pre class="code-sample">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Παράδειγμα JavaScript&lt;/title&gt;
+    &lt;script&gt;
+      function sayHello() {
+        alert("Γειά σου Κόσμε!");
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;button onclick="sayHello()"&gt;Κάνε Κλικ&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>
+            Όταν ο χρήστης πατάει το κουμπί, καλείται η συνάρτηση <code>sayHello()</code> που εμφανίζει ένα παράθυρο με μήνυμα.
+        </p>
+    </section>
+
+    <section class="topic-content">
+        <h2>Βασικές Έννοιες της JavaScript</h2>
+        <ul>
+            <li><strong>Μεταβλητές:</strong> Αποθηκεύουν δεδομένα. Π.χ. <code>let name = "Γιάννης";</code></li>
+            <li><strong>Συναρτήσεις:</strong> Μπλοκ κώδικα που εκτελούν συγκεκριμένη εργασία.</li>
+            <li><strong>Εκδηλώσεις (Events):</strong> Ενέργειες που προκαλούν κώδικα, π.χ. κλικ, φόρτωση σελίδας.</li>
+            <li><strong>DOM (Document Object Model):</strong> Αντιπροσωπεύει τη δομή της HTML και επιτρέπει την αλλαγή της μέσω JavaScript.</li>
+        </ul>
+    </section>
+
+    <section class="topic-content">
+        <h2>Πώς να προσθέσετε JavaScript στη σελίδα σας</h2>
+        <p>Υπάρχουν τρεις βασικοί τρόποι:</p>
+        <ol>
+            <li>Ενσωματωμένος κώδικας μέσα σε <code>&lt;script&gt;</code> στο HTML.</li>
+            <li>Εξωτερικό αρχείο JavaScript που συνδέεται με <code>&lt;script src="filename.js"&gt;&lt;/script&gt;</code>.</li>
+            <li>Inline κώδικας μέσα σε HTML στοιχεία (π.χ. <code>onclick="function()"</code>).</li>
+        </ol>
+    </section>
+
+    <section class="topic-content">
+        <h2>Συχνά Λάθη Αρχαρίων στη JavaScript</h2>
+        <ul>
+            <li>Ξεχνούν το <code>;</code> στο τέλος των εντολών.</li>
+            <li>Μπερδεύουν <code>var</code>, <code>let</code> και <code>const</code>.</li>
+            <li>Προσπαθούν να χρησιμοποιήσουν στοιχεία HTML πριν φορτώσει η σελίδα (πρέπει να περιμένουν το DOM).</li>
+            <li>Δεν ελέγχουν για λάθη και δεν χρησιμοποιούν εργαλεία debugging.</li>
+        </ul>
+    </section>
+
+    <section class="topic-content">
+        <h2>Άσκηση για Εξάσκηση</h2>
+        <a href="javascript_ex.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button" style="margin-left: 16px;">
+  <span class="btn-icon">
+    <!-- SVG εικονίδιο βιβλίου -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+    </svg>
+  </span>
+            <span class="btn-text">Δες ΕΔΩ</span>
+        </a>
+
+
+        <ol>
+            <li>Δημιουργήστε ένα αρχείο <code>script.js</code> και γράψτε μια συνάρτηση που αλλάζει το κείμενο ενός στοιχείου HTML όταν πατιέται ένα κουμπί.</li>
+            <li>Προσθέστε ένα κουμπί στη σελίδα σας και συνδέστε το με τη συνάρτηση.</li>
+            <li>Δοκιμάστε να εμφανίσετε ένα alert με μήνυμα όταν ο χρήστης κάνει κλικ.</li>
+        </ol>
+    </section>
+
+    <section class="topic-content">
+        <h2>Απαντήσεις στις Ασκήσεις</h2>
+        <ol>
+            <li>
+                <strong>Συνάρτηση που αλλάζει το κείμενο ενός στοιχείου HTML όταν πατιέται κουμπί</strong><br>
+                <em>HTML (π.χ. στο body):</em>
+                <pre class="code-sample">
+&lt;p id="myText"&gt;Αυτό είναι το αρχικό κείμενο.&lt;/p&gt;
+&lt;button onclick="changeText()"&gt;Άλλαξε το κείμενο&lt;/button&gt;
+            </pre>
+                <em>JavaScript (στο αρχείο <code>script.js</code>):</em>
+                <pre class="code-sample">
+// Συνάρτηση που αλλάζει το κείμενο του στοιχείου με id "myText"
+function changeText() {
+    // Βρίσκουμε το στοιχείο με id "myText" και αλλάζουμε το κείμενό του
+    document.getElementById("myText").textContent = "Το κείμενο άλλαξε με JavaScript!";
+}
+            </pre>
+                <!-- Σχόλιο: Η συνάρτηση changeText() καλείται όταν πατηθεί το κουμπί και αλλάζει το κείμενο της παραγράφου. -->
+            </li>
+            <li>
+                <strong>Προσθήκη κουμπιού και σύνδεσή του με τη συνάρτηση</strong><br>
+                <em>Βλέπε παραπάνω παράδειγμα: το κουμπί έχει <code>onclick="changeText()"</code> που καλεί τη συνάρτηση όταν πατηθεί.</em>
+            </li>
+            <li>
+                <strong>Εμφάνιση alert με μήνυμα όταν ο χρήστης κάνει κλικ</strong><br>
+                <em>Μπορείς να προσθέσεις ένα δεύτερο κουμπί ή να το ενσωματώσεις στην ίδια συνάρτηση:</em>
+                <pre class="code-sample">
+&lt;button onclick="showAlert()"&gt;Δείξε Μήνυμα&lt;/button&gt;
+            </pre>
+                <pre class="code-sample">
+// Συνάρτηση που εμφανίζει alert με μήνυμα
+function showAlert() {
+    alert("Καλώς ήρθες στη σελίδα μας!");
+}
+            </pre>
+                <!-- Σχόλιο: Όταν ο χρήστης πατήσει το κουμπί, εμφανίζεται ένα παράθυρο με το μήνυμα. -->
+            </li>
+        </ol>
+        <p>
+            <strong>Παράδειγμα ολοκληρωμένου HTML με τα παραπάνω:</strong>
+        </p>
+        <pre class="code-sample">
+&lt;!-- Μέσα στο &lt;body&gt; της σελίδας --&gt;
+&lt;p id="myText"&gt;Αυτό είναι το αρχικό κείμενο.&lt;/p&gt;
+&lt;button onclick="changeText()"&gt;Άλλαξε το κείμενο&lt;/button&gt;
+&lt;button onclick="showAlert()"&gt;Δείξε Μήνυμα&lt;/button&gt;
+
+&lt;!-- Στο αρχείο script.js --&gt;
+function changeText() {
+    document.getElementById("myText").textContent = "Το κείμενο άλλαξε με JavaScript!";
+}
+
+function showAlert() {
+    alert("Καλώς ήρθες στη σελίδα μας!");
+}
+    </pre>
+        <p>
+            <em>Σχόλιο:</em> <br>
+            Το πρώτο κουμπί αλλάζει το κείμενο της παραγράφου, το δεύτερο εμφανίζει μήνυμα. Μπορείς να χρησιμοποιήσεις και τις δύο συναρτήσεις ή να τις συνδυάσεις όπως θέλεις!
+        </p>
+    </section>
+
+
+    <section class="topic-content">
+        <h2>Χρήσιμες Πηγές για JavaScript</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/el/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN Web Docs - JavaScript</a></li>
+            <li><a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript Tutorial</a></li>
+            <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info - Εκμάθηση JavaScript</a></li>
+        </ul>
+    </section>
+
+    <!-- Εκπαιδευτικό Βίντεο -->
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/hdI2bqOjy3c?si=YKyWRk_uQa8x3zGn"
+                title="Εισαγωγή στη JavaScript"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon" />
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon" />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon" />
+        </a>
+    </div>
+
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

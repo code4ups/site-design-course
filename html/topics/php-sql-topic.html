@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP & MySQL - Διασύνδεση και Βασικές Εντολές</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+    <h1>PHP & MySQL - Διασύνδεση και Βασικές Εντολές</h1>
+    <p>
+        Σε αυτή την ενότητα θα μάθετε πώς να χρησιμοποιείτε τη <strong>PHP</strong> για να δημιουργείτε δυναμικές ιστοσελίδες που επικοινωνούν με βάσεις δεδομένων <strong>MySQL</strong>. Η PHP είναι γλώσσα προγραμματισμού που εκτελείται στον διακομιστή (server-side), ενώ η MySQL είναι ένα από τα πιο διαδεδομένα συστήματα διαχείρισης βάσεων δεδομένων.
+    </p>
+
+    <!-- Τι είναι η PHP και η MySQL -->
+    <section class="topic-content">
+        <h2>Τι είναι η PHP και η MySQL;</h2>
+        <ul>
+            <li><strong>PHP:</strong> Γλώσσα προγραμματισμού για τον server, ιδανική για δυναμικές ιστοσελίδες, φόρμες, διαχείριση χρηστών κ.ά.</li>
+            <li><strong>MySQL:</strong> Σύστημα διαχείρισης βάσεων δεδομένων όπου αποθηκεύονται οργανωμένα τα δεδομένα της ιστοσελίδας (π.χ. χρήστες, άρθρα, σχόλια).</li>
+        </ul>
+    </section>
+
+    <!-- Σύνδεση σε Βάση Δεδομένων -->
+    <section class="topic-content">
+        <h2>Σύνδεση σε Βάση Δεδομένων με PHP</h2>
+        <pre class="code-sample">
+&lt;?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "my_database";
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+// Έλεγχος σύνδεσης
+if ($conn-&gt;connect_error) {
+    die("Σφάλμα σύνδεσης: " . $conn-&gt;connect_error);
+}
+echo "Η σύνδεση ήταν επιτυχής!";
+?&gt;
+        </pre>
+        <ul>
+            <li><strong>$host:</strong> Ο server της βάσης (συνήθως <em>localhost</em> σε τοπικό περιβάλλον).</li>
+            <li><strong>$user:</strong> Όνομα χρήστη της βάσης (π.χ. <em>root</em>).</li>
+            <li><strong>$password:</strong> Κωδικός χρήστη (συχνά κενός τοπικά).</li>
+            <li><strong>$dbname:</strong> Όνομα της βάσης που έχεις δημιουργήσει.</li>
+        </ul>
+        <p>
+            Ο παραπάνω κώδικας χρησιμοποιεί το αντικείμενο <code>mysqli</code> για να συνδεθεί στη βάση. Αν η σύνδεση αποτύχει, εμφανίζεται μήνυμα λάθους.
+        </p>
+    </section>
+
+    <!-- Εκτέλεση SELECT -->
+    <section class="topic-content">
+        <h2>Εκτέλεση Ερωτήματος SQL (SELECT)</h2>
+        <pre class="code-sample">
+&lt;?php
+$sql = "SELECT id, name FROM users";
+$result = $conn-&gt;query($sql);
+
+if ($result-&gt;num_rows &gt; 0) {
+    while($row = $result-&gt;fetch_assoc()) {
+        echo "ID: " . $row["id"] . " - Όνομα: " . $row["name"] . "&lt;br&gt;";
+    }
+} else {
+    echo "0 αποτελέσματα";
+}
+$conn-&gt;close();
+?&gt;
+        </pre>
+        <p>
+            Με το <code>$conn-&gt;query()</code> εκτελείται το ερώτημα SQL. Με το <code>fetch_assoc()</code> διαβάζεις κάθε γραμμή αποτελεσμάτων ως πίνακα.
+        </p>
+    </section>
+
+    <!-- Εισαγωγή (INSERT) -->
+    <section class="topic-content">
+        <h2>Εισαγωγή Δεδομένων (INSERT)</h2>
+        <pre class="code-sample">
+&lt;?php
+$sql = "INSERT INTO users (name) VALUES ('Γιάννης')";
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Η εγγραφή προστέθηκε με επιτυχία!";
+} else {
+    echo "Σφάλμα: " . $conn-&gt;error;
+}
+?&gt;
+        </pre>
+        <p>
+            Με το <code>INSERT INTO</code> προσθέτεις νέα δεδομένα στον πίνακα <code>users</code>.
+        </p>
+    </section>
+
+    <!-- Προετοιμασμένες Δηλώσεις -->
+    <section class="topic-content">
+        <h2>Ασφάλεια: Προετοιμασμένες Δηλώσεις</h2>
+        <p>
+            Για να αποφύγεις επιθέσεις <strong>SQL injection</strong>, χρησιμοποίησε <strong>prepared statements</strong>:
+        </p>
+        <pre class="code-sample">
+&lt;?php
+$stmt = $conn-&gt;prepare("INSERT INTO users (name) VALUES (?)");
+$stmt-&gt;bind_param("s", $name);
+$name = "Μαρία";
+$stmt-&gt;execute();
+$stmt-&gt;close();
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Συχνά Λάθη Αρχαρίων -->
+    <section class="topic-content">
+        <h2>Συχνά Λάθη Αρχαρίων σε PHP & MySQL</h2>
+        <ul>
+            <li>Ξεχνούν να κλείσουν τη σύνδεση με <code>$conn-&gt;close();</code></li>
+            <li>Δεν ελέγχουν αν η σύνδεση ή το ερώτημα πέτυχε.</li>
+            <li>Γράφουν SQL εντολές απευθείας χωρίς ασφάλεια.</li>
+            <li>Μπερδεύουν τα ονόματα των πεδίων ή των πινάκων.</li>
+        </ul>
+    </section>
+
+    <!-- Άσκηση για Εξάσκηση -->
+    <section class="topic-content">
+        <h2>Άσκηση για Εξάσκηση</h2>
+        <a href="php-sql_ex.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button" style="margin-left: 16px;">
+  <span class="btn-icon">
+    <!-- SVG εικονίδιο βιβλίου -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+    </svg>
+  </span>
+            <span class="btn-text">Δες ΕΔΩ</span>
+        </a>
+        <ol>
+            <li>Δημιούργησε μια βάση δεδομένων <strong>my_database</strong> και έναν πίνακα <strong>users</strong> με πεδία <code>id</code> (AUTO_INCREMENT) και <code>name</code> (VARCHAR).</li>
+            <li>Γράψε κώδικα PHP για να προσθέσεις έναν νέο χρήστη και να εμφανίσεις όλους τους χρήστες.</li>
+            <li>Δοκίμασε να κάνεις το ίδιο με προετοιμασμένες δηλώσεις.</li>
+            <li>Εκτέλεσε όλα τα παραπάνω βήματα χρησιμοποιώντας μόνο SQL εντολές μέσα στο phpMyAdmin (χωρίς PHP).</li>
+        </ol>
+
+    </section>
+
+    <!-- Χρήσιμες Πηγές -->
+    <section class="topic-content">
+        <h2>Χρήσιμες Πηγές για PHP & MySQL</h2>
+        <ul>
+            <li><a href="https://www.php.net/manual/el/" target="_blank" rel="noopener noreferrer">PHP Manual (Ελληνικά)</a></li>
+            <li><a href="https://www.w3schools.com/php/" target="_blank" rel="noopener noreferrer">W3Schools - PHP Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">W3Schools - SQL Tutorial</a></li>
+            <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL Official Site</a></li>
+        </ul>
+    </section>
+
+    <!-- Εκπαιδευτικό Βίντεο -->
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/2eebptXfEvw?si=GO1f_TdQWqRtEi4J"
+                title="PHP MySQL Σύνδεση και SELECT"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

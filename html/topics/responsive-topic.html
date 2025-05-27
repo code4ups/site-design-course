@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Ιστοσελίδες - Σχεδιασμός για Κινητές Συσκευές</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+    <h1>Responsive Ιστοσελίδες - Σχεδιασμός για Κινητές Συσκευές</h1>
+    <p>
+        Σε αυτή την ενότητα θα μάθετε πώς να σχεδιάζετε <strong>responsive ιστοσελίδες</strong> (ανταποκρινόμενες ιστοσελίδες), ώστε να προσαρμόζονται ομαλά σε διάφορες συσκευές, όπως κινητά τηλέφωνα, tablets και υπολογιστές.
+    </p>
+
+    <!-- Τι είναι το Responsive Design -->
+    <section class="topic-content">
+        <h2>Τι είναι το Responsive Design;</h2>
+        <p>
+            Το <strong>responsive web design</strong> είναι η τεχνική που επιτρέπει σε μια ιστοσελίδα να αλλάζει εμφάνιση και διάταξη ανάλογα με το μέγεθος της οθόνης του χρήστη. Έτσι, όλοι οι επισκέπτες έχουν ευχάριστη εμπειρία, είτε χρησιμοποιούν κινητό, tablet ή υπολογιστή.
+        </p>
+        <ul>
+            <li>Βελτιώνει την προσβασιμότητα και την εμπειρία χρήστη.</li>
+            <li>Είναι απαραίτητο για SEO (καλή κατάταξη στη Google).</li>
+            <li>Αποφεύγει την ανάγκη για ξεχωριστές mobile και desktop εκδόσεις.</li>
+        </ul>
+    </section>
+
+    <!-- Παράδειγμα Responsive Σχεδίασης -->
+    <section class="topic-content">
+        <h2>Χρήση Ετικέτας Viewport και CSS Media Queries</h2>
+
+        <pre class="code-sample">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;Responsive Σελίδα&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Καλώς ήρθατε!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <p>
+            Η ετικέτα <strong>&lt;meta name="viewport"&gt;</strong> είναι απαραίτητη για την υποστήριξη responsive σχεδίασης. Ορίζει πώς προβάλλεται η ιστοσελίδα σε διαφορετικές διαστάσεις οθονών.
+        </p>
+
+        <p>
+            Με <strong>media queries</strong> στο CSS μπορείτε να προσαρμόσετε το layout:
+        </p>
+
+        <pre class="code-sample">
+/* Στυλ για οθόνες με πλάτος έως 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    background-color: #f0f0f0;
+  }
+
+  nav .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+        </pre>
+
+        <p>
+            Με αυτόν τον τρόπο η ιστοσελίδα γίνεται εύχρηστη και ευανάγνωστη σε <strong>κινητές συσκευές</strong>.
+        </p>
+    </section>
+
+    <!-- Responsive Εικόνες -->
+    <section class="topic-content">
+        <h2>Responsive Εικόνες</h2>
+        <p>
+            Για να προσαρμόζονται οι εικόνες αυτόματα στο πλάτος της οθόνης, χρησιμοποιούμε:
+        </p>
+        <pre class="code-sample">
+img {
+  max-width: 100%;
+  height: auto;
+}
+        </pre>
+        <p>
+            Έτσι, οι εικόνες δεν ξεφεύγουν από το πλάτος του κοντέινερ τους και φαίνονται σωστά παντού.
+        </p>
+    </section>
+
+    <!-- Flexbox & Grid για Responsive Layouts -->
+    <section class="topic-content">
+        <h2>Flexbox & Grid για Responsive Layouts</h2>
+        <p>
+            Για πιο σύνθετες responsive διατάξεις, χρησιμοποιούμε <strong>Flexbox</strong> ή <strong>CSS Grid</strong>:
+        </p>
+        <pre class="code-sample">
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.item {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+        </pre>
+        <p>
+            Με το <code>flex-wrap: wrap;</code> τα στοιχεία "σπάνε" σε νέα γραμμή όταν δεν χωράνε, διατηρώντας την ευελιξία της διάταξης σε κάθε οθόνη.
+        </p>
+    </section>
+
+    <!-- Συχνά Λάθη Αρχαρίων -->
+    <section class="topic-content">
+        <h2>Συχνά Λάθη Αρχαρίων στο Responsive Design</h2>
+        <ul>
+            <li>Ξεχνούν το <code>&lt;meta name="viewport"&gt;</code> στο <code>&lt;head&gt;</code>.</li>
+            <li>Δεν χρησιμοποιούν media queries ή τα βάζουν λάθος.</li>
+            <li>Ορίζουν σταθερά πλάτη (π.χ. <code>width: 600px;</code>) αντί για ποσοστά ή <code>max-width</code>.</li>
+            <li>Δεν ελέγχουν τη σελίδα σε διαφορετικές συσκευές/αναλύσεις.</li>
+        </ul>
+    </section>
+
+    <!-- Άσκηση για Εξάσκηση -->
+    <section class="topic-content">
+        <h2>Άσκηση για Εξάσκηση</h2>
+        <ol>
+            <li>Φτιάξε μια σελίδα με τρεις εικόνες στη σειρά.</li>
+            <li>Χρησιμοποίησε Flexbox για να εμφανίζονται οριζόντια σε μεγάλες οθόνες και κάθετα σε κινητά (με media query).</li>
+            <li>Βεβαιώσου ότι οι εικόνες είναι responsive (<code>max-width: 100%;</code>).</li>
+        </ol>
+    </section>
+
+    <!-- Χρήσιμες Πηγές -->
+    <section class="topic-content">
+        <h2>Χρήσιμες Πηγές για Responsive Design</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/el/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">MDN Web Docs - Responsive Design</a></li>
+            <li><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank" rel="noopener noreferrer">W3Schools - Responsive Web Design</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Flexbox Guide</a></li>
+        </ul>
+    </section>
+
+    <!-- Εκπαιδευτικό Βίντεο -->
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/srvUrASNj0s"
+                title="Responsive Web Design Tutorial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

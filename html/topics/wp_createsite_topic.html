@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Δημιουργία Ιστοσελίδας με WordPress - Οδηγός για Αρχάριους</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        .wp-create-section {
+            background: #f8fafd;
+            border-left: 4px solid #1976d2;
+            padding: 18px 18px 8px 18px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+        .video-container {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        ul.sources-list {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            padding-left: 20px;
+        }
+        ul.sources-list li {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image" />
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<main class="main-content">
+    <h1>Δημιουργία Ιστοσελίδας με WordPress (Creating a Website with WordPress)</h1>
+
+    <section>
+        <h2>Εισαγωγή (Introduction)</h2>
+        <p>
+            Σε αυτό το μάθημα θα μάθεις πώς να δημιουργήσεις ένα σύγχρονο, λειτουργικό website χωρίς να χρειάζεσαι γνώσεις προγραμματισμού, χρησιμοποιώντας το WordPress. Ο οδηγός είναι κατάλληλος για αρχάριους και σε καθοδηγεί βήμα-βήμα, από την επιλογή domain και hosting, μέχρι την τελική διαμόρφωση και δημοσίευση της ιστοσελίδας σου.
+        </p>
+    </section>
+
+    <section>
+        <h2>Τι είναι το WordPress; (What is WordPress?)</h2>
+        <p>
+            Το WordPress είναι ένα σύστημα διαχείρισης περιεχομένου (CMS) που σου επιτρέπει να δημιουργήσεις και να διαχειριστείς ιστοσελίδες εύκολα, χωρίς να γράψεις ούτε μία γραμμή κώδικα. Είναι το πιο δημοφιλές CMS παγκοσμίως, χρησιμοποιείται από πάνω από το 40% των ιστοσελίδων και διατίθεται δωρεάν.
+        </p>
+        <ul>
+            <li>Δεν χρειάζεται να γνωρίζεις HTML, CSS ή JavaScript.</li>
+            <li>Όλη η διαχείριση γίνεται γραφικά, μέσα από το διαχειριστικό περιβάλλον.</li>
+            <li>Είναι ιδανικό για blogs, επαγγελματικές ιστοσελίδες, e-shop και πολλά άλλα.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Απόκτηση Domain και Hosting (Getting a Domain and Hosting)</h2>
+        <p>
+            Για να είναι το site σου προσβάσιμο στο διαδίκτυο, χρειάζεσαι δύο πράγματα:
+        </p>
+        <ul>
+            <li><strong>Domain name:</strong> Η διεύθυνση που θα πληκτρολογούν οι επισκέπτες (π.χ. <code>toonomasou.gr</code>).</li>
+            <li><strong>Hosting:</strong> Ο χώρος όπου θα φιλοξενείται το site και τα αρχεία του.</li>
+        </ul>
+        <p>
+            Βήματα:
+        </p>
+        <ol>
+            <li>Επίλεξε έναν αξιόπιστο πάροχο hosting που υποστηρίζει WordPress (π.χ. Hostinger, Papaki, Top.Host, SiteGround).</li>
+            <li>Κατά την αγορά hosting, μπορείς να κατοχυρώσεις και το domain σου.</li>
+            <li>Αγόρασε το πακέτο που καλύπτει τις ανάγκες σου (συνήθως τα βασικά πακέτα είναι αρκετά για αρχή).</li>
+            <li>Μετά την αγορά, θα λάβεις email με στοιχεία σύνδεσης στο control panel του hosting σου (συνήθως cPanel ή hPanel).</li>
+        </ol>
+        <p>
+            <strong>Συμβουλή:</strong> Το domain κοστίζει περίπου 10-20€ το χρόνο και το hosting περίπου 3-5€ το μήνα για ένα απλό site.
+        </p>
+    </section>
+
+    <section>
+        <h2>Εγκατάσταση WordPress (Installing WordPress)</h2>
+        <p>
+            Υπάρχουν δύο βασικοί τρόποι για να εγκαταστήσεις το WordPress στον server σου:
+        </p>
+        <ol>
+            <li>
+                <strong>Αυτόματη εγκατάσταση μέσω του hosting:</strong>
+                <ul>
+                    <li>Συνδέσου στο control panel του hosting σου (π.χ. cPanel/hPanel).</li>
+                    <li>Βρες το εργαλείο “WordPress Installer” ή “Softaculous”.</li>
+                    <li>Επίλεξε το domain σου, όρισε όνομα site, όνομα χρήστη και κωδικό διαχειριστή.</li>
+                    <li>Πάτησε “Εγκατάσταση” και περίμενε να ολοκληρωθεί.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Χειροκίνητη εγκατάσταση:</strong>
+                <ul>
+                    <li>Κατέβασε το WordPress από το <a href="https://el.wordpress.org/download/" target="_blank">επίσημο site</a>.</li>
+                    <li>Ανέβασε τα αρχεία στον server μέσω FTP.</li>
+                    <li>Δημιούργησε βάση δεδομένων MySQL από το control panel.</li>
+                    <li>Άνοιξε τον browser και πήγαινε στη διεύθυνση του site σου για να ξεκινήσεις τη διαδικασία εγκατάστασης.</li>
+                    <li>Συμπλήρωσε τα στοιχεία της βάσης και ολοκλήρωσε την εγκατάσταση.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>
+            <strong>Σημείωση:</strong> Οι περισσότεροι αρχάριοι επιλέγουν την αυτόματη εγκατάσταση γιατί είναι πιο απλή και γρήγορη.
+        </p>
+    </section>
+
+    <section>
+        <h2>Ρύθμιση Προσαρμοσμένου Email (Setting Up Custom Email)</h2>
+        <p>
+            Με το domain σου μπορείς να δημιουργήσεις επαγγελματικές διευθύνσεις email (π.χ. info@toonomasou.gr).
+            <br>
+            Βήματα:
+        </p>
+        <ol>
+            <li>Συνδέσου στο control panel του hosting σου.</li>
+            <li>Βρες την ενότητα “Email Accounts” ή “Λογαριασμοί Email”.</li>
+            <li>Δημιούργησε νέο email, όρισε κωδικό και αποθήκευσε.</li>
+            <li>Μπορείς να ελέγχεις τα email σου μέσω webmail ή να τα προωθείς σε άλλη διεύθυνση (π.χ. Gmail).</li>
+            <li>Για να στέλνεις/λαμβάνεις email, μπορείς να χρησιμοποιήσεις το webmail του hosting ή να ρυθμίσεις το email σε εφαρμογή (Outlook, Gmail κ.λπ.).</li>
+        </ol>
+        <p>
+            <strong>Συμβουλή:</strong> Επαλήθευσε το email σου αν ζητηθεί, ώστε να λειτουργεί σωστά η αποστολή και λήψη.
+        </p>
+    </section>
+
+    <section>
+        <h2>Εξερεύνηση Πίνακα Ελέγχου WordPress (Exploring WordPress Dashboard)</h2>
+        <p>
+            Αφού ολοκληρωθεί η εγκατάσταση, συνδέσου στο διαχειριστικό του WordPress (π.χ. <code>yourdomain.gr/wp-admin</code>).
+            <br>
+            Στον πίνακα ελέγχου θα βρεις:
+        </p>
+        <ul>
+            <li>Το αριστερό μενού με επιλογές για άρθρα, σελίδες, εμφάνιση, πρόσθετα, χρήστες, ρυθμίσεις κ.ά.</li>
+            <li>Την κεντρική σελίδα με γρήγορες επιλογές και ειδοποιήσεις.</li>
+            <li>Εδώ μπορείς να προσθέσεις περιεχόμενο, να αλλάξεις το θέμα, να εγκαταστήσεις πρόσθετα και να ρυθμίσεις το site σου.</li>
+        </ul>
+        <p>
+            <strong>Συμβουλή:</strong> Η μαύρη μπάρα στο πάνω μέρος της σελίδας εμφανίζεται μόνο όταν είσαι συνδεδεμένος ως διαχειριστής.
+        </p>
+    </section>
+
+    <section>
+        <h2>Ενημέρωση Ρυθμίσεων (Updating Settings)</h2>
+        <p>
+            Πριν ξεκινήσεις να προσθέτεις περιεχόμενο, καλό είναι να ρυθμίσεις βασικές επιλογές:
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Ρυθμίσεις” → “Γενικά”. Συμπλήρωσε τίτλο ιστοσελίδας, περιγραφή, email διαχειριστή, ζώνη ώρας και γλώσσα.</li>
+            <li>Στο “Ρυθμίσεις” → “Σύνδεσμοι” (Permalinks), επέλεξε “Όνομα άρθρου” για φιλικές διευθύνσεις URL (SEO friendly).</li>
+            <li>Ρύθμισε αν θέλεις να επιτρέπονται σχόλια, ποια θα είναι η αρχική σελίδα κ.λπ.</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Εγκατάσταση Πρόσθετων (Installing Plugins)</h2>
+        <p>
+            Τα πρόσθετα (plugins) επεκτείνουν τις δυνατότητες του WordPress. Για παράδειγμα, μπορείς να προσθέσεις φόρμα επικοινωνίας, SEO, ασφάλεια, gallery φωτογραφιών κ.ά.
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Πρόσθετα” → “Νέο Πρόσθετο”.</li>
+            <li>Αναζήτησε το πρόσθετο που θέλεις (π.χ. “Elementor”, “WPForms”).</li>
+            <li>Πάτησε “Εγκατάσταση” και μετά “Ενεργοποίηση”.</li>
+            <li>Διαχειρίσου τα πρόσθετα από το ίδιο μενού.</li>
+            <li>Αφαίρεσε όσα πρόσθετα δεν χρειάζεσαι για να κρατήσεις το site ελαφρύ και ασφαλές.</li>
+        </ol>
+        <p>
+            <strong>Συμβουλή:</strong> Εγκατέστησε μόνο όσα πρόσθετα χρειάζεσαι πραγματικά.
+        </p>
+    </section>
+
+    <section>
+        <h2>Εγκατάσταση Θέματος (Installing Theme)</h2>
+        <p>
+            Το θέμα (theme) καθορίζει την εμφάνιση του site σου. Μπορείς να διαλέξεις ανάμεσα σε χιλιάδες δωρεάν ή επί πληρωμή θέματα.
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Εμφάνιση” → “Θέματα”.</li>
+            <li>Πάτησε “Προσθήκη νέου” για να δεις τα διαθέσιμα θέματα.</li>
+            <li>Δοκίμασε προεπισκόπηση (Preview) και εγκατέστησε το θέμα που σου αρέσει.</li>
+            <li>Μετά την εγκατάσταση, πάτησε “Ενεργοποίηση”.</li>
+            <li>Για περισσότερες δυνατότητες, προτείνεται το θέμα Astra που συνεργάζεται άψογα με το Elementor.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Δημιουργία Λογοτύπου (Creating a Logo)</h2>
+        <p>
+            Ένα καλό λογότυπο δίνει ταυτότητα στην ιστοσελίδα σου.
+        </p>
+        <ol>
+            <li>Μπες σε ένα εργαλείο δημιουργίας λογοτύπου, όπως το <a href="https://www.canva.com/" target="_blank">Canva</a> ή το <a href="https://looka.com/" target="_blank">Looka</a>.</li>
+            <li>Επίλεξε διαστάσεις (συνήθως τετράγωνο, π.χ. 500x500px).</li>
+            <li>Σχεδίασε το λογότυπο με κείμενο, εικόνες ή εικονίδια που ταιριάζουν στο θέμα του site σου.</li>
+            <li>Κατέβασε το λογότυπο σε μορφή PNG με διαφάνεια (αν είναι δυνατόν).</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσθήκη Λογοτύπου στο Site (Adding Logo to Website)</h2>
+        <p>
+            Για να προσθέσεις το λογότυπο σου:
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Εμφάνιση” → “Προσαρμογή”.</li>
+            <li>Επίλεξε “Ταυτότητα Ιστοσελίδας”.</li>
+            <li>Ανέβασε το αρχείο του λογοτύπου και κάνε αποθήκευση.</li>
+            <li>Το λογότυπο θα εμφανίζεται πλέον στην κεφαλίδα (header) του site σου.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Επεξεργασία Site με Elementor (Editing Site with Elementor)</h2>
+        <p>
+            Το Elementor είναι ένα πρόσθετο που σου επιτρέπει να διαμορφώνεις σελίδες με drag & drop, χωρίς να γράφεις κώδικα.
+        </p>
+        <ol>
+            <li>Εγκατέστησε και ενεργοποίησε το Elementor.</li>
+            <li>Πήγαινε σε μια σελίδα ή άρθρο και πάτησε “Επεξεργασία με Elementor”.</li>
+            <li>Χρησιμοποίησε τα blocks για να προσθέσεις κείμενα, εικόνες, κουμπιά κ.λπ.</li>
+            <li>Μπορείς να αλλάξεις χρώματα, γραμματοσειρές και διάταξη εύκολα.</li>
+            <li>Αποθήκευσε τις αλλαγές και δες άμεσα το αποτέλεσμα.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσθήκη Προσαρμοσμένου HTML (Adding Custom HTML to Site)</h2>
+        <p>
+            Αν θέλεις να προσθέσεις δικό σου κώδικα HTML (π.χ. widgets, scripts):
+        </p>
+        <ol>
+            <li>Στον Gutenberg editor, πρόσθεσε block “Προσαρμοσμένο HTML”.</li>
+            <li>Επικόλλησε τον κώδικα HTML που θέλεις.</li>
+            <li>Με το Elementor, χρησιμοποίησε το widget “HTML” και πρόσθεσε τον κώδικα.</li>
+            <li>Πάντα να ελέγχεις ότι ο κώδικας δεν προκαλεί προβλήματα στην εμφάνιση ή τη λειτουργία του site.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Ενημέρωση Μενού (Updating Menus)</h2>
+        <p>
+            Τα μενού βοηθούν τους επισκέπτες να περιηγούνται εύκολα στο site σου.
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Εμφάνιση” → “Μενού”.</li>
+            <li>Δημιούργησε νέο μενού ή επεξεργάσου το υπάρχον.</li>
+            <li>Πρόσθεσε σελίδες, άρθρα ή custom links στο μενού.</li>
+            <li>Όρισε το μενού ως “Κύριο Μενού” (Primary Menu) για να εμφανίζεται στην πλοήγηση.</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσθήκη Νέας Σελίδας (Adding a New Page)</h2>
+        <p>
+            Για να προσθέσεις νέα σελίδα:
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Σελίδες” → “Προσθήκη Νέας”.</li>
+            <li>Γράψε τον τίτλο και το περιεχόμενο της σελίδας.</li>
+            <li>Χρησιμοποίησε blocks για να προσθέσεις εικόνες, λίστες, κουμπιά κ.λπ.</li>
+            <li>Πάτησε “Δημοσίευση” για να εμφανιστεί η σελίδα στο site.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσαρμογή Ονόματος Σελίδας (Customizing Page Name)</h2>
+        <p>
+            Μπορείς να αλλάξεις τον τίτλο και το URL (σύνδεσμο) κάθε σελίδας:
+        </p>
+        <ol>
+            <li>Πριν δημοσιεύσεις, επεξεργάσου το πεδίο “Μόνιμος σύνδεσμος” (Permalink) κάτω από τον τίτλο.</li>
+            <li>Δώσε ένα σύντομο και περιγραφικό URL (π.χ. <code>epikoinonia</code> αντί για <code>page123</code>).</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Επεξεργασία Σελίδας "Σχετικά" (Editing About Page)</h2>
+        <p>
+            Η σελίδα “Σχετικά” παρουσιάζει εσένα ή την επιχείρησή σου στους επισκέπτες:
+        </p>
+        <ol>
+            <li>Πήγαινε στη σελίδα “Σχετικά” και πάτησε “Επεξεργασία”.</li>
+            <li>Γράψε λίγα λόγια για εσένα, την ομάδα ή την αποστολή του site.</li>
+            <li>Πρόσθεσε φωτογραφίες, βιογραφικό ή ιστορικό.</li>
+            <li>Χρησιμοποίησε blocks για να κάνεις το περιεχόμενο πιο ελκυστικό.</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Επεξεργασία Σελίδας "Επικοινωνία" (Editing Contact Page)</h2>
+        <p>
+            Η σελίδα “Επικοινωνία” επιτρέπει στους επισκέπτες να έρθουν σε επαφή μαζί σου:
+        </p>
+        <ol>
+            <li>Δημιούργησε ή επεξεργάσου τη σελίδα “Επικοινωνία”.</li>
+            <li>Πρόσθεσε φόρμα επικοινωνίας με plugin (π.χ. WPForms) ή απλά τα στοιχεία επικοινωνίας σου (email, τηλέφωνο).</li>
+            <li>Δώσε σαφείς οδηγίες για το πώς μπορεί κάποιος να επικοινωνήσει μαζί σου.</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσαρμογή Φόρμας Επικοινωνίας (Customizing Contact Form)</h2>
+        <p>
+            Για να προσαρμόσεις τη φόρμα επικοινωνίας:
+        </p>
+        <ol>
+            <li>Άνοιξε το plugin της φόρμας (π.χ. WPForms).</li>
+            <li>Πρόσθεσε ή αφαίρεσε πεδία (όνομα, email, μήνυμα κ.λπ.).</li>
+            <li>Όρισε που θα στέλνονται τα μηνύματα (email διαχειριστή).</li>
+            <li>Διαμόρφωσε το μήνυμα επιβεβαίωσης που βλέπει ο επισκέπτης μετά την αποστολή.</li>
+            <li>Ενσωμάτωσε τη φόρμα στη σελίδα “Επικοινωνία” με shortcode ή block.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Ενημέρωση Υποσέλιδου (Updating Page Footer)</h2>
+        <p>
+            Το υποσέλιδο (footer) εμφανίζεται στο κάτω μέρος κάθε σελίδας:
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Εμφάνιση” → “Προσαρμογή” → “Υποσέλιδο” ή “Widgets”.</li>
+            <li>Πρόσθεσε στοιχεία όπως πνευματικά δικαιώματα, social media, επιπλέον συνδέσμους ή πληροφορίες.</li>
+            <li>Αποθήκευσε τις αλλαγές.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Κάνε το Site Responsive (Making Site Responsive)</h2>
+        <p>
+            Η responsive σχεδίαση εξασφαλίζει ότι το site σου φαίνεται σωστά σε κινητά, tablet και υπολογιστές.
+        </p>
+        <ol>
+            <li>Επίλεξε θέμα που είναι responsive (τα περισσότερα σύγχρονα θέματα το υποστηρίζουν).</li>
+            <li>Με το Elementor μπορείς να δεις και να προσαρμόσεις την εμφάνιση για κινητά/tablet.</li>
+            <li>Δοκίμασε το site σου σε διάφορες συσκευές και βελτίωσε όπου χρειάζεται.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσθήκη Blog (Adding a Blog)</h2>
+        <p>
+            Το blog είναι μια ενότητα όπου μπορείς να δημοσιεύεις νέα, άρθρα ή ενημερώσεις.
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Άρθρα” → “Προσθήκη Νέου”.</li>
+            <li>Γράψε το άρθρο σου και δημοσίευσέ το.</li>
+            <li>Οργάνωσε τα άρθρα σε κατηγορίες (π.χ. Νέα, Ανακοινώσεις).</li>
+            <li>Όρισε μια σελίδα ως “Blog” από τις ρυθμίσεις “Ανάγνωση”.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Δημιουργία Αναρτήσεων με AI Content Creator (Creating Posts with AI Content Creator)</h2>
+        <p>
+            Μπορείς να χρησιμοποιήσεις εργαλεία Τεχνητής Νοημοσύνης (AI) για να δημιουργήσεις περιεχόμενο πιο γρήγορα.
+        </p>
+        <ol>
+            <li>Δοκίμασε εργαλεία όπως ChatGPT, Jasper ή το ενσωματωμένο AI του hosting σου (αν υπάρχει).</li>
+            <li>Ζήτησε ιδέες για άρθρα, προσχέδια ή ακόμα και έτοιμα κείμενα.</li>
+            <li>Πάντα διάβαζε και προσαρμόζε το περιεχόμενο πριν το δημοσιεύσεις.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Προσαρμογή Blog (Customizing Blog)</h2>
+        <p>
+            Μπορείς να διαμορφώσεις την εμφάνιση και τη λειτουργία του blog σου:
+        </p>
+        <ol>
+            <li>Πήγαινε στο “Εμφάνιση” → “Προσαρμογή” → “Blog” ή “Αρχεία”.</li>
+            <li>Άλλαξε τη διάταξη, τα χρώματα, τις γραμματοσειρές και τα widgets του blog.</li>
+            <li>Πρόσθεσε widgets για πρόσφατα άρθρα, κατηγορίες, αναζήτηση κ.λπ.</li>
+            <li>Δοκίμασε διάφορες ρυθμίσεις μέχρι να βρεις αυτό που σου ταιριάζει.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Συμπέρασμα (Conclusion)</h2>
+        <p>
+            Ακολουθώντας τα παραπάνω βήματα, μπορείς να δημιουργήσεις ένα σύγχρονο, λειτουργικό και επαγγελματικό website με WordPress, ακόμα κι αν είναι η πρώτη σου φορά. Μην φοβηθείς να πειραματιστείς και να εξερευνήσεις τις δυνατότητες του WordPress – οι επιλογές είναι σχεδόν απεριόριστες!
+        </p>
+    </section>
+
+    <section>
+        <h2>Χρήσιμες Πηγές (Useful Resources)</h2>
+        <ul class="sources-list">
+            <li>
+                <a href="https://wordpress.org/documentation/article/get-started-with-wordpress/" target="_blank" rel="noopener noreferrer">
+                    Επίσημος οδηγός: Get Started with WordPress
+                </a>
+            </li>
+            <li>
+                <a href="https://www.greengeeks.com/tutorials/wordpress/" target="_blank" rel="noopener noreferrer">
+                    GreenGeeks: WordPress Guide for Beginners
+                </a>
+            </li>
+            <li>
+                <a href="https://codex.wordpress.org/WordPress_Quick_Start_Guide" target="_blank" rel="noopener noreferrer">
+                    WordPress Codex: Quick Start Guide
+                </a>
+            </li>
+            <li>
+                <a href="https://www.wpbeginner.com/guides/" target="_blank" rel="noopener noreferrer">
+                    WPBeginner: WordPress Guides & Tutorials
+                </a>
+            </li>
+            <li>
+                <a href="https://www.wp101.com/" target="_blank" rel="noopener noreferrer">
+                    WP101: WordPress Video Tutorials
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Εκπαιδευτικό Βίντεο: Δημιουργία Ιστοσελίδας με WordPress</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/R4v_7hh4Yys?si=X0NEw0gw1iMTmwlX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p style="text-align:center; margin-top: 8px;">
+                <a href="https://www.youtube.com/watch?v=R4v_7hh4Yys" target="_blank" rel="noopener noreferrer">Δες το βίντεο στο YouTube</a><br />
+                <small><em>Αναλυτικό βίντεο που καλύπτει όλα τα βήματα για να δημιουργήσεις το δικό σου website με WordPress, ιδανικό για αρχάριους.</em></small>
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon" />
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon" />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon" />
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+<script src="../../js/script.js"></script>
+</body>
+</html>

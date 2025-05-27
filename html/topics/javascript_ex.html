@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Εμπλουτισμένη Άσκηση JavaScript & DOM</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* Ειδικό στυλ μόνο για το παράδειγμα της άσκησης */
+    .js-demo-section {
+      background: #f8fafd;
+      border-left: 4px solid #007BFF;
+      padding: 18px 18px 8px 18px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .js-demo-section p {
+      margin-bottom: 0.5em;
+    }
+    .highlight {
+      background: #ffe082;
+      color: #333;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .removed {
+      text-decoration: line-through;
+      color: #b71c1c;
+    }
+    /* Πίνακας εννοιών */
+    .concept-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      font-size: 1em;
+    }
+    .concept-table th, .concept-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .concept-table th {
+      background: #e3f2fd;
+      color: #005599;
+      font-weight: bold;
+    }
+    .concept-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    @media (max-width: 700px) {
+      .btn-row { flex-direction: column; gap: 10px; }
+      .concept-table, .concept-table th, .concept-table td { font-size: 0.94em; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../about.html">Σχετικά</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<main class="main-content">
+  <h1>Άσκηση JavaScript & DOM</h1>
+
+  <p style="text-align:right; margin-bottom: 24px;">
+    <a href="../glossary.html" class="main-button fancy-btn" target="_blank" role="button">
+    <span class="btn-icon">
+      <!-- SVG εικονίδιο βιβλίου -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+      </svg>
+    </span>
+      <span class="btn-text">Δες το Γλωσσάρι</span>
+    </a>
+  </p>
+
+  <section>
+    <h2>Τι θα μάθεις με αυτό το αρχείο</h2>
+    <ul>
+      <li>Πώς να αλλάζεις κείμενο και να εμφανίζεις μηνύματα με JavaScript (με δύο τρόπους).</li>
+      <li>Πώς να προσθέτεις και να αφαιρείς στοιχεία στο DOM.</li>
+      <li>Πώς να αλλάζεις στυλ HTML στοιχείων από τη JavaScript.</li>
+      <li>Πώς να χρησιμοποιείς βασικές μεθόδους και ιδιότητες του DOM.</li>
+      <li>Πώς να οργανώνεις τον κώδικά σου με συναρτήσεις και μεταβλητές.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Παράδειγμα: Εφαρμογή DOM & JavaScript</h2>
+    <div class="js-demo-section">
+      <h3>1. Αλλαγή κειμένου με κουμπί (onClick στο HTML)</h3>
+      <p id="myText">Αυτό είναι το αρχικό κείμενο.</p>
+      <div class="btn-row">
+        <button onclick="changeText()">Άλλαξε το κείμενο</button>
+        <button onclick="showAlert()">Δείξε Μήνυμα</button>
+      </div>
+
+      <h3>2. Αλλαγή κειμένου με addEventListener (JavaScript)</h3>
+      <p id="myText2">Κείμενο που θα αλλάξει με addEventListener.</p>
+      <div class="btn-row">
+        <button id="btnChangeText2">Άλλαξε το κείμενο (με JS)</button>
+        <button id="btnAlert2">Δείξε Μήνυμα (με JS)</button>
+      </div>
+
+      <h3>3. Επιπλέον παραδείγματα DOM</h3>
+      <p id="colorText">Αυτό το κείμενο θα αλλάξει χρώμα και στυλ.</p>
+      <div class="btn-row">
+        <button id="btnStyle">Αλλαγή στυλ</button>
+        <button id="btnAdd">Προσθήκη νέας παραγράφου</button>
+        <button id="btnRemove">Αφαίρεση παραγράφου</button>
+      </div>
+      <div id="extraParagraphs"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Αναλυτική σκέψη για κάθε έννοια</h2>
+    <div class="learning-table">
+    <table class="concept-table">
+      <tr>
+        <th>Έννοια</th>
+        <th>Περιγραφή / Ρόλος</th>
+        <th>Παράδειγμα</th>
+      </tr>
+      <tr>
+        <td><strong>document</strong></td>
+        <td>Αντικείμενο που αναπαριστά όλο το HTML της σελίδας (DOM).</td>
+        <td>document.getElementById("myText")</td>
+      </tr>
+      <tr>
+        <td><strong>getElementById</strong></td>
+        <td>Μέθοδος που επιστρέφει το στοιχείο με το συγκεκριμένο id.</td>
+        <td>document.getElementById("myText")</td>
+      </tr>
+      <tr>
+        <td><strong>textContent</strong></td>
+        <td>Ιδιότητα που αλλάζει το κείμενο ενός στοιχείου.</td>
+        <td>element.textContent = "Νέο κείμενο";</td>
+      </tr>
+      <tr>
+        <td><strong>alert()</strong></td>
+        <td>Μέθοδος που εμφανίζει παράθυρο με μήνυμα στον χρήστη.</td>
+        <td>alert("Μήνυμα");</td>
+      </tr>
+      <tr>
+        <td><strong>addEventListener</strong></td>
+        <td>Μέθοδος που προσθέτει ακροατή συμβάντος σε ένα στοιχείο.</td>
+        <td>button.addEventListener("click", function() {...})</td>
+      </tr>
+      <tr>
+        <td><strong>function</strong></td>
+        <td>Ομάδα εντολών που εκτελούνται μαζί όταν καλείται η συνάρτηση ή συμβαίνει ένα event.</td>
+        <td>function showAlert() {...}</td>
+      </tr>
+      <tr>
+        <td><strong>let</strong></td>
+        <td>Δήλωση μεταβλητής (αποθηκεύει προσωρινά τιμές).</td>
+        <td>let el = document.getElementById("colorText");</td>
+      </tr>
+      <tr>
+        <td><strong>style</strong></td>
+        <td>Αντικείμενο που επιτρέπει να αλλάξουμε CSS ιδιότητες από τη JavaScript.</td>
+        <td>el.style.color = "#d84315";</td>
+      </tr>
+      <tr>
+        <td><strong>classList.add</strong></td>
+        <td>Μέθοδος που προσθέτει CSS κλάση σε στοιχείο.</td>
+        <td>el.classList.add("highlight");</td>
+      </tr>
+      <tr>
+        <td><strong>createElement</strong></td>
+        <td>Δημιουργεί νέο στοιχείο HTML μέσω JavaScript.</td>
+        <td>document.createElement("p");</td>
+      </tr>
+      <tr>
+        <td><strong>appendChild</strong></td>
+        <td>Προσθέτει ένα στοιχείο ως παιδί σε άλλο στοιχείο.</td>
+        <td>container.appendChild(newP);</td>
+      </tr>
+      <tr>
+        <td><strong>remove()</strong></td>
+        <td>Αφαιρεί το στοιχείο από το DOM.</td>
+        <td>element.remove();</td>
+      </tr>
+      <tr>
+        <td><strong>setTimeout</strong></td>
+        <td>Εκτελεί μια συνάρτηση μετά από καθυστέρηση.</td>
+        <td>setTimeout(function(){...}, 500);</td>
+      </tr>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Σύνοψη</h2>
+    <ul>
+      <li>Με τη JavaScript μπορούμε να αλλάζουμε το περιεχόμενο, το στυλ και τη δομή της σελίδας (DOM).</li>
+      <li>Οι συναρτήσεις οργανώνουν τον κώδικα και εκτελούν ενέργειες όταν καλούνται ή όταν συμβαίνει κάποιο γεγονός (event).</li>
+      <li>Οι μέθοδοι και οι ιδιότητες του DOM μας επιτρέπουν να αλληλεπιδρούμε με τα στοιχεία της σελίδας δυναμικά.</li>
+      <li>Η χρήση διαφορετικών τρόπων (onclick, addEventListener) μας βοηθά να κατανοήσουμε τη δύναμη της JavaScript και του DOM.</li>
+    </ul>
+  </section>
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<script>
+  /*
+    1. Συνάρτηση που αλλάζει το κείμενο (με onclick στο HTML)
+    - document: το βασικό αντικείμενο που αναπαριστά όλο το HTML της σελίδας (DOM)
+    - getElementById("myText"): μέθοδος του document που επιστρέφει το στοιχείο με id="myText"
+    - .textContent: ιδιότητα που αλλάζει το κείμενο που εμφανίζεται μέσα του
+  */
+  function changeText() {
+    document.getElementById("myText").textContent = "Το κείμενο άλλαξε με JavaScript!";
+  }
+
+  /*
+    2. Συνάρτηση που εμφανίζει alert (με onclick στο HTML)
+    - alert(): μέθοδος της JavaScript που εμφανίζει ένα παράθυρο με μήνυμα στον χρήστη
+  */
+  function showAlert() {
+    alert("Καλώς ήρθες στη σελίδα μας!");
+  }
+
+  /*
+    3. Αλλαγή κειμένου με addEventListener (χωρίς inline onclick)
+    - addEventListener: προσθέτει ακροατή συμβάντος (event listener) σε ένα στοιχείο
+    - function() {...}: ανώνυμη συνάρτηση που εκτελείται όταν συμβεί το event
+  */
+  document.getElementById("btnChangeText2").addEventListener("click", function() {
+    document.getElementById("myText2").textContent = "Το κείμενο άλλαξε με addEventListener!";
+  });
+
+  /*
+    4. Εμφάνιση alert με addEventListener
+  */
+  document.getElementById("btnAlert2").addEventListener("click", function() {
+    alert("Αυτό το alert εμφανίστηκε με addEventListener!");
+  });
+
+  /*
+    5. Επιπλέον παραδείγματα DOM
+  */
+
+  // Αλλαγή στυλ σε στοιχείο
+  document.getElementById("btnStyle").addEventListener("click", function() {
+    let el = document.getElementById("colorText"); // Δημιουργούμε μια μεταβλητή el που δείχνει στο στοιχείο με id="colorText"
+    el.style.color = "#d84315"; // Αλλάζουμε το χρώμα του κειμένου (ιδιότητα style.color)
+    el.style.backgroundColor = "#fff3e0"; // Αλλάζουμε το φόντο (ιδιότητα style.backgroundColor)
+    el.style.fontWeight = "bold"; // Κάνουμε το κείμενο έντονο (ιδιότητα style.fontWeight)
+    el.classList.add("highlight"); // Προσθέτουμε την κλάση CSS "highlight" στο στοιχείο (μέθοδος classList.add)
+  });
+
+  // Προσθήκη νέας παραγράφου στο DOM
+  document.getElementById("btnAdd").addEventListener("click", function() {
+    let newP = document.createElement("p"); // Δημιουργούμε νέο στοιχείο <p>
+    newP.textContent = "Νέα παράγραφος που προστέθηκε δυναμικά!"; // Ορίζουμε το κείμενο της παραγράφου
+    document.getElementById("extraParagraphs").appendChild(newP); // Προσθέτουμε το νέο <p> ως παιδί του div με id="extraParagraphs"
+  });
+
+  // Αφαίρεση παραγράφου από το DOM με ασφαλή τρόπο
+  document.getElementById("btnRemove").addEventListener("click", function() {
+    // Βρίσκουμε το div που περιέχει τις παραγράφους που έχουν προστεθεί δυναμικά
+    let container = document.getElementById("extraParagraphs");
+
+    // lastElementChild: Επιστρέφει το τελευταίο "στοιχείο" (Element) παιδί του container,
+    // αγνοώντας τυχόν κενά κείμενα ή άλλα nodes που δεν είναι HTML στοιχεία.
+    let last = container.lastElementChild;
+
+    // Ελέγχουμε αν υπάρχει τουλάχιστον μία παράγραφος (δηλαδή αν το last δεν είναι null)
+    if (last) {
+      // Προσθέτουμε την κλάση "removed" για οπτική ένδειξη (π.χ. διαγράμμιση, κόκκινο χρώμα)
+      last.classList.add("removed");
+
+      // setTimeout: Περιμένει 500 χιλιοστά του δευτερολέπτου (0.5 δευτερόλεπτα)
+      // πριν αφαιρέσει το στοιχείο, ώστε να προλάβει να φανεί το εφέ της κλάσης "removed"
+      setTimeout(() => {
+        // Αφαιρεί το τελευταίο στοιχείο (παράγραφο) από το DOM
+        last.remove();
+      }, 500);
+    } else {
+      // Αν δεν υπάρχουν παράγραφοι, εμφανίζουμε μήνυμα στον χρήστη
+      alert("Δεν υπάρχουν άλλες παραγράφοι για αφαίρεση!");
+    }
+  });
+
+
+</script>
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Οδηγός: Εγκατάσταση Wordpress σε Τοπικό Server (XAMPP)</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .wp-demo-section {
+      background: #f8fafd;
+      border-left: 4px solid #43a047;
+      padding: 18px 18px 8px 18px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .concept-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      font-size: 1em;
+    }
+    .concept-table th, .concept-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .concept-table th {
+      background: #e3f2fd;
+      color: #005599;
+      font-weight: bold;
+    }
+    .concept-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    @media (max-width: 700px) {
+      .btn-row { flex-direction: column; gap: 10px; }
+      .concept-table, .concept-table th, .concept-table td { font-size: 0.94em; }
+    }
+    .wp-screenshot {
+      display: block;
+      max-width: 100%;
+      margin: 12px auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../about.html">Σχετικά</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<main class="main-content">
+  <h1>Εγκατάσταση Wordpress σε Τοπικό Server με XAMPP (Windows)</h1>
+
+  <p style="text-align:right; margin-bottom: 24px;">
+    <a href="../glossary.html" class="main-button fancy-btn" target="_blank" role="button" rel="noopener noreferrer">
+      <span class="btn-icon">
+        <!-- SVG εικονίδιο βιβλίου -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="btn-text">Δες το Γλωσσάρι</span>
+    </a>
+  </p>
+
+  <section>
+    <h2>Τι θα μάθεις με αυτόν τον οδηγό</h2>
+    <ul>
+      <li>Τι είναι το XAMPP και γιατί το χρησιμοποιούμε για τοπικό server.</li>
+      <li>Πώς να εγκαταστήσεις και να ρυθμίσεις το XAMPP στα Windows.</li>
+      <li>Πώς να κατεβάσεις και να εγκαταστήσεις το Wordpress τοπικά.</li>
+      <li>Πώς να δημιουργήσεις βάση δεδομένων για το Wordpress μέσω phpMyAdmin.</li>
+      <li>Πώς να ολοκληρώσεις τη βασική εγκατάσταση και να μπεις στο διαχειριστικό περιβάλλον του Wordpress.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Αναλυτικός Οδηγός Εγκατάστασης Wordpress (βήμα-βήμα)</h2>
+    <div class="wp-demo-section">
+      <ol>
+        <li>
+          <strong>Κατέβασε και εγκατέστησε το XAMPP</strong>
+          <ul>
+            <li>Μεταβείτε στη σελίδα <a href="https://www.apachefriends.org/download.html" target="_blank" rel="noopener noreferrer">https://www.apachefriends.org/download.html</a> και κατέβασε την έκδοση για Windows.</li>
+            <li>Τρέξε το αρχείο εγκατάστασης και ακολούθησε τα βήματα (προτείνεται να το εγκαταστήσεις στον φάκελο <code>C:\xampp</code>).</li>
+            <li>Μετά την εγκατάσταση, άνοιξε το <strong>XAMPP Control Panel</strong> και ξεκίνα τα modules <strong>Apache</strong> και <strong>MySQL</strong> πατώντας τα αντίστοιχα κουμπιά "Start".</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Κατέβασε το Wordpress</strong>
+          <ul>
+            <li>Πήγαινε στη σελίδα <a href="https://el.wordpress.org/download/" target="_blank" rel="noopener noreferrer">https://el.wordpress.org/download/</a> και κατέβασε το αρχείο ZIP της τελευταίας έκδοσης.</li>
+            <li>Αποσυμπίεσε το αρχείο ZIP.</li>
+            <li>Μετονόμασε τον φάκελο (π.χ. σε <code>mywp</code>) για να είναι το όνομα του site σου.</li>
+            <li>Μετακίνησε τον φάκελο <code>mywp</code> μέσα στον φάκελο <code>C:\xampp\htdocs\</code>.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Δημιούργησε νέα βάση δεδομένων στο phpMyAdmin</strong>
+          <ul>
+            <li>Άνοιξε τον browser και πήγαινε στη διεύθυνση <a href="http://localhost/phpmyadmin" target="_blank" rel="noopener noreferrer">http://localhost/phpmyadmin</a>.</li>
+            <li>Πάτησε στο "Νέα" (New) στην αριστερή στήλη.</li>
+            <li>Στο πεδίο "Όνομα βάσης δεδομένων" γράψε π.χ. <code>mywp_db</code> και πάτησε "Δημιουργία" (Create).</li>
+            <li>Δεν χρειάζεται να δημιουργήσεις πίνακες – το Wordpress θα το κάνει αυτόματα.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Εκκίνηση της εγκατάστασης Wordpress</strong>
+          <ul>
+            <li>Άνοιξε τον browser και πήγαινε στη διεύθυνση <code>http://localhost/mywp</code> (ή το όνομα φακέλου που έδωσες).</li>
+            <li>Θα εμφανιστεί η αρχική οθόνη εγκατάστασης του Wordpress. Επίλεξε γλώσσα και πάτησε "Συνέχεια".</li>
+            <li>Συμπλήρωσε τα στοιχεία της βάσης δεδομένων:
+              <ul>
+                <li><strong>Όνομα βάσης δεδομένων:</strong> <code>mywp_db</code></li>
+                <li><strong>Όνομα χρήστη:</strong> <code>root</code></li>
+                <li><strong>Κωδικός:</strong> (άφησέ το κενό)</li>
+                <li><strong>Διακομιστής βάσης:</strong> <code>localhost</code></li>
+                <li><strong>Πρόθεμα πινάκων:</strong> <code>wp_</code> (άφησέ το ως έχει)</li>
+              </ul>
+            </li>
+            <li>Πάτησε "Υποβολή" και μετά "Εκκίνηση εγκατάστασης".</li>
+            <li>Στην επόμενη οθόνη, συμπλήρωσε τα στοιχεία του site (τίτλος, όνομα χρήστη διαχειριστή, κωδικός, email).</li>
+            <li>Ολοκλήρωσε την εγκατάσταση και συνδέσου στο διαχειριστικό με τα στοιχεία που έβαλες.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Σύνδεση στο διαχειριστικό Wordpress</strong>
+          <ul>
+            <li>Για να μπεις στο διαχειριστικό, πήγαινε στη διεύθυνση <code>http://localhost/mywp/wp-admin</code>.</li>
+            <li>Συνδέσου με το όνομα χρήστη και τον κωδικό που όρισες.</li>
+            <li>Τώρα μπορείς να αρχίσεις να δημιουργείς και να επεξεργάζεσαι τοπικά το site σου!</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Συχνές Ερωτήσεις και Συμβουλές</h2>
+    <ul>
+      <li><strong>Δεν ξεκινάει το Apache ή το MySQL στο XAMPP:</strong> Βεβαιώσου ότι δεν τρέχουν άλλα προγράμματα που χρησιμοποιούν τις ίδιες θύρες (π.χ. Skype, IIS). Κλείσε τα ή άλλαξε τις θύρες στο XAMPP.</li>
+      <li><strong>Ξέχασα τον κωδικό διαχειριστή Wordpress:</strong> Μπορείς να τον επαναφέρεις από τη βάση δεδομένων μέσω phpMyAdmin ή να δημιουργήσεις νέο χρήστη με SQL ερώτημα.</li>
+      <li><strong>Το Wordpress ζητάει ξανά τα στοιχεία της βάσης:</strong> Έλεγξε ότι τα στοιχεία στη φόρμα είναι σωστά και ότι η βάση υπάρχει.</li>
+      <li><strong>Γιατί να δουλέψω τοπικά με XAMPP;</strong> Είναι ασφαλές περιβάλλον για δοκιμές χωρίς να επηρεάζεις το πραγματικό site σου στο internet.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Βασικές Έννοιες που θα συναντήσεις</h2>
+    <div class="learning-table">
+      <table class="concept-table">
+        <tr>
+          <th>Έννοια</th>
+          <th>Περιγραφή / Ρόλος</th>
+          <th>Παράδειγμα / Σημείωση</th>
+        </tr>
+        <tr>
+          <td><strong>XAMPP</strong></td>
+          <td>Τοπικός server που περιλαμβάνει Apache (web server), MySQL/MariaDB (βάση), PHP, phpMyAdmin.</td>
+          <td>Εγκαθίσταται σε Windows, Linux ή Mac.</td>
+        </tr>
+        <tr>
+          <td><strong>htdocs</strong></td>
+          <td>Κύριος φάκελος όπου βάζουμε τα αρχεία των sites μας στο XAMPP.</td>
+          <td>C:\xampp\htdocs\mywp</td>
+        </tr>
+        <tr>
+          <td><strong>phpMyAdmin</strong></td>
+          <td>Εργαλείο για διαχείριση βάσεων δεδομένων μέσω browser.</td>
+          <td>http://localhost/phpmyadmin</td>
+        </tr>
+        <tr>
+          <td><strong>Βάση δεδομένων</strong></td>
+          <td>Αποθηκεύει όλα τα δεδομένα του Wordpress (άρθρα, χρήστες, ρυθμίσεις).</td>
+          <td>mywp_db</td>
+        </tr>
+        <tr>
+          <td><strong>wp-admin</strong></td>
+          <td>Διαχειριστικό περιβάλλον Wordpress.</td>
+          <td>http://localhost/mywp/wp-admin</td>
+        </tr>
+        <tr>
+          <td><strong>wp-config.php</strong></td>
+          <td>Αρχείο ρυθμίσεων της εγκατάστασης του Wordpress.</td>
+          <td>Δημιουργείται αυτόματα κατά την εγκατάσταση.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Σύνοψη</h2>
+    <ul>
+      <li>Η εγκατάσταση Wordpress σε τοπικό server με XAMPP είναι ιδανική για δοκιμές και εκμάθηση.</li>
+      <li>Ακολουθώντας τα βήματα του οδηγού, μπορείς να έχεις ένα πλήρες site Wordpress στον υπολογιστή σου χωρίς να χρειαστείς hosting ή domain.</li>
+      <li>Όλες οι αλλαγές που κάνεις είναι τοπικές και δεν επηρεάζουν το διαδίκτυο.</li>
+      <li>Όταν είσαι έτοιμος, μπορείς να μεταφέρεις το site σου σε πραγματικό server.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Πηγές & Χρήσιμο Υλικό για Εγκατάσταση WordPress σε XAMPP (Windows)</h2>
+    <ul>
+      <li>
+        <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank" rel="noopener noreferrer">
+          Επίσημος οδηγός εγκατάστασης WordPress (WordPress.org)
+        </a>
+      </li>
+      <li>
+        <a href="https://wphive.com/tutorials/how-to-install-wordpress-on-xampp/" target="_blank" rel="noopener noreferrer">
+          WP Hive: How to Install WordPress on XAMPP (2023, αναλυτικός οδηγός)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.booleanworld.com/install-wordpress-windows-xampp/" target="_blank" rel="noopener noreferrer">
+          Boolean World: How to Install WordPress on Windows with XAMPP
+        </a>
+      </li>
+      <li>
+        <a href="https://el.wordpress.org/download/" target="_blank" rel="noopener noreferrer">
+          Κατέβασε το WordPress (ελληνική έκδοση)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.apachefriends.org/download.html" target="_blank" rel="noopener noreferrer">
+          Κατέβασε το XAMPP για Windows
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Εκπαιδευτικό Βίντεο: Εγκατάσταση WordPress σε XAMPP (Windows)</h2>
+    <div class="video-container" style="max-width: 700px; margin: 0 auto;">
+      <!-- YouTube Video: How to Install WordPress in XAMPP Localhost on Windows 10/11 [2024 Update] -->
+      <iframe width="100%" height="400"
+              src="https://www.youtube.com/embed/6M5Unq3Vbhg"
+              title="How to Install WordPress in XAMPP Localhost on Windows 10/11 [2025 Update] Demo Website"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+      </iframe>
+      <p style="text-align:center; margin-top: 8px;">
+        <a href="https://www.youtube.com/watch?v=pQQFqUl4XuQ" target="_blank" rel="noopener noreferrer">
+          Δες το βίντεο στο YouTube
+        </a>
+        <br>
+        <small>
+          <em>
+            Το βίντεο “How to Install WordPress in XAMPP Localhost on Windows 10/11 [2024 Update]” είναι πρόσφατο, δημοφιλές, αναλυτικό και με πολύ θετικές κριτικές, κατάλληλο για αρχάριους.
+          </em>
+        </small>
+      </p>
+    </div>
+  </section>
+
+
+
+
+</main>
+
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+<script src="../../js/script.js"></script>
+</body>
+</html>

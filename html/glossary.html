@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Γλωσσάρι Web Development</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .glossary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 1em;
+        }
+        .glossary-table th, .glossary-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .glossary-table th {
+            background: #f7f7f7;
+            color: #005599;
+            font-weight: bold;
+        }
+        .glossary-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .category-row th {
+            background: #e3f2fd;
+            color: #0077cc;
+            font-size: 1.1em;
+            text-align: left;
+            padding-top: 24px;
+        }
+        .star {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        @media (max-width: 700px) {
+            .glossary-table, .glossary-table th, .glossary-table td {
+                font-size: 0.92em;
+                padding: 8px 4px;
+            }
+        }
+        .sources-list {
+            margin-top: 32px;
+            margin-bottom: 32px;
+            background: #f5faff;
+            border-left: 5px solid #0077cc;
+            padding: 18px 24px;
+            border-radius: 8px;
+        }
+        .sources-list ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+        .sources-list li {
+            margin-bottom: 8px;
+        }
+        .notes-block {
+            margin-top: 30px;
+            background: #fffbe5;
+            border-left: 4px solid #ff9800;
+            padding: 18px 24px;
+            border-radius: 8px;
+            font-size: 1.01em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="index.html" class="logo-link">
+            <img src="../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Αρχική</a></li>
+        <li><a href="about.html">Σχετικά</a></li>
+        <li><a href="lessons.html">Μαθήματα</a></li>
+        <li><a href="contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<main class="main-content">
+    <h1>Γλωσσάρι Web Development</h1>
+    <p>
+        Στον παρακάτω πίνακα θα βρείτε όλους τους βασικούς και προχωρημένους όρους που χρησιμοποιούνται στην ανάπτυξη ιστοσελίδων, με αγγλική και ελληνική ονομασία και σύντομη επεξήγηση.<br>
+        <span class="star">*</span> <strong>Όροι με αστερίσκο:</strong> Εξειδικευμένοι ή προχωρημένοι όροι.
+    </p>
+
+    <table class="glossary-table">
+        <tr class="category-row"><th colspan="3">HTML</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>HTML</td><td>Υπερκείμενο</td><td>Γλώσσα σήμανσης για τη δομή και το περιεχόμενο ιστοσελίδων.</td></tr>
+        <tr><td>Tag</td><td>Ετικέτα</td><td>Στοιχείο HTML που ορίζει τμήμα της δομής (π.χ. <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>).</td></tr>
+        <tr><td>Element</td><td>Στοιχείο</td><td>Πλήρης μονάδα HTML (π.χ. <code>&lt;div&gt;Κείμενο&lt;/div&gt;</code>).</td></tr>
+        <tr><td>Attribute</td><td>Ιδιότητα</td><td>Πρόσθετη πληροφορία σε ετικέτα (π.χ. <code>src</code>, <code>alt</code>, <code>href</code>).</td></tr>
+        <tr><td>Head</td><td>Κεφαλίδα</td><td>Τμήμα HTML με μεταδεδομένα, τίτλο, συνδέσεις σε CSS/JS.</td></tr>
+        <tr><td>Body</td><td>Σώμα</td><td>Το κύριο ορατό περιεχόμενο της ιστοσελίδας.</td></tr>
+        <tr><td>Doctype</td><td>Δήλωση τύπου</td><td>Ενημερώνει τον browser για την έκδοση HTML.</td></tr>
+        <tr><td>Semantic Tags <span class="star">*</span></td><td>Σημασιολογικές ετικέτες</td><td>Ετικέτες που περιγράφουν το ρόλο του περιεχομένου (π.χ. <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>).</td></tr>
+        <tr><td>Form</td><td>Φόρμα</td><td>Ενότητα για συλλογή δεδομένων από τον χρήστη.</td></tr>
+        <tr><td>Input</td><td>Πεδίο εισαγωγής</td><td>Στοιχείο φόρμας για λήψη δεδομένων από τον χρήστη.</td></tr>
+        <tr><td>Anchor</td><td>Σύνδεσμος</td><td>Ετικέτα για υπερσυνδέσμους (<code>&lt;a href="..."&gt;</code>).</td></tr>
+        <tr><td>Image</td><td>Εικόνα</td><td>Ενσωμάτωση εικόνας στη σελίδα (<code>&lt;img src="..."&gt;</code>).</td></tr>
+        <tr><td>List</td><td>Λίστα</td><td>Ομαδοποίηση στοιχείων (π.χ. <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>).</td></tr>
+        <tr><td>Table</td><td>Πίνακας</td><td>Δομή για εμφάνιση δεδομένων σε γραμμές και στήλες.</td></tr>
+        <tr><td>Comment</td><td>Σχόλιο</td><td>Μη ορατό κείμενο για σημειώσεις στον κώδικα (<code>&lt;!-- σχόλιο --&gt;</code>).</td></tr>
+        <tr><td>Meta</td><td>Μεταδεδομένα</td><td>Πληροφορίες για τη σελίδα (π.χ. charset, viewport).</td></tr>
+        <tr><td>Alt Attribute</td><td>Εναλλακτικό κείμενο</td><td>Κείμενο που εμφανίζεται αν δεν φορτωθεί η εικόνα, χρήσιμο για προσβασιμότητα.</td></tr>
+        <tr><td>Section <span class="star">*</span></td><td>Ενότητα</td><td>Χωρίζει το περιεχόμενο σε ενότητες.</td></tr>
+        <tr><td>Article <span class="star">*</span></td><td>Άρθρο</td><td>Αυτόνομο κομμάτι περιεχομένου.</td></tr>
+        <tr><td>Aside <span class="star">*</span></td><td>Πλαϊνή ενότητα</td><td>Πληροφορίες στο πλάι (π.χ. sidebar).</td></tr>
+        <tr><td>Header <span class="star">*</span></td><td>Κεφαλίδα</td><td>Η κεφαλίδα της σελίδας ή μιας ενότητας.</td></tr>
+        <tr><td>Footer <span class="star">*</span></td><td>Υποσέλιδο</td><td>Το υποσέλιδο της σελίδας.</td></tr>
+        <tr><td>Nav <span class="star">*</span></td><td>Πλοήγηση</td><td>Το μενού πλοήγησης.</td></tr>
+        <tr><td>Viewport <span class="star">*</span></td><td>Περιοχή προβολής</td><td>Το ορατό τμήμα της σελίδας στη συσκευή.</td></tr>
+
+        <tr class="category-row"><th colspan="3">CSS</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>CSS</td><td>Φύλλα στυλ (CSS)</td><td>Γλώσσα για τη μορφοποίηση και το στυλ των ιστοσελίδων.</td></tr>
+        <tr><td>Selector</td><td>Επιλογέας</td><td>Επιλέγει ποια στοιχεία HTML θα μορφοποιηθούν.</td></tr>
+        <tr><td>Property</td><td>Ιδιότητα</td><td>Χαρακτηριστικό που ορίζει το στυλ (π.χ. <code>color</code>, <code>font-size</code>).</td></tr>
+        <tr><td>Value</td><td>Τιμή</td><td>Η τιμή μιας ιδιότητας CSS (π.χ. <code>color: red;</code>).</td></tr>
+        <tr><td>Class</td><td>Κλάση</td><td>Ομάδα στυλ που εφαρμόζεται με το <code>class="..."</code>.</td></tr>
+        <tr><td>ID</td><td>Ταυτότητα</td><td>Μοναδικό αναγνωριστικό για ένα στοιχείο.</td></tr>
+        <tr><td>Box Model <span class="star">*</span></td><td>Μοντέλο Κουτιού</td><td>Τρόπος υπολογισμού διαστάσεων στοιχείου (content, padding, border, margin).</td></tr>
+        <tr><td>Margin</td><td>Εξωτερικό περιθώριο</td><td>Απόσταση έξω από το στοιχείο.</td></tr>
+        <tr><td>Padding</td><td>Εσωτερικό περιθώριο</td><td>Απόσταση μέσα από το στοιχείο, γύρω από το περιεχόμενο.</td></tr>
+        <tr><td>Border</td><td>Περιγράμματα</td><td>Γραμμή γύρω από το στοιχείο.</td></tr>
+        <tr><td>Responsive</td><td>Προσαρμοστικότητα</td><td>Ικανότητα του layout να αλλάζει ανάλογα με τη συσκευή.</td></tr>
+        <tr><td>Media Query <span class="star">*</span></td><td>Ερώτημα πολυμέσων</td><td>Κανόνας CSS που εφαρμόζεται σε συγκεκριμένα μεγέθη οθόνης.</td></tr>
+        <tr><td>Flexbox <span class="star">*</span></td><td>Ευέλικτο πλαίσιο</td><td>Σύστημα διάταξης για εύκολη στοίχιση και ευελιξία στοιχείων.</td></tr>
+        <tr><td>Grid <span class="star">*</span></td><td>Πλέγμα</td><td>Σύστημα διάταξης για δισδιάστατη τοποθέτηση στοιχείων.</td></tr>
+        <tr><td>Hover</td><td>Εφέ κατάδειξης</td><td>Εφέ που εφαρμόζεται όταν το ποντίκι περνάει πάνω από ένα στοιχείο.</td></tr>
+        <tr><td>Responsive Image</td><td>Προσαρμοζόμενη εικόνα</td><td>Εικόνα που αλλάζει μέγεθος ανάλογα με το πλάτος του κοντέινερ.</td></tr>
+        <tr><td>Gap <span class="star">*</span></td><td>Κενό</td><td>Απόσταση μεταξύ flex items ή grid cells.</td></tr>
+        <tr><td>Breakpoint <span class="star">*</span></td><td>Σημείο αλλαγής</td><td>Συγκεκριμένο πλάτος οθόνης όπου αλλάζει το layout.</td></tr>
+        <tr><td>Mobile-first <span class="star">*</span></td><td>Πρώτα για κινητά</td><td>Σχεδιασμός που ξεκινά από μικρές οθόνες και επεκτείνεται.</td></tr>
+
+        <tr class="category-row"><th colspan="3">JavaScript</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>JavaScript</td><td>Τζάβασκριπτ</td><td>Γλώσσα προγραμματισμού για διαδραστικότητα στις ιστοσελίδες.</td></tr>
+        <tr><td>Variable</td><td>Μεταβλητή</td><td>Αποθηκεύει τιμές (π.χ. <code>let x = 5;</code>).</td></tr>
+        <tr><td>Function</td><td>Συνάρτηση</td><td>Ομάδα εντολών που εκτελούν μια εργασία.</td></tr>
+        <tr><td>Event</td><td>Συμβάν</td><td>Ενέργεια που συμβαίνει στη σελίδα (π.χ. click, submit).</td></tr>
+        <tr><td>DOM <span class="star">*</span></td><td>Μοντέλο Αντικειμένου Εγγράφου</td><td>Η δομή της HTML όπως την "βλέπει" η JavaScript.</td></tr>
+        <tr><td>Array</td><td>Πίνακας</td><td>Δομή που αποθηκεύει πολλαπλές τιμές.</td></tr>
+        <tr><td>Object</td><td>Αντικείμενο</td><td>Συλλογή ιδιοτήτων και τιμών.</td></tr>
+        <tr><td>Loop</td><td>Βρόχος</td><td>Επαναλαμβάνει εντολές (π.χ. for, while).</td></tr>
+        <tr><td>Condition</td><td>Συνθήκη</td><td>Έλεγχος λογικής (π.χ. if, else).</td></tr>
+        <tr><td>Callback <span class="star">*</span></td><td>Συνάρτηση επανάκλησης</td><td>Συνάρτηση που εκτελείται μετά από άλλη συνάρτηση.</td></tr>
+        <tr><td>Event Listener <span class="star">*</span></td><td>Ακροατής συμβάντος</td><td>Κώδικας που "ακούει" για συμβάντα (π.χ. <code>addEventListener</code>).</td></tr>
+        <tr><td>AJAX <span class="star">*</span></td><td>Ασύγχρονη ανταλλαγή δεδομένων</td><td>Τεχνική για επικοινωνία με server χωρίς ανανέωση σελίδας.</td></tr>
+        <tr><td>Debugging <span class="star">*</span></td><td>Εντοπισμός σφαλμάτων</td><td>Διαδικασία εύρεσης και διόρθωσης λαθών στον κώδικα.</td></tr>
+        <tr><td>Console</td><td>Κονσόλα</td><td>Εργαλείο για εμφάνιση μηνυμάτων και debugging.</td></tr>
+
+        <tr class="category-row"><th colspan="3">PHP</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>PHP</td><td>Πι-Ειτς-Πι (PHP)</td><td>Γλώσσα προγραμματισμού για δυναμικές σελίδες στον server.</td></tr>
+        <tr><td>Server-side</td><td>Πλευρά διακομιστή</td><td>Εκτέλεση κώδικα στον server πριν σταλεί στον browser.</td></tr>
+        <tr><td>Variable</td><td>Μεταβλητή</td><td>Αποθήκευση τιμών (<code>$name = "Γιάννης";</code>).</td></tr>
+        <tr><td>Echo</td><td>Εκτύπωση</td><td>Εντολή για εμφάνιση αποτελέσματος (<code>echo "Γειά σου";</code>).</td></tr>
+        <tr><td>Include/Require <span class="star">*</span></td><td>Ενσωμάτωση αρχείου</td><td>Εισαγωγή άλλου αρχείου PHP στον τρέχοντα κώδικα.</td></tr>
+        <tr><td>Form Handling</td><td>Επεξεργασία φόρμας</td><td>Διαχείριση δεδομένων που στέλνει ο χρήστης μέσω HTML φόρμας.</td></tr>
+        <tr><td>Prepared Statement <span class="star">*</span></td><td>Προετοιμασμένη δήλωση</td><td>Τεχνική για ασφαλή εκτέλεση SQL εντολών.</td></tr>
+        <tr><td>CRUD <span class="star">*</span></td><td>CRUD (Create, Read, Update, Delete)</td><td>Βασικές λειτουργίες διαχείρισης δεδομένων σε βάσεις.</td></tr>
+
+        <tr class="category-row"><th colspan="3">MySQL / SQL</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>MySQL</td><td>Μάι-Ες-Κιου-Ελ</td><td>Σύστημα διαχείρισης σχεσιακών βάσεων δεδομένων.</td></tr>
+        <tr><td>SQL</td><td>Δομημένη Γλώσσα Ερωτημάτων</td><td>Γλώσσα για διαχείριση και ανάκτηση δεδομένων από βάσεις.</td></tr>
+        <tr><td>Table</td><td>Πίνακας</td><td>Οργανωμένη αποθήκευση δεδομένων σε γραμμές και στήλες.</td></tr>
+        <tr><td>Row</td><td>Γραμμή</td><td>Μία εγγραφή σε πίνακα.</td></tr>
+        <tr><td>Column</td><td>Στήλη</td><td>Ένα πεδίο δεδομένων σε πίνακα.</td></tr>
+        <tr><td>Query</td><td>Ερώτημα</td><td>Εντολή SQL για λήψη ή τροποποίηση δεδομένων.</td></tr>
+        <tr><td>SELECT</td><td>Επιλογή</td><td>Εντολή SQL για ανάκτηση δεδομένων.</td></tr>
+        <tr><td>INSERT</td><td>Εισαγωγή</td><td>Εντολή SQL για προσθήκη νέων δεδομένων.</td></tr>
+        <tr><td>UPDATE</td><td>Ενημέρωση</td><td>Εντολή SQL για αλλαγή υπαρχόντων δεδομένων.</td></tr>
+        <tr><td>DELETE</td><td>Διαγραφή</td><td>Εντολή SQL για διαγραφή δεδομένων.</td></tr>
+        <tr><td>Primary Key</td><td>Πρωτεύον Κλειδί</td><td>Μοναδικό αναγνωριστικό κάθε γραμμής σε πίνακα.</td></tr>
+        <tr><td>Foreign Key <span class="star">*</span></td><td>Ξένο Κλειδί</td><td>Σύνδεση μεταξύ πινάκων.</td></tr>
+        <tr><td>Database</td><td>Βάση δεδομένων</td><td>Συλλογή οργανωμένων πινάκων και δεδομένων.</td></tr>
+        <tr><td>Connection</td><td>Σύνδεση</td><td>Η διαδικασία σύνδεσης της PHP με τη βάση δεδομένων.</td></tr>
+
+        <tr class="category-row"><th colspan="3">Responsive Design</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>Responsive Design</td><td>Ανταποκρινόμενος Σχεδιασμός</td><td>Προσαρμογή της σελίδας σε διαφορετικά μεγέθη οθόνης.</td></tr>
+        <tr><td>Media Query <span class="star">*</span></td><td>Ερώτημα πολυμέσων</td><td>CSS κανόνας για διαφορετικά μεγέθη οθόνης.</td></tr>
+        <tr><td>Mobile-first <span class="star">*</span></td><td>Πρώτα για κινητά</td><td>Σχεδιασμός που ξεκινά από μικρές οθόνες και επεκτείνεται.</td></tr>
+        <tr><td>Breakpoint <span class="star">*</span></td><td>Σημείο αλλαγής</td><td>Συγκεκριμένο πλάτος οθόνης όπου αλλάζει το layout.</td></tr>
+        <tr><td>Hamburger Menu <span class="star">*</span></td><td>Μενού Hamburger</td><td>Εικονίδιο με τρεις γραμμές για μενού σε κινητά.</td></tr>
+        <tr><td>Viewport <span class="star">*</span></td><td>Περιοχή προβολής</td><td>Το ορατό τμήμα της σελίδας στη συσκευή.</td></tr>
+        <tr><td>Responsive Image</td><td>Προσαρμοζόμενη εικόνα</td><td>Εικόνα που αλλάζει μέγεθος ανάλογα με το πλάτος του κοντέινερ.</td></tr>
+
+        <tr class="category-row"><th colspan="3">Web Design</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>Web Design</td><td>Σχεδιασμός Ιστοσελίδων</td><td>Η διαδικασία δημιουργίας της εμφάνισης και λειτουργίας ιστοσελίδων.</td></tr>
+        <tr><td>UI</td><td>Διεπαφή Χρήστη</td><td>Η οπτική εμφάνιση και τα διαδραστικά στοιχεία μιας εφαρμογής.</td></tr>
+        <tr><td>UX</td><td>Εμπειρία Χρήστη</td><td>Η συνολική εμπειρία και αίσθηση του χρήστη κατά την πλοήγηση.</td></tr>
+        <tr><td>Accessibility <span class="star">*</span></td><td>Προσβασιμότητα</td><td>Η δυνατότητα χρήσης της σελίδας από άτομα με ειδικές ανάγκες.</td></tr>
+        <tr><td>SEO <span class="star">*</span></td><td>Βελτιστοποίηση για Μηχανές Αναζήτησης</td><td>Τεχνικές για καλύτερη κατάταξη στις μηχανές αναζήτησης.</td></tr>
+        <tr><td>ARIA <span class="star">*</span></td><td>ARIA (Accessible Rich Internet Applications)</td><td>Ετικέτες και ιδιότητες για βελτίωση της προσβασιμότητας.</td></tr>
+
+        <tr class="category-row"><th colspan="3">Flexbox</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>Flexbox</td><td>Ευέλικτο Πλαίσιο</td><td>CSS σύστημα διάταξης για ευέλικτη στοίχιση και διανομή χώρου.</td></tr>
+        <tr><td>Flex Container</td><td>Κοντέινερ Flex</td><td>Το στοιχείο που περιέχει τα flex items (<code>display: flex</code>).</td></tr>
+        <tr><td>Flex Item</td><td>Στοιχείο Flex</td><td>Τα παιδιά του flex container.</td></tr>
+        <tr><td>Justify Content</td><td>Στοίχιση Κύριου Άξονα</td><td>Ευθυγράμμιση στοιχείων οριζόντια.</td></tr>
+        <tr><td>Align Items</td><td>Στοίχιση Εγκάρσιου Άξονα</td><td>Ευθυγράμμιση στοιχείων κάθετα.</td></tr>
+        <tr><td>Flex Direction</td><td>Κατεύθυνση Flex</td><td>Ορίζει αν τα στοιχεία μπαίνουν σε σειρά ή στήλη.</td></tr>
+        <tr><td>Flex Wrap</td><td>Αναδίπλωση Flex</td><td>Τα στοιχεία "σπάνε" σε νέες γραμμές αν δεν χωράνε.</td></tr>
+        <tr><td>Gap</td><td>Κενό</td><td>Απόσταση μεταξύ flex items.</td></tr>
+
+        <tr class="category-row"><th colspan="3">Εργαλεία & Περιβάλλον Ανάπτυξης</th></tr>
+        <tr>
+            <th>Αγγλικός Όρος</th>
+            <th>Ελληνικός Όρος</th>
+            <th>Περιγραφή</th>
+        </tr>
+        <tr><td>IDE <span class="star">*</span></td><td>Περιβάλλον ανάπτυξης</td><td>Εφαρμογή για συγγραφή, δοκιμή και debugging κώδικα.</td></tr>
+        <tr><td>WebStorm <span class="star">*</span></td><td>WebStorm</td><td>Επαγγελματικό IDE για ανάπτυξη web εφαρμογών.</td></tr>
+        <tr><td>Live Server <span class="star">*</span></td><td>Live Server</td><td>Εργαλείο για τοπική προεπισκόπηση και αυτόματη ανανέωση σελίδας.</td></tr>
+        <tr><td>XAMPP <span class="star">*</span></td><td>XAMPP</td><td>Πακέτο με Apache, MySQL, PHP για τοπικό server.</td></tr>
+        <tr><td>MAMP <span class="star">*</span></td><td>MAMP</td><td>Πακέτο με Apache, MySQL, PHP για Mac.</td></tr>
+        <tr><td>Laragon <span class="star">*</span></td><td>Laragon</td><td>Εναλλακτικό πακέτο για τοπικό server σε Windows.</td></tr>
+        <tr><td>Apache HTTP Server <span class="star">*</span></td><td>Apache HTTP Server</td><td>Λογισμικό διακομιστή για τοπικό ή online hosting.</td></tr>
+        <tr><td>Browser</td><td>Φυλλομετρητής</td><td>Εφαρμογή για προβολή ιστοσελίδων (Chrome, Firefox κ.ά.).</td></tr>
+        <tr><td>File Structure</td><td>Δομή αρχείων</td><td>Η οργάνωση των φακέλων και αρχείων στο project.</td></tr>
+        <tr><td>Pixabay <span class="star">*</span></td><td>Pixabay</td><td>Δωρεάν πλατφόρμα εικόνων για χρήση σε ιστοσελίδες.</td></tr>
+
+        <!-- ΝΕΟΙ ΟΡΟΙ ΓΙΑ WORDPRESS & XAMPP -->
+        <tr>
+            <td>WordPress</td>
+            <td>WordPress</td>
+            <td>Δημοφιλές σύστημα διαχείρισης περιεχομένου (CMS) για εύκολη δημιουργία και διαχείριση ιστοσελίδων.</td>
+        </tr>
+        <tr>
+            <td>CMS (Content Management System)</td>
+            <td>Σύστημα Διαχείρισης Περιεχομένου</td>
+            <td>Λογισμικό για εύκολη δημιουργία, επεξεργασία και διαχείριση ιστοσελίδων.</td>
+        </tr>
+        <tr>
+            <td>XAMPP</td>
+            <td>XAMPP</td>
+            <td>Πακέτο τοπικού server με Apache, MySQL/MariaDB, PHP και phpMyAdmin για ανάπτυξη και δοκιμές στον υπολογιστή.</td>
+        </tr>
+        <tr>
+            <td>Apache</td>
+            <td>Apache</td>
+            <td>Διακομιστής web που εξυπηρετεί ιστοσελίδες τοπικά ή online.</td>
+        </tr>
+        <tr>
+            <td>MySQL/MariaDB</td>
+            <td>MySQL/MariaDB</td>
+            <td>Σύστημα διαχείρισης βάσεων δεδομένων που χρησιμοποιεί το WordPress.</td>
+        </tr>
+        <tr>
+            <td>phpMyAdmin</td>
+            <td>phpMyAdmin</td>
+            <td>Εργαλείο για διαχείριση βάσεων δεδομένων μέσω browser.</td>
+        </tr>
+        <tr>
+            <td>localhost</td>
+            <td>localhost</td>
+            <td>Η διεύθυνση του τοπικού υπολογιστή (127.0.0.1), για δοκιμές χωρίς σύνδεση στο διαδίκτυο.</td>
+        </tr>
+        <tr>
+            <td>Database</td>
+            <td>Βάση δεδομένων</td>
+            <td>Αποθηκεύει όλα τα δεδομένα του WordPress (άρθρα, σελίδες, χρήστες, ρυθμίσεις).</td>
+        </tr>
+        <tr>
+            <td>wp-admin</td>
+            <td>wp-admin</td>
+            <td>Η διαχειριστική περιοχή του WordPress (προσβάσιμη μέσω /wp-admin).</td>
+        </tr>
+        <tr>
+            <td>wp-content</td>
+            <td>wp-content</td>
+            <td>Φάκελος του WordPress όπου αποθηκεύονται θέματα, πρόσθετα και αρχεία πολυμέσων.</td>
+        </tr>
+        <tr>
+            <td>Theme</td>
+            <td>Θέμα</td>
+            <td>Ορίζει την εμφάνιση και τη διάταξη του WordPress site.</td>
+        </tr>
+        <tr>
+            <td>Plugin</td>
+            <td>Πρόσθετο</td>
+            <td>Επεκτείνει τη λειτουργικότητα του WordPress (φόρμες, SEO, ασφάλεια, κ.λπ.).</td>
+        </tr>
+        <tr>
+            <td>Widget</td>
+            <td>Widget</td>
+            <td>Μικρά εργαλεία που προσθέτουν λειτουργίες σε περιοχές του site (π.χ. sidebar, footer).</td>
+        </tr>
+        <tr>
+            <td>Permalink</td>
+            <td>Μόνιμος σύνδεσμος</td>
+            <td>Η σταθερή διεύθυνση URL κάθε σελίδας ή άρθρου στο WordPress.</td>
+        </tr>
+        <tr>
+            <td>Dashboard</td>
+            <td>Πίνακας ελέγχου</td>
+            <td>Το κεντρικό σημείο διαχείρισης του WordPress.</td>
+        </tr>
+        <tr>
+            <td>Post</td>
+            <td>Άρθρο</td>
+            <td>Δημοσίευση blog ή είδησης στο WordPress.</td>
+        </tr>
+        <tr>
+            <td>Page</td>
+            <td>Σελίδα</td>
+            <td>Στατική σελίδα (π.χ. Σχετικά, Επικοινωνία) στο WordPress.</td>
+        </tr>
+        <tr>
+            <td>Menu</td>
+            <td>Μενού</td>
+            <td>Πλοήγηση της ιστοσελίδας με συνδέσμους προς σελίδες/άρθρα.</td>
+        </tr>
+        <tr>
+            <td>Customizer</td>
+            <td>Προσαρμογέας</td>
+            <td>Εργαλείο του WordPress για παραμετροποίηση εμφάνισης σε πραγματικό χρόνο.</td>
+        </tr>
+        <tr>
+            <td>Elementor</td>
+            <td>Elementor</td>
+            <td>Δημοφιλές πρόσθετο για δημιουργία σελίδων με drag & drop.</td>
+        </tr>
+        <tr>
+            <td>Shortcode</td>
+            <td>Shortcode</td>
+            <td>Μικρός κώδικας σε αγκύλες που προσθέτει λειτουργίες ή περιεχόμενο σε σελίδες/άρθρα.</td>
+        </tr>
+        <tr>
+            <td>Media Library</td>
+            <td>Βιβλιοθήκη πολυμέσων</td>
+            <td>Αποθήκευση και διαχείριση εικόνων, βίντεο, αρχείων στο WordPress.</td>
+        </tr>
+        <tr>
+            <td>User Role</td>
+            <td>Ρόλος χρήστη</td>
+            <td>Καθορίζει τα δικαιώματα κάθε χρήστη (Διαχειριστής, Συντάκτης, κ.λπ.).</td>
+        </tr>
+        <tr>
+            <td>Backup</td>
+            <td>Αντίγραφο ασφαλείας</td>
+            <td>Αποθήκευση όλων των δεδομένων του site για επαναφορά σε περίπτωση προβλήματος.</td>
+        </tr>
+        <tr>
+            <td>SSL</td>
+            <td>Πιστοποιητικό SSL</td>
+            <td>Εξασφαλίζει ασφαλή σύνδεση (https) στο site.</td>
+        </tr>
+        <tr>
+            <td>SEO</td>
+            <td>Βελτιστοποίηση για Μηχανές Αναζήτησης</td>
+            <td>Τεχνικές για καλύτερη κατάταξη στις μηχανές αναζήτησης.</td>
+        </tr>
+        <tr>
+            <td>Staging Site</td>
+            <td>Πειραματικό site</td>
+            <td>Αντίγραφο του site για δοκιμές πριν τις αλλαγές στο κανονικό site.</td>
+        </tr>
+        <tr>
+            <td>FTP</td>
+            <td>FTP (Πρωτόκολλο μεταφοράς αρχείων)</td>
+            <td>Χρήσιμο για μεταφορά αρχείων από/προς τον server.</td>
+        </tr>
+        <tr>
+            <td>Child Theme</td>
+            <td>Θέμα παιδί</td>
+            <td>Θέμα που βασίζεται σε άλλο (γονικό) θέμα για ασφαλείς παραμετροποιήσεις.</td>
+        </tr>
+
+    </table>
+
+    <div class="sources-list">
+        <h2>Πηγές – Βιβλιογραφία</h2>
+        <ul>
+            <li><a href="https://www.jetbrains.com/help/webstorm/" target="_blank" rel="noopener noreferrer">JetBrains WebStorm Documentation</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs - HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN Web Docs - CSS</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN Web Docs - JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">MDN Web Docs - Responsive Design</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener noreferrer">MDN Web Docs - Flexbox</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank" rel="noopener noreferrer">MDN Web Docs - Accessibility</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" target="_blank" rel="noopener noreferrer">MDN Web Docs - ARIA</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/SEO" target="_blank" rel="noopener noreferrer">MDN Web Docs - SEO</a></li>
+            <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">W3Schools - HTML Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">W3Schools - CSS Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/php/" target="_blank" rel="noopener noreferrer">W3Schools - PHP Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">W3Schools - SQL Tutorial</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks - A Complete Guide to Flexbox</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Responsive Design</a></li>
+            <li><a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener noreferrer">Apache Friends - XAMPP</a></li>
+            <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL Official Site</a></li>
+            <li><a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Pixabay - Free Images</a></li>
+            <li><a href="https://www.freecodecamp.org/news/html-crash-course/" target="_blank" rel="noopener noreferrer">FreeCodeCamp - HTML Crash Course</a></li>
+            <li><a href="https://flexboxfroggy.com/#el" target="_blank" rel="noopener noreferrer">Flexbox Froggy (διαδραστικό παιχνίδι)</a></li>
+            <li><a href="https://wordpress.org/documentation/" target="_blank" rel="noopener noreferrer">WordPress.org Documentation</a></li>
+            <li><a href="https://www.wpbeginner.com/" target="_blank" rel="noopener noreferrer">WPBeginner</a></li>
+            <li><a href="https://elementor.com/help/" target="_blank" rel="noopener noreferrer">Elementor Help Center</a></li>
+            <li><a href="https://www.freecodecamp.org/news/how-to-get-started-with-php/" target="_blank" rel="noopener noreferrer">FreeCodeCamp: How to Get Started with PHP and XAMPP</a></li>
+            <li><a href="https://www.hostinger.com/tutorials/how-to-install-wordpress-on-localhost" target="_blank" rel="noopener noreferrer">Hostinger Tutorials: How to Install WordPress on Localhost</a></li>
+            <li><a href="https://www.wp101.com/" target="_blank" rel="noopener noreferrer">WP101: WordPress Video Tutorials</a></li>
+            <li><a href="https://codex.wordpress.org/WordPress_Quick_Start_Guide" target="_blank" rel="noopener noreferrer">WordPress Codex: Quick Start Guide</a></li>
+        </ul>
+    </div>
+
+    <div class="notes-block">
+        <strong>Σημειώσεις:</strong>
+        <ul>
+            <li>Οι όροι με <span class="star">*</span> είναι προχωρημένοι/εξειδικευμένοι και καλό είναι να εξηγούνται επιπλέον ή να διδάσκονται σε δεύτερη φάση.</li>
+            <li>Το γλωσσάρι μπορεί να επεκταθεί με επιπλέον όρους ανάλογα με την πρόοδο του μαθήματος ή το επίπεδο των εκπαιδευομένων.</li>
+            <li>Οι πηγές είναι αξιόπιστες και καλύπτουν όλο το φάσμα του web development.</li>
+        </ul>
+    </div>
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../js/script.js"></script>
+</body>
+</html>

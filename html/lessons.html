@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Μαθήματα</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <!-- Λογότυπο -->
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+
+  <!-- Λίστα Συνδέσμων Πλοήγησης -->
+  <ul class="nav-links">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="about.html">Σχετικά</a></li>
+    <li><a href="lessons.html">Μαθήματα</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+  </ul>
+
+  <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+
+<!-- Κύριο περιεχόμενο σελίδας -->
+<main class="main-content">
+  <!-- Σύνδεσμος προς το Τεστ -->
+  <p style="text-align:center; margin-bottom: 24px;">
+    <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
+  <span class="btn-icon">
+    <!-- SVG εικονίδιο βιβλίου (ή ό,τι άλλο θες) -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+    </svg>
+  </span>
+      <span class="btn-text">Κάνε το Τέστ!</span>
+    </a>
+
+  <!-- Σύνδεσμος προς το Γλωσσάρι -->
+
+    <a href="glossary.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
+  <span class="btn-icon">
+    <!-- SVG εικονίδιο βιβλίου (ή ό,τι άλλο θες) -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+    </svg>
+  </span>
+      <span class="btn-text">Δες το Γλωσσάρι</span>
+    </a>
+  </p>
+
+  <h1>Τι θα Μάθετε</h1>
+  <p>Στο πλαίσιο του εκπαιδευτικού μας προγράμματος θα αποκτήσετε βασικές δεξιότητες στα εξής:</p>
+
+  <!-- Ενότητα Μαθημάτων με Accordion -->
+  <div class="accordion-lessons">
+
+    <!-- Θέμα HTML5 -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        HTML5 - Δημιουργία Δομής Ιστοσελίδας
+      </button>
+      <div class="accordion-panel">
+        <p>Στο μάθημα αυτό, θα μάθετε πώς να δημιουργείτε τη βασική δομή μιας ιστοσελίδας χρησιμοποιώντας HTML5. Θα εξετάσουμε τη χρήση των βασικών ετικετών και χαρακτηριστικών του HTML5, όπως οι επικεφαλίδες, οι παράγραφοι και οι λίστες. Επίσης, θα αναλύσουμε την ενσωμάτωση πολυμέσων και την προσθήκη φορμών για την αλληλεπίδραση με τους χρήστες.</p>
+        <a href="topics/html5-topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <!-- SVG βέλος -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα CSS3 Flexbox -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        CSS3 Flexbox - Σχεδιασμός Ευέλικτης Διάταξης
+      </button>
+      <div class="accordion-panel">
+        <p>Στο μάθημα αυτό, θα μάθετε να χρησιμοποιείτε το Flexbox για τη δημιουργία ευέλικτων διατάξεων ιστοσελίδων που προσαρμόζονται σε διαφορετικά μεγέθη οθονών. Θα κατανοήσετε πώς να οργανώνετε τα στοιχεία της σελίδας σε σειρές και στήλες με εύκολο και ευέλικτο τρόπο. Επίσης, θα εξετάσουμε τη δημιουργία responsive διατάξεων που προσφέρουν καλύτερη εμπειρία χρήστη σε κινητές συσκευές.</p>
+        <a href="topics/css3-flexbox-topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα JavaScript -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        JavaScript - Εισαγωγή στη Δυναμική Συμπεριφορά Ιστοσελίδων
+      </button>
+      <div class="accordion-panel">
+        <p>Το μάθημα αυτό εισάγει τον προγραμματισμό JavaScript, μια γλώσσα που χρησιμοποιείται για τη δημιουργία δυναμικών ιστοσελίδων. Θα μάθετε πώς να προσθέτετε αλληλεπίδραση στις ιστοσελίδες σας, όπως η αλλαγή περιεχομένου χωρίς ανανέωση σελίδας και η διαχείριση γεγονότων από τον χρήστη. Θα εξετάσουμε επίσης βασικές αρχές, όπως οι μεταβλητές, οι συναρτήσεις και η διαχείριση των DOM στοιχείων.</p>
+        <a href="topics/javascript-topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα PHP & MySQL -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        PHP & MySQL - Διασύνδεση και Βασικές Εντολές
+      </button>
+      <div class="accordion-panel">
+        <p>Αυτό το μάθημα καλύπτει τη σύνδεση της ιστοσελίδας με μια βάση δεδομένων χρησιμοποιώντας PHP και MySQL. Θα μάθετε να εκτελείτε βασικές εντολές SQL, όπως SELECT, INSERT, UPDATE και DELETE, για να αλληλεπιδράτε με δεδομένα που αποθηκεύονται στον διακομιστή. Θα δούμε επίσης πώς να δημιουργείτε δυναμικές ιστοσελίδες που χρησιμοποιούν δεδομένα από βάσεις δεδομένων για να εμφανίσουν περιεχόμενο σε πραγματικό χρόνο.</p>
+        <a href="topics/php-sql-topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα Responsive Ιστοσελίδες -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        Responsive Ιστοσελίδες - Σχεδιασμός για Κινητές Συσκευές
+      </button>
+      <div class="accordion-panel">
+        <p>Σε αυτό το μάθημα, θα μάθετε πώς να δημιουργείτε ιστοσελίδες που προσαρμόζονται στις οθόνες κινητών και άλλων συσκευών. Θα εξετάσουμε τη χρήση media queries για να διαμορφώνουμε τις σελίδες ανάλογα με το μέγεθος και την ανάλυση της οθόνης. Επίσης, θα καλύψουμε τη σημασία του responsive design στην εμπειρία χρήστη και πώς να βελτιστοποιείτε την απόδοση της ιστοσελίδας σε κινητές συσκευές, κάνοντάς την ευχάριστη και εύχρηστη.</p>
+        <a href="topics/responsive-topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα Εγκατάσταση Wordpress -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        Εγκατάσταση WordPress σε Τοπικό Server (XAMPP, Windows)
+      </button>
+      <div class="accordion-panel">
+        <p>Σε αυτό το μάθημα θα μάθετε πώς να εγκαταστήσετε το WordPress στον υπολογιστή σας χρησιμοποιώντας το XAMPP ως τοπικό server σε περιβάλλον Windows. Ο οδηγός είναι βήμα προς βήμα και απευθύνεται σε αρχάριους, ώστε να δημιουργήσετε το δικό σας δοκιμαστικό WordPress site χωρίς να χρειάζεστε hosting ή domain. Θα εξοικειωθείτε με τη διαδικασία εγκατάστασης, τη δημιουργία βάσης δεδομένων και τη βασική ρύθμιση του WordPress για να ξεκινήσετε άμεσα να πειραματίζεστε με το δημοφιλέστερο σύστημα διαχείρισης περιεχομένου.</p>
+        <a href="topics/wp_setup_topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα Οδηγός Wordpress -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        Δημιουργία Ιστοσελίδας με WordPress
+      </button>
+      <div class="accordion-panel">
+        <p>Μάθε βήμα-βήμα πώς να δημιουργήσεις το δικό σου σύγχρονο website χωρίς να ξέρεις κώδικα, χρησιμοποιώντας το WordPress. Ο οδηγός καλύπτει όλα τα στάδια: από την επιλογή domain και hosting, την εγκατάσταση και βασική ρύθμιση του WordPress, μέχρι την εγκατάσταση θεμάτων και προσθέτων, τη δημιουργία λογοτύπου, τη διαμόρφωση σελίδων και blog, καθώς και τη χρήση εργαλείων όπως το Elementor και AI content creator. Ιδανικό για αρχάριους που θέλουν να φτιάξουν επαγγελματική ιστοσελίδα εύκολα και γρήγορα.</p>
+        <a href="topics/wp_createsite_topic.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Θέμα Photoshop -->
+    <div class="accordion-item">
+      <button class="accordion-btn">
+        Οδηγός Photoshop για Αρχάριους
+      </button>
+      <div class="accordion-panel">
+        <p>Μάθε τα βασικά του Adobe Photoshop βήμα-βήμα, από τη δημιουργία νέου εγγράφου και τη χρήση layers, μέχρι την επεξεργασία εικόνας, μάσκες, φίλτρα και εξαγωγή. Ο οδηγός καλύπτει όλες τις βασικές τεχνικές και εργαλεία για να ξεκινήσεις να δημιουργείς επαγγελματικά γραφικά και φωτογραφίες, ακόμα κι αν είσαι αρχάριος. Ιδανικό για όσους θέλουν να μάθουν γρήγορα και πρακτικά το Photoshop, με παραδείγματα, ασκήσεις και χρήσιμες πηγές.</p>
+        <a href="topics/photoshop.html" class="lesson-link">
+          <span class="btn-text">Δες το μάθημα</span>
+          <span class="btn-icon" style="margin-left:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+</main>
+
+
+
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 - Δημιουργία Δομής Ιστοσελίδας</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <!-- Λογότυπο -->
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+
+    <!-- Λίστα Συνδέσμων Πλοήγησης -->
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+
+    <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+    <h1>HTML5 - Δημιουργία Δομής Ιστοσελίδας</h1>
+    <p>
+        Σε αυτή την ενότητα θα μάθετε πώς να δημιουργείτε τη βασική δομή μιας ιστοσελίδας χρησιμοποιώντας τη <strong>HTML5</strong> (HyperText Markup Language 5).
+        Η HTML είναι η "γλώσσα" με την οποία γράφουμε το σκελετό κάθε ιστοσελίδας στο διαδίκτυο.
+    </p>
+
+    <!-- Ενότητα: Τι είναι η HTML5 -->
+    <section class="topic-content">
+        <h2>Τι είναι η HTML5;</h2>
+        <p>
+            Η <strong>HTML5</strong> είναι η πιο πρόσφατη έκδοση της HTML και προσφέρει νέες δυνατότητες για τη δημιουργία μοντέρνων, δυναμικών και προσβάσιμων ιστοσελίδων.
+            Με την HTML5 μπορούμε να χρησιμοποιήσουμε νέες ετικέτες (tags), όπως <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, που κάνουν τον κώδικα πιο κατανοητό και οργανωμένο.
+        </p>
+    </section>
+
+    <!-- Παράδειγμα Δομής HTML5 -->
+    <section class="topic-content">
+        <h2>Βασική Δομή Αρχείου HTML5</h2>
+        <pre class="code-sample">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ο Τίτλος της Σελίδας&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Καλώς ήρθατε στην ιστοσελίδα μου!&lt;/h1&gt;
+    &lt;p&gt;Αυτή είναι μια παραδειγματική παράγραφος.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>
+            <strong>Επεξήγηση:</strong>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code>: Δηλώνει ότι χρησιμοποιούμε HTML5.</li>
+            <li><code>&lt;html lang="el"&gt;</code>: Όλη η σελίδα. Το <code>lang="el"</code> δηλώνει ότι η γλώσσα είναι τα Ελληνικά.</li>
+            <li><code>&lt;head&gt;</code>: Περιέχει πληροφορίες για τη σελίδα (τίτλος, χαρακτήρες, responsive σχεδίαση).</li>
+            <li><code>&lt;body&gt;</code>: Το ορατό περιεχόμενο της σελίδας.</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Σημαντικές Ετικέτες HTML5 -->
+    <section class="topic-content">
+        <h2>Σημαντικές Ετικέτες HTML5</h2>
+        <ul>
+            <li><code>&lt;header&gt;</code>: Η κεφαλίδα της σελίδας ή μιας ενότητας.</li>
+            <li><code>&lt;nav&gt;</code>: Το μενού πλοήγησης.</li>
+            <li><code>&lt;main&gt;</code>: Το κύριο περιεχόμενο της σελίδας.</li>
+            <li><code>&lt;section&gt;</code>: Χωρίζει το περιεχόμενο σε ενότητες.</li>
+            <li><code>&lt;article&gt;</code>: Αυτόνομο κομμάτι περιεχομένου (π.χ. άρθρο blog).</li>
+            <li><code>&lt;aside&gt;</code>: Πληροφορίες στο πλάι (π.χ. sidebar).</li>
+            <li><code>&lt;footer&gt;</code>: Το υποσέλιδο της σελίδας.</li>
+        </ul>
+        <p>
+            Αυτές οι ετικέτες βοηθούν στη δομή και την οργάνωση του κώδικα, αλλά και στη βελτίωση της προσβασιμότητας και του SEO.
+        </p>
+    </section>
+
+    <!-- Ενότητα: Παράδειγμα με HTML5 ετικέτες -->
+    <section class="topic-content">
+        <h2>Παράδειγμα: Μια Οργανωμένη Ιστοσελίδα με HTML5</h2>
+        <pre class="code-sample">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Παράδειγμα HTML5&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Η Σελίδα μου&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Αρχική&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Σχετικά&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Καλώς ήρθατε!&lt;/h2&gt;
+        &lt;p&gt;Αυτή είναι μια οργανωμένη ιστοσελίδα με HTML5.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;© 2025 Εκπαιδευτικός Ιστότοπος&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+
+    <!-- Ενότητα: Συχνά Λάθη Αρχαρίων -->
+    <section class="topic-content">
+        <h2>Συχνά Λάθη Αρχαρίων</h2>
+        <ul>
+            <li>Ξεχνούν το <code>&lt;!DOCTYPE html&gt;</code> στην αρχή.</li>
+            <li>Δεν κλείνουν σωστά τις ετικέτες (tags).</li>
+            <li>Χρησιμοποιούν λάθος σειρά στις ενότητες (<code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>).</li>
+            <li>Δεν βάζουν <code>lang="el"</code> στο <code>&lt;html&gt;</code> για ελληνικές σελίδες.</li>
+        </ul>
+    </section>
+
+    <!-- Ενότητα: Ασκήσεις για Εξάσκηση -->
+    <section class="topic-content">
+        <h2>Άσκηση για Εξάσκηση</h2>
+        <ol>
+            <li>Δημιούργησε ένα νέο αρχείο <strong>index.html</strong> στον υπολογιστή σου.</li>
+            <li>Γράψε τη βασική δομή HTML5 που έμαθες παραπάνω.</li>
+            <li>Βάλε έναν τίτλο και μια παράγραφο με το όνομά σου.</li>
+            <li>Άνοιξε το αρχείο στον browser σου και δες το αποτέλεσμα!</li>
+        </ol>
+    </section>
+
+    <!-- Ενότητα: Χρήσιμες Πηγές -->
+    <section class="topic-content">
+        <h2>Χρήσιμες Πηγές για HTML5</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/el/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs - HTML</a></li>
+            <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">W3Schools - HTML Tutorial</a></li>
+            <li><a href="https://www.freecodecamp.org/news/html-crash-course/" target="_blank" rel="noopener noreferrer">FreeCodeCamp - HTML Crash Course</a></li>
+        </ul>
+    </section>
+
+    <!-- Ενσωματωμένο Εκπαιδευτικό Βίντεο -->
+    <div class="video-container">
+        <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/kUMe1FH4CHE?si=ZlRhBDF5U4Duzw0P"
+                title="Εκμάθηση HTML5 Βασικά"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Επικοινωνία</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <!-- Λογότυπο -->
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+
+  <!-- Λίστα Συνδέσμων Πλοήγησης -->
+  <ul class="nav-links">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="about.html">Σχετικά</a></li>
+    <li><a href="lessons.html">Μαθήματα</a></li>
+    <li><a href="contact.html">Επικοινωνία</a></li>
+  </ul>
+
+  <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Κύριο περιεχόμενο σελίδας -->
+<main class="main-content">
+  <h1>Επικοινωνία</h1>
+  <p>Για ερωτήσεις ή απορίες σχετικά με τον ιστότοπο εκπαίδευσης, παρακαλούμε επικοινωνήστε μαζί μας μέσω e-mail:
+  <br><strong><em>mysite.deforest892@passinbox.com</em></strong></p>
+
+  <!-- Προσθήκη πριν τη φόρμα επικοινωνίας -->
+  <section class="contact-form-section" >
+    <h2>Δεν έχετε λογαριασμό;</h2>
+    <p>
+      Αν δεν είστε ακόμα εγγεγραμμένος/-η, σας προτείνουμε να δημιουργήσετε λογαριασμό για να έχετε πρόσβαση σε αποκλειστικό εκπαιδευτικό περιεχόμενο και προσωπική υποστήριξη.
+    </p>
+    <p>
+      <a href="register.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer">Εγγραφή Τώρα</a>
+    </p>
+    <p style="margin-top: 5px; font-size: smaller;">ή συμπληρώστε την παρακάτω φόρμα για να επικοινωνήσουμε μαζί σας</p>
+
+  </section>
+
+
+  <!-- Φόρμα Επικοινωνίας -->
+  <section class="contact-form-section">
+    <h2>Φόρμα Επικοινωνίας</h2>
+
+    <form id="contact-form" method="POST">
+      <p>
+        <label for="name">Όνομα:</label><br>
+        <input type="text" id="name" name="user_name" placeholder="Εισάγετε το όνομά σας" required>
+      </p>
+
+      <p>
+        <label for="mail">E-mail:</label><br>
+        <input type="email" id="mail" name="user_mail" placeholder="E-mail Επικοινωνίας" required>
+      </p>
+
+      <p>
+        <label for="msg">Μήνυμα:</label><br>
+        <textarea id="msg" name="user_message" rows="6" placeholder="Γράψτε το μήνυμά σας εδώ" required></textarea>
+      </p>
+
+
+      <p class="button">
+        <button type="submit">Αποστολή Μηνύματος</button>
+      </p>
+
+    </form>
+    <div id="messageBox" style="display: none;"></div>
+  </section>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../js/script.js"></script>
+</body>
+</html>
