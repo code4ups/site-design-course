@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εισαγωγή στην HTML5 – Blog | Εκπαιδευτικός Ιστότοπος</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .blog-article-main {
+            max-width: 800px;
+            margin: 2.5rem auto 2rem auto;
+            padding: 2.2rem 1.5rem 2rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+        }
+        .back-to-blog {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #0077b6;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-to-blog:hover {
+            color: #005f73;
+            text-decoration: underline;
+        }
+        .blog-article-main h1 {
+            color: #005f73;
+            margin-bottom: 0.8em;
+        }
+        .blog-article-main .post-date {
+            color: #666;
+            font-size: 0.98em;
+            margin-bottom: 1.5em;
+        }
+        .blog-article-main img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5em 0;
+            display: block;
+        }
+        .blog-article-main h2 {
+            color: #0077b6;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+        }
+        .blog-article-main pre, .blog-article-main .code-sample {
+            background: #f5f7fa;
+            border-radius: 6px;
+            padding: 12px 8px;
+            margin: 18px 0;
+            font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+            font-size: 1em;
+            overflow-x: auto;
+        }
+        .post-author {
+            font-size: 0.93em;
+            color: #888;
+            margin-bottom: 0.3em;
+        }
+        .post-author .by-label {
+            font-style: italic;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .blog-article-main { padding: 1.2rem 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image">
+            <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<main class="blog-article-main">
+    <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    <h1>Εισαγωγή στην HTML5</h1>
+    <div class="post-date"><em>Ημερομηνία δημοσίευσης: 28 Μαΐου 2025</em></div>
+    <div class="post-author"><span class="by-label">By:</span> Π.Ι.Κ.</div>
+    <img src="../../images/website_building.jpg" alt="Κατασκευή ιστοσελίδας με HTML5">
+    <p>
+        Η HTML5 αποτελεί τη σύγχρονη έκδοση της γλώσσας σήμανσης που χρησιμοποιείται για τη δημιουργία ιστοσελίδων. Είναι το θεμέλιο πάνω στο οποίο «χτίζεται» το περιεχόμενο του διαδικτύου και καθορίζει τη δομή, τη σημασιολογία και την οργάνωση των στοιχείων μιας ιστοσελίδας.
+    </p>
+    <h2>Τι είναι η HTML5;</h2>
+    <p>
+        Η HTML (HyperText Markup Language) είναι η βασική γλώσσα δομής των ιστοσελίδων. Η έκδοση 5 (HTML5) εισήγαγε νέα στοιχεία, καλύτερη υποστήριξη για πολυμέσα (εικόνες, βίντεο, ήχο), και νέες δυνατότητες για διαδραστικές εφαρμογές χωρίς την ανάγκη πρόσθετων plugins.
+    </p>
+    <h2>Βασική Δομή ενός Αρχείου HTML5</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Τίτλος Σελίδας&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Καλωσήρθατε στην πρώτη σας ιστοσελίδα!&lt;/h1&gt;
+    &lt;p&gt;Αυτό είναι το πρώτο σας παράγραφο.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>
+        Η παραπάνω δομή είναι το σημείο εκκίνησης για κάθε ιστοσελίδα. Το <code>&lt;!DOCTYPE html&gt;</code> δηλώνει ότι χρησιμοποιείται HTML5, ενώ τα στοιχεία <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> και <code>&lt;body&gt;</code> ορίζουν τη βασική αρχιτεκτονική του εγγράφου.
+    </p>
+    <h2>Νέα στοιχεία της HTML5</h2>
+    <ul>
+        <li><strong>&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;:</strong> Σημασιολογικά στοιχεία που βοηθούν στην καλύτερη οργάνωση και κατανόηση του περιεχομένου από μηχανές αναζήτησης και βοηθητικές τεχνολογίες.</li>
+        <li><strong>&lt;video&gt; και &lt;audio&gt;:</strong> Ενσωμάτωση πολυμέσων χωρίς πρόσθετα.</li>
+        <li><strong>&lt;canvas&gt; και &lt;svg&gt;:</strong> Δυνατότητα δημιουργίας γραφικών και διαγραμμάτων.</li>
+        <li><strong>Φόρμες με νέους τύπους input:</strong> Π.χ. <code>email</code>, <code>date</code>, <code>range</code> κ.ά.</li>
+    </ul>
+    <h2>Παράδειγμα: Ενσωμάτωση Βίντεο με HTML5</h2>
+    <pre>
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Το πρόγραμμα περιήγησής σας δεν υποστηρίζει το βίντεο.
+&lt;/video&gt;
+    </pre>
+    <h2>Γιατί να μάθετε HTML5;</h2>
+    <ul>
+        <li>Είναι η βάση για κάθε ιστοσελίδα και web εφαρμογή.</li>
+        <li>Είναι εύκολη στην εκμάθηση και στην κατανόηση.</li>
+        <li>Σας επιτρέπει να δημιουργείτε δομημένο και προσβάσιμο περιεχόμενο.</li>
+        <li>Είναι απαραίτητη για όσους θέλουν να ασχοληθούν με τον σχεδιασμό, την ανάπτυξη ή τη διαχείριση ιστοσελίδων.</li>
+    </ul>
+    <h2>Συμπέρασμα</h2>
+    <p>
+        Η HTML5 είναι το πρώτο και πιο σημαντικό βήμα για όποιον θέλει να ασχοληθεί με τον κόσμο του web. Ξεκινήστε να πειραματίζεστε, δημιουργήστε τις πρώτες σας σελίδες και ανακαλύψτε τη χαρά της δημιουργίας στο διαδίκτυο!
+    </p>
+    <div style="margin-top:2.5em;">
+        <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    </div>
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank"  rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+<!-- Αν έχεις scroll-to-top ή script.js, πρόσθεσέ τα εδώ -->
+<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Design με CSS Flexbox – Blog | Εκπαιδευτικός Ιστότοπος</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .blog-article-main {
+      max-width: 800px;
+      margin: 2.5rem auto 2rem auto;
+      padding: 2.2rem 1.5rem 2rem 1.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    }
+    .back-to-blog {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: #0077b6;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-to-blog:hover {
+      color: #005f73;
+      text-decoration: underline;
+    }
+    .blog-article-main h1 {
+      color: #005f73;
+      margin-bottom: 0.8em;
+    }
+    .blog-article-main .post-date {
+      color: #666;
+      font-size: 0.98em;
+      margin-bottom: 1.5em;
+    }
+    .blog-article-main img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1.5em 0;
+      display: block;
+    }
+    .blog-article-main h2 {
+      color: #0077b6;
+      margin-top: 2em;
+      margin-bottom: 0.7em;
+    }
+    .blog-article-main pre, .blog-article-main .code-sample {
+      background: #f5f7fa;
+      border-radius: 6px;
+      padding: 12px 8px;
+      margin: 18px 0;
+      font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+      font-size: 1em;
+      overflow-x: auto;
+    }
+    .post-author {
+      font-size: 0.93em;
+      color: #888;
+      margin-bottom: 0.3em;
+    }
+    .post-author .by-label {
+      font-style: italic;
+      color: #0077b6;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      .blog-article-main { padding: 1.2rem 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo.png" alt="Λογότυπο Μάθε Web Development" class="logo-image" />
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../about.html">Σχετικά</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<main class="blog-article-main">
+  <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+  <h1>Responsive Design με CSS Flexbox</h1>
+  <div class="post-date"><em>Ημερομηνία δημοσίευσης: 29 Μαΐου 2025</em></div>
+  <div class="post-author"><span class="by-label">By:</span> Π.Ι.Κ.</div>
+  <img src="../../images/responsive_design.png" alt="Responsive Design με CSS Flexbox" />
+  <p>
+    Το Responsive Design είναι μια τεχνική σχεδιασμού ιστοσελίδων που επιτρέπει στο περιεχόμενο να προσαρμόζεται αυτόματα σε διαφορετικά μεγέθη οθόνης και συσκευές, όπως υπολογιστές, tablets και κινητά τηλέφωνα.
+  </p>
+  <h2>Τι είναι το CSS Flexbox;</h2>
+  <p>
+    Το CSS Flexible Box Layout Module, γνωστό και ως Flexbox, είναι ένας σύγχρονος τρόπος διάταξης στοιχείων σε έναν container, που επιτρέπει εύκολη και ευέλικτη στοίχιση, κατεύθυνση και διαχείριση χώρου μεταξύ των στοιχείων.
+  </p>
+  <h2>Βασικά χαρακτηριστικά του Flexbox</h2>
+  <ul>
+    <li>Ευέλικτη διάταξη σε μία διάσταση (γραμμικά: οριζόντια ή κάθετα).</li>
+    <li>Αυτόματη προσαρμογή των στοιχείων ανάλογα με το διαθέσιμο χώρο.</li>
+    <li>Εύκολη στοίχιση και κατανομή κενών μεταξύ των στοιχείων.</li>
+    <li>Υποστήριξη για αλλαγή σειράς εμφάνισης χωρίς αλλαγή στο HTML.</li>
+  </ul>
+  <h2>Παράδειγμα βασικής χρήσης Flexbox</h2>
+  <pre>
+.container {
+  display: flex;
+  flex-direction: row; /* Οριζόντια διάταξη */
+  justify-content: space-between; /* Κατανομή χώρου */
+  align-items: center; /* Κάθετη στοίχιση */
+}
+    </pre>
+  <p>
+    Με αυτόν τον κώδικα, τα στοιχεία μέσα στο container θα τοποθετηθούν οριζόντια, θα έχουν ίση κατανομή χώρου και θα στοιχίζονται κάθετα στο κέντρο.
+  </p>
+  <h2>Γιατί να χρησιμοποιήσετε Flexbox στο Responsive Design;</h2>
+  <p>
+    Το Flexbox απλοποιεί την δημιουργία ευέλικτων layouts που προσαρμόζονται σε διαφορετικές διαστάσεις οθόνης, χωρίς να χρειάζεται πολύπλοκος κώδικας ή media queries για βασικές περιπτώσεις.
+  </p>
+  <h2>Συμβουλές για καλύτερο responsive design με Flexbox</h2>
+  <ul>
+    <li>Χρησιμοποιήστε media queries για να αλλάξετε τη διάταξη σε πολύ μικρές οθόνες.</li>
+    <li>Συνδυάστε Flexbox με Grid για πιο σύνθετα layouts.</li>
+    <li>Πειραματιστείτε με ιδιότητες όπως <code>flex-grow</code>, <code>flex-shrink</code> και <code>flex-basis</code> για καλύτερο έλεγχο.</li>
+  </ul>
+  <h2>Περισσότεροι πόροι</h2>
+  <p>
+    Μπορείτε να βρείτε αναλυτικά tutorials για Flexbox στο <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks Flexbox Guide</a> και στο <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>.
+  </p>
+  <h2>Συμπέρασμα</h2>
+  <p>
+    Η χρήση του CSS Flexbox είναι απαραίτητη για κάθε σύγχρονο web developer που θέλει να δημιουργήσει responsive και ευέλικτα layouts με λιγότερο κώδικα και μεγαλύτερη ευκολία.
+  </p>
+  <div style="margin-top:2.5em;">
+    <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon" />
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon" />
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon" />
+    </a>
+  </div>
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<script src="../../js/script.js"></script>
+</body>
+</html>

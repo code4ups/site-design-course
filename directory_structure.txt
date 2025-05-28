@@ -1,0 +1,107 @@
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               ├── HEAD
+│   │               └── main
+│   ├── objects
+│   │   ├── 17
+│   │   │   └── 6a458f94e0ea5272ce67c36bf30b6be9caf623
+│   │   ├── 5a
+│   │   │   └── 3e8747948e6012c9467b035fd53a38364614b9
+│   │   ├── 93
+│   │   │   └── 6c5d6db20f6f674e85ce931c4be4dc679b93bb
+│   │   ├── info
+│   │   └── pack
+│   │       ├── pack-c037bcf41a23b716587babce3b81b963f03aed42.idx
+│   │       └── pack-c037bcf41a23b716587babce3b81b963f03aed42.pack
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       ├── HEAD
+│       │       └── main
+│       └── tags
+├── .gitattributes
+├── .idea
+│   ├── .gitignore
+│   ├── MyFirstWebsite.iml
+│   ├── modules.xml
+│   ├── vcs.xml
+│   └── workspace.xml
+├── directory_structure.txt
+└── docs
+    ├── .nojekyll
+    ├── css
+    │   └── style.css
+    ├── html
+    │   ├── about.html
+    │   ├── business-info.html
+    │   ├── contact.html
+    │   ├── cookies-notice.html
+    │   ├── glossary.html
+    │   ├── index.html
+    │   ├── index.php
+    │   ├── lessons.html
+    │   ├── privacy-notice.html
+    │   ├── quiz_test_final.html
+    │   ├── register.html
+    │   ├── terms-of-use.html
+    │   ├── topics
+    │   │   ├── add_user.php
+    │   │   ├── css3-flexbox-topic.html
+    │   │   ├── get_users.php
+    │   │   ├── html5-topic.html
+    │   │   ├── javascript-topic.html
+    │   │   ├── javascript_ex.html
+    │   │   ├── photoshop.html
+    │   │   ├── photoshopforbeginners.pdf
+    │   │   ├── php-sql-topic.html
+    │   │   ├── php-sql_ex.html
+    │   │   ├── responsive-topic.html
+    │   │   ├── setup.php
+    │   │   ├── wp_createsite_topic.html
+    │   │   └── wp_setup_topic.html
+    │   └── webDevQ_book.pdf
+    ├── images
+    │   ├── about-us.png
+    │   ├── facebook-icon.png
+    │   ├── logo.png
+    │   ├── tiktok-icon.png
+    │   ├── website_building.jpg
+    │   └── youtube-icon.png
+    ├── js
+    │   └── script.js
+    ├── project-tree.txt
+    ├── register_user.php
+    └── submit_contact.php
+
+27 directories, 78 files

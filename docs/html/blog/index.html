@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – Εκπαιδευτικός Ιστότοπος</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .blog-header {
+      text-align: center;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .post-list {
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1rem;
+    }
+    .post-item {
+      background: #f0f4f8;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .post-item:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    }
+    .post-title {
+      font-size: 1.3rem;
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .post-title:hover {
+      color: #005f73;
+      text-decoration: underline;
+    }
+    .post-date {
+      font-size: 0.92em;
+      color: #666;
+      margin-bottom: 0.5em;
+    }
+    .post-author {
+      font-size: 0.93em;
+      color: #888;
+      margin-bottom: 0.3em;
+    }
+    .by-label {
+      font-style: italic;
+      color: #0077b6;
+      font-weight: bold;
+      margin-right: 0.2em;
+    }
+    .post-summary {
+      margin-top: 0.5em;
+      color: #222;
+    }
+    .post-thumb {
+      display: block;
+      margin-bottom: 0.7em;
+      max-width: 140px;
+      border-radius: 8px;
+    }
+
+    .post-tags {
+      margin: 0.5em 0 1em 0;
+    }
+
+    .tag-label {
+      display: inline-block;
+      background: #0077b6;
+      color: #fff;
+      font-size: 0.88em;
+      padding: 0.2em 0.7em;
+      border-radius: 12px;
+      margin-right: 0.4em;
+      margin-bottom: 0.2em;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+    .tag-label:hover {
+      background: #005f73;
+    }
+
+    @media (max-width: 600px) {
+      .post-item { padding: 1rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- Πλοήγηση (όπως στο index.html) -->
+<nav class="navigation">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo.png" alt="Λογότυπο" class="logo-image">
+      <span class="logo-text">Σχεδιασμός Ιστοσελίδων</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../about.html">Σχετικά</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="blog-header">
+  <h1>Blog</h1>
+  <p>Τα τελευταία μας άρθρα για τον σχεδιασμό και την ανάπτυξη ιστοσελίδων.</p>
+</div>
+
+<div class="post-list" id="postList">
+  <!-- Τα άρθρα θα φορτωθούν δυναμικά εδώ -->
+</div>
+
+<!-- Footer (όπως στο index.html) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+    </p>
+  </div>
+  <div class="social-media-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank"  rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<script>
+  // Δυναμική φόρτωση άρθρων από posts.json
+  async function loadPosts() {
+    try {
+      const response = await fetch('posts.json');
+      const posts = await response.json();
+      const postList = document.getElementById('postList');
+      postList.innerHTML = '';
+
+      posts.forEach(post => {
+        const postItem = document.createElement('div');
+        postItem.className = 'post-item';
+
+        // Εικόνα άρθρου
+        if (post.image) {
+          const img = document.createElement('img');
+          img.src = post.image;
+          img.alt = post.title;
+          img.className = 'post-thumb';
+          img.style = "max-width:140px; width:100%; border-radius:8px; margin-bottom:0.7em;";
+          postItem.appendChild(img);
+        }
+
+        // Τίτλος άρθρου
+        const postTitle = document.createElement('a');
+        postTitle.className = 'post-title';
+        postTitle.href = post.url;
+        postTitle.textContent = post.title;
+        postItem.appendChild(postTitle);
+
+        // Εμφάνιση συγγραφέα
+        const postAuthor = document.createElement('div');
+        postAuthor.className = 'post-author';
+        postAuthor.innerHTML = '<span class="by-label">By:</span> ' + (post.author || "Άγνωστος");
+        postItem.appendChild(postAuthor);
+
+        // Ημερομηνία
+        const postDate = document.createElement('div');
+        postDate.className = 'post-date';
+        postDate.textContent = new Date(post.date).toLocaleDateString('el-GR', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+        postItem.appendChild(postDate);
+
+        // Περίληψη
+        const postSummary = document.createElement('div');
+        postSummary.className = 'post-summary';
+        postSummary.textContent = post.summary;
+        postItem.appendChild(postSummary);
+
+        // Tags
+        let tagsDiv = null;
+        if (post.tags && post.tags.length) {
+          tagsDiv = document.createElement('div');
+          tagsDiv.className = 'post-tags';
+          post.tags.forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'tag-label';
+            tagSpan.textContent = tag;
+            tagsDiv.appendChild(tagSpan);
+          });
+          postItem.appendChild(tagsDiv);
+        }
+
+        postList.appendChild(postItem);
+      });
+    } catch (error) {
+      document.getElementById('postList').textContent = 'Δεν ήταν δυνατή η φόρτωση των άρθρων.';
+    }
+  }
+  loadPosts();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Responsive Design με CSS Flexbox",
+    "summary": "Δημιουργήστε ιστοσελίδες που προσαρμόζονται σε όλες τις συσκευές με το Flexbox.",
+    "url": "post2.html",
+    "date": "2025-05-29",
+    "image": "../../images/responsive_design.png",
+    "tags": ["CSS", "Flexbox", "Responsive"],
+    "author": "Π.Ι.Κ."
+  },
+  {
+    "title": "Εισαγωγή στην HTML5",
+    "summary": "Μάθετε τα βασικά της HTML5 και πώς να χτίζετε τη δομή μιας σύγχρονης ιστοσελίδας.",
+    "url": "post1.html",
+    "date": "2025-05-28",
+    "image": "../../images/website_building.jpg",
+    "tags": ["HTML5", "Βασικά", "Web Development"],
+    "author": "Π.Ι.Κ."
+  }
+]
