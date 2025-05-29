@@ -118,9 +118,9 @@ pre, .code-sample {
 }
 
 .logo-link {
-    display: flex;
-    align-items: center;
+    display: inline-block; /* Αντί για flex */
     text-decoration: none; /* Αφαίρεση υπογράμμισης */
+    text-align: center; /* Κεντράρει το περιεχόμενο */
 }
 .logo-image {
     height: 100px;
@@ -129,11 +129,27 @@ pre, .code-sample {
     border-radius: 8px; /* Μικρή στρογγύλευση πάντα */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
-
+.logo-block {
+    display: flex;
+    flex-direction: column; /* Στοιχίζει κάθετα */
+    align-items: center;    /* Κεντράρει οριζόντια */
+    margin-bottom: 1.2rem;
+}
 .logo-text {
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
-    color: white; /* Προσαρμόσιμο */
+    color: white; /* ή ό,τι άλλο ταιριάζει με το φόντο σου */
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.11);
+}
+.logo-slogan {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #e0fbfc; /* ανοιχτό θαλασσί, προσαρμόσιμο */
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-top: 0.1em;
 }
 
 .logo-link:hover .logo-image {
