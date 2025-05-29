@@ -8,8 +8,24 @@
   <style>
     .blog-header {
       text-align: center;
-      margin: 2rem 0 1.5rem 0;
+      margin: 3rem 0 2rem 0;
     }
+
+    .blog-header h1 {
+      font-size: 2.8rem;
+      color: #0077b6; /* όμορφο θαλασσί, ταιριάζει με web design */
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .blog-header .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      font-style: italic;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
     .post-list {
       max-width: 800px;
       margin: 0 auto 3rem auto;
@@ -79,11 +95,57 @@
       font-weight: 500;
       letter-spacing: 0.03em;
       transition: background 0.2s;
+      border: none;
+      cursor: pointer;
     }
     .tag-label:hover {
       background: #005f73;
     }
 
+    /* Στυλ για το μπλοκ αναζήτησης/φίλτρων ώστε να ταιριάζει με τα άρθρα */
+    .search-filter-block {
+      background: #f0f4f8; /* ίδιο με .post-item */
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s, background 0.2s;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .search-filter-block:hover,
+    .search-filter-block:focus-within {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+      background: #eafcfd;
+    }
+
+    .search-filter-block input[type="text"]#searchInput {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.7em 1em;
+      border-radius: 8px;
+      border: 1px solid #bde0fe;
+      font-size: 1.08rem;
+      margin-bottom: 1.2em;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,123,255,0.06);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .search-filter-block input[type="text"]#searchInput:focus {
+      border: 1.5px solid #0077b6;
+      box-shadow: 0 2px 8px rgba(0,123,255,0.09);
+    }
+
+    #tagsFilter {
+      width: 100%;
+      text-align: center;
+    }
     @media (max-width: 600px) {
       .post-item { padding: 1rem 0.5rem; }
     }
@@ -111,8 +173,14 @@
 </nav>
 
 <div class="blog-header">
-  <h1>Blog</h1>
-  <p>Τα τελευταία μας άρθρα για τον σχεδιασμό και την ανάπτυξη ιστοσελίδων.</p>
+  <h1>Blog Web Design & Development</h1>
+    <p class="subtitle">Πρακτικά μαθήματα και νέα για web designers και developers</p>
+</div>
+
+<!-- Αναζήτηση με λέξη-κλειδί και Φίλτρο με tags -->
+<div class="search-filter-block">
+  <input type="text" id="searchInput" placeholder="Αναζήτηση άρθρων...">
+  <div id="tagsFilter"></div>
 </div>
 
 <div class="post-list" id="postList">
@@ -143,78 +211,130 @@
   <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
 </footer>
 
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
 <script>
-  // Δυναμική φόρτωση άρθρων από posts.json
+  let allPosts = []; // Θα κρατάει όλα τα άρθρα στη μνήμη
+
   async function loadPosts() {
     try {
       const response = await fetch('posts.json');
-      const posts = await response.json();
-      const postList = document.getElementById('postList');
-      postList.innerHTML = '';
-
-      posts.forEach(post => {
-        const postItem = document.createElement('div');
-        postItem.className = 'post-item';
-
-        // Εικόνα άρθρου
-        if (post.image) {
-          const img = document.createElement('img');
-          img.src = post.image;
-          img.alt = post.title;
-          img.className = 'post-thumb';
-          img.style = "max-width:140px; width:100%; border-radius:8px; margin-bottom:0.7em;";
-          postItem.appendChild(img);
-        }
-
-        // Τίτλος άρθρου
-        const postTitle = document.createElement('a');
-        postTitle.className = 'post-title';
-        postTitle.href = post.url;
-        postTitle.textContent = post.title;
-        postItem.appendChild(postTitle);
-
-        // Εμφάνιση συγγραφέα
-        const postAuthor = document.createElement('div');
-        postAuthor.className = 'post-author';
-        postAuthor.innerHTML = '<span class="by-label">By:</span> ' + (post.author || "Άγνωστος");
-        postItem.appendChild(postAuthor);
-
-        // Ημερομηνία
-        const postDate = document.createElement('div');
-        postDate.className = 'post-date';
-        postDate.textContent = new Date(post.date).toLocaleDateString('el-GR', {
-          year: 'numeric', month: 'long', day: 'numeric'
-        });
-        postItem.appendChild(postDate);
-
-        // Περίληψη
-        const postSummary = document.createElement('div');
-        postSummary.className = 'post-summary';
-        postSummary.textContent = post.summary;
-        postItem.appendChild(postSummary);
-
-        // Tags
-        let tagsDiv = null;
-        if (post.tags && post.tags.length) {
-          tagsDiv = document.createElement('div');
-          tagsDiv.className = 'post-tags';
-          post.tags.forEach(tag => {
-            const tagSpan = document.createElement('span');
-            tagSpan.className = 'tag-label';
-            tagSpan.textContent = tag;
-            tagsDiv.appendChild(tagSpan);
-          });
-          postItem.appendChild(tagsDiv);
-        }
-
-        postList.appendChild(postItem);
-      });
+      allPosts = await response.json();
+      renderTagsFilter(allPosts);
+      renderPosts(allPosts);
     } catch (error) {
       document.getElementById('postList').textContent = 'Δεν ήταν δυνατή η φόρτωση των άρθρων.';
     }
   }
-  loadPosts();
 
+  // Εμφάνιση φίλτρων tags
+  function renderTagsFilter(posts) {
+    const tagsSet = new Set();
+    posts.forEach(post => (post.tags || []).forEach(tag => tagsSet.add(tag)));
+    const tags = Array.from(tagsSet).sort();
+    const tagsFilter = document.getElementById('tagsFilter');
+    tagsFilter.innerHTML = '<strong>Φίλτρο tags:</strong> ';
+    tags.forEach(tag => {
+      const btn = document.createElement('button');
+      btn.textContent = tag;
+      btn.className = 'tag-label';
+      btn.style.marginRight = '0.5em';
+      btn.onclick = () => filterPostsByTag(tag);
+      tagsFilter.appendChild(btn);
+    });
+    // Κουμπί για "Όλα"
+    const allBtn = document.createElement('button');
+    allBtn.textContent = 'Όλα';
+    allBtn.className = 'tag-label';
+    allBtn.style.background = '#888';
+    allBtn.onclick = () => renderPosts(allPosts);
+    tagsFilter.appendChild(allBtn);
+  }
+
+  // Εμφάνιση άρθρων (με τη σειρά και το στυλ που έχεις)
+  function renderPosts(posts) {
+    const postList = document.getElementById('postList');
+    postList.innerHTML = '';
+    posts.forEach(post => {
+      const postItem = document.createElement('div');
+      postItem.className = 'post-item';
+
+      // Εικόνα άρθρου
+      if (post.image) {
+        const img = document.createElement('img');
+        img.src = post.image;
+        img.alt = post.title;
+        img.className = 'post-thumb';
+        img.style = "max-width:140px; width:100%; border-radius:8px; margin-bottom:0.7em;";
+        postItem.appendChild(img);
+      }
+
+      // Τίτλος άρθρου
+      const postTitle = document.createElement('a');
+      postTitle.className = 'post-title';
+      postTitle.href = post.url;
+      postTitle.textContent = post.title;
+      postItem.appendChild(postTitle);
+
+      // Εμφάνιση συγγραφέα
+      const postAuthor = document.createElement('div');
+      postAuthor.className = 'post-author';
+      postAuthor.innerHTML = '<span class="by-label">By:</span> ' + (post.author || "Άγνωστος");
+      postItem.appendChild(postAuthor);
+
+      // Ημερομηνία
+      const postDate = document.createElement('div');
+      postDate.className = 'post-date';
+      postDate.textContent = new Date(post.date).toLocaleDateString('el-GR', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+      postItem.appendChild(postDate);
+
+      // Περίληψη
+      const postSummary = document.createElement('div');
+      postSummary.className = 'post-summary';
+      postSummary.textContent = post.summary;
+      postItem.appendChild(postSummary);
+
+      // Tags
+      if (post.tags && post.tags.length) {
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'post-tags';
+        post.tags.forEach(tag => {
+          const tagSpan = document.createElement('span');
+          tagSpan.className = 'tag-label';
+          tagSpan.textContent = tag;
+          tagsDiv.appendChild(tagSpan);
+        });
+        postItem.appendChild(tagsDiv);
+      }
+
+      postList.appendChild(postItem);
+    });
+  }
+
+  // Φιλτράρισμα με tag
+  function filterPostsByTag(tag) {
+    const filtered = allPosts.filter(post => post.tags && post.tags.includes(tag));
+    renderPosts(filtered);
+  }
+
+  // Αναζήτηση με λέξη-κλειδί
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      const filtered = allPosts.filter(post =>
+              post.title.toLowerCase().includes(q) ||
+              post.summary.toLowerCase().includes(q) ||
+              (post.tags && post.tags.some(tag => tag.toLowerCase().includes(q)))
+      );
+      renderPosts(filtered);
+    });
+  });
+
+  loadPosts();
 </script>
+
 </body>
 </html>
