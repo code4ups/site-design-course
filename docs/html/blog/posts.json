@@ -1,5 +1,14 @@
 [
   {
+    "title": "Εισαγωγή στη JavaScript",
+    "summary": "Μάθε τα βασικά της JavaScript, της γλώσσας που δίνει διαδραστικότητα και ζωντάνια στις σύγχρονες ιστοσελίδες. Παραδείγματα, συμβουλές και βασικές έννοιες για αρχάριους και προχωρημένους.",
+    "url": "post3.html",
+    "date": "2025-05-30",
+    "image": "../../images/coding.png",
+    "tags": ["Javascript", "Web Development", "Programming", "Code"],
+    "author": "Π.Ι.Κ."
+  },
+  {
     "title": "Responsive Design με CSS Flexbox",
     "summary": "Δημιουργήστε ιστοσελίδες που προσαρμόζονται σε όλες τις συσκευές με το Flexbox.",
     "url": "post2.html",

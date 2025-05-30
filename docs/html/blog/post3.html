@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εισαγωγή στη JavaScript – Blog | Εκπαιδευτικός Ιστότοπος</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700,400&display=swap" rel="stylesheet">
+    <style>
+        .blog-article-main {
+            max-width: 800px;
+            margin: 2.5rem auto 2rem auto;
+            padding: 2.2rem 1.5rem 2rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+        }
+        .back-to-blog {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #0077b6;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-to-blog:hover {
+            color: #005f73;
+            text-decoration: underline;
+        }
+        .blog-article-main h1 {
+            color: #005f73;
+            margin-bottom: 0.8em;
+        }
+        .blog-article-main .post-date {
+            color: #666;
+            font-size: 0.98em;
+            margin-bottom: 1.5em;
+        }
+        .blog-article-main img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5em 0;
+            display: block;
+        }
+        .blog-article-main h2 {
+            color: #0077b6;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+        }
+        .blog-article-main pre, .blog-article-main .code-sample {
+            background: #f5f7fa;
+            border-radius: 6px;
+            padding: 12px 8px;
+            margin: 18px 0;
+            font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+            font-size: 1em;
+            overflow-x: auto;
+        }
+        .post-author {
+            font-size: 0.93em;
+            color: #888;
+            margin-bottom: 0.3em;
+        }
+        .post-author .by-label {
+            font-style: italic;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .blog-article-main { padding: 1.2rem 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <div class="logo-block">
+        <a href="../index.html" class="logo-link">
+            <span class="logo-text">PanJKCMS</span>
+            <div class="logo-slogan">Joins Knowledge</div>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../about.html">Σχετικά</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<main class="blog-article-main">
+    <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    <h1>Εισαγωγή στη JavaScript</h1>
+    <div class="post-date"><em>Ημερομηνία δημοσίευσης: 30 Μαΐου 2025</em></div>
+    <div class="post-author"><span class="by-label">By:</span> Π.Ι.Κ.</div>
+    <img src="../../images/coding.png" alt="Εκμάθηση JavaScript">
+    <p>
+        Η JavaScript είναι η πιο διαδεδομένη γλώσσα προγραμματισμού για το web και αποτελεί βασικό εργαλείο για τη δημιουργία διαδραστικών ιστοσελίδων και εφαρμογών. Μαζί με την HTML και την CSS, αποτελεί τον «πυρήνα» του σύγχρονου διαδικτύου.
+    </p>
+    <h2>Τι είναι η JavaScript;</h2>
+    <p>
+        Η JavaScript είναι μια γλώσσα προγραμματισμού που εκτελείται στον browser του χρήστη και επιτρέπει την υλοποίηση δυναμικής και διαδραστικής λειτουργικότητας στις ιστοσελίδες. Μπορεί να χειριστεί γεγονότα, να αλλάξει το περιεχόμενο της σελίδας, να επικοινωνήσει με servers και πολλά άλλα.
+    </p>
+    <h2>Παράδειγμα: Εμφάνιση μηνύματος με JavaScript</h2>
+    <pre>
+&lt;script&gt;
+  alert('Καλωσήρθατε στη σελίδα μου!');
+&lt;/script&gt;
+    </pre>
+    <p>
+        Ο παραπάνω κώδικας εμφανίζει ένα απλό μήνυμα στον επισκέπτη της σελίδας. Η JavaScript μπορεί να τοποθετηθεί είτε στο <code>&lt;head&gt;</code> είτε στο <code>&lt;body&gt;</code> μιας HTML σελίδας.
+    </p>
+    <h2>Βασικές δυνατότητες της JavaScript</h2>
+    <ul>
+        <li>Διαχείριση γεγονότων (events) όπως clicks, πληκτρολογήσεις, κτλ.</li>
+        <li>Αλλαγή περιεχομένου και στυλ στοιχείων της σελίδας (DOM manipulation).</li>
+        <li>Επικοινωνία με servers μέσω AJAX ή Fetch API.</li>
+        <li>Υλοποίηση διαδραστικών widgets, μενού, gallery, κ.ά.</li>
+        <li>Δημιουργία παιχνιδιών και web εφαρμογών.</li>
+    </ul>
+    <h2>Παράδειγμα: Αλλαγή περιεχομένου με JavaScript</h2>
+    <pre>
+&lt;button onclick="document.getElementById('demo').textContent = 'Γεια σου, JavaScript!';"&gt;Κάνε κλικ&lt;/button&gt;
+&lt;p id="demo"&gt;Αυτό το κείμενο θα αλλάξει.&lt;/p&gt;
+    </pre>
+    <p>
+        Με το παραπάνω παράδειγμα, όταν ο χρήστης πατήσει το κουμπί, το κείμενο της παραγράφου αλλάζει δυναμικά με JavaScript.
+    </p>
+    <h2>Γιατί να μάθετε JavaScript;</h2>
+    <ul>
+        <li>Είναι απαραίτητη για κάθε σύγχρονο web developer.</li>
+        <li>Ανοίγει το δρόμο για ανάπτυξη web εφαρμογών, mobile apps, ακόμα και server-side εφαρμογών (Node.js).</li>
+        <li>Υπάρχει τεράστια κοινότητα και άφθονο υλικό εκμάθησης.</li>
+        <li>Είναι διασκεδαστική και δημιουργική!</li>
+    </ul>
+    <h2>Συμπέρασμα</h2>
+    <p>
+        Η JavaScript είναι το «κλειδί» για να κάνετε τις ιστοσελίδες σας διαδραστικές και ζωντανές. Ξεκινήστε να πειραματίζεστε με μικρά παραδείγματα και σταδιακά θα ανακαλύψετε τις απεριόριστες δυνατότητές της!
+    </p>
+    <div style="margin-top:2.5em;">
+        <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Επιχείρηση</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank"  rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+<script src="../../js/script.js"></script>
+</body>
+</html>
