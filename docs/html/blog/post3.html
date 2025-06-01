@@ -76,18 +76,27 @@
             .blog-article-main { padding: 1.2rem 0.3rem; }
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XN66TXYPFV"></script>
+    <!-- Consent Mode default (στο head) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-XN66TXYPFV');
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
     </script>
+
 </head>
 <body>
 
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;z-index:1000;">
+    Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας.
+    <a href="cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
+    <button id="accept">Αποδοχή</button>
+    <button id="reject">Απόρριψη</button>
+</div>
 <!-- Πλοήγηση (Navigation Menu) -->
 <nav class="navigation">
     <div class="logo-block">
@@ -189,5 +198,65 @@
 
 <a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
 <script src="../../js/script.js"></script>
+<script>
+    (function() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept');
+        const rejectBtn = document.getElementById('reject');
+
+        function updateConsent(consent) {
+            localStorage.setItem('cookieConsent', consent);
+
+            // Ενημέρωση Google Consent Mode
+            if(window.gtag) {
+                if(consent === 'accepted') {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'analytics_storage': 'granted'
+                    });
+                } else {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'analytics_storage': 'denied'
+                    });
+                }
+            }
+
+            banner.style.display = 'none';
+
+            if(consent === 'accepted') {
+                loadAnalytics();
+            }
+        }
+
+        function loadAnalytics() {
+            if(window.gtag) return; // Αν έχει φορτωθεί ήδη
+
+            const script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-XN66TXYPFV";
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+
+            gtag('js', new Date());
+            gtag('config', 'G-XN66TXYPFV', { 'anonymize_ip': true });
+        }
+
+        const consent = localStorage.getItem('cookieConsent');
+        if(consent === 'accepted') {
+            loadAnalytics();
+        } else if(consent === 'rejected') {
+            updateConsent('rejected');
+        } else {
+            banner.style.display = 'block';
+        }
+
+        acceptBtn.addEventListener('click', () => updateConsent('accepted'));
+        rejectBtn.addEventListener('click', () => updateConsent('rejected'));
+    })();
+</script>
 </body>
 </html>
