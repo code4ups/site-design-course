@@ -46,20 +46,32 @@
     </div>
 
     <!-- Λίστα Συνδέσμων Πλοήγησης -->
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Αρχική</a></li>
-        <li><a href="about.html">Σχετικά</a></li>
         <li><a href="lessons.html">Μαθήματα</a></li>
         <li><a href="blog/index.html">Blog</a></li>
+        <li class="dropdown">
+            <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                Εργαλειοθήκη
+                <span class="arrow">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" id="dropdownMenu">
+                <li><a href="about.html">Οδηγός</a></li>
+                <li><a href="glossary.html">Γλωσσάρι</a></li>
+                <li><a href="quiz_test_final.html">Τέστ</a></li>
+            </ul>
+        </li>
+
+
         <li><a href="contact.html">Επικοινωνία</a></li>
     </ul>
 
     <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
-    <div class="hamburger">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </button>
 </nav>
 
 <!-- Κεντρική Ηρωική Ενότητα (Hero Section) -->
@@ -67,20 +79,7 @@
     <h1>Καλωσήρθες στο Ψηφιακό Εργαστήρι!</h1>
     <p>Για την Εκπαίδευσή σου στον Σχεδιασμό Ιστοσελίδων και Εφαρμογών.</p>
 
-    <!-- Σύνδεσμος προς το Τεστ -->
-    <div style="text-align:center; margin-bottom: 24px;">
-        <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
-          <span class="btn-icon">
-            <!-- SVG εικονίδιο βιβλίου (ή ό,τι άλλο θες) -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
-            </svg>
-          </span>
-            <span class="btn-text">Δείξε τι Ξέρεις</span>
-        </a>
-    </div>
+
     <!-- Εικόνα Ηρωικής Ενότητας -->
     <img src="../images/website_building.jpg" alt="Κατασκευή Ιστοσελίδας" class="hero-image">
 </header>
@@ -172,6 +171,20 @@
                 <h3>PHP & SQL</h3>
                 <p>Διαχείριση backend και βάσεων δεδομένων.</p>
             </div>
+        </a>
+    </div>
+    <!-- Σύνδεσμος προς το Τεστ -->
+    <div style="text-align:center; margin-bottom: 24px;">
+        <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
+          <span class="btn-icon">
+            <!-- SVG εικονίδιο βιβλίου (ή ό,τι άλλο θες) -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+              <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+              <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+            </svg>
+          </span>
+            <span class="btn-text">Δείξε τι Ξέρεις</span>
         </a>
     </div>
 </section>
