@@ -45,22 +45,33 @@
     </div>
 
     <!-- Λίστα Συνδέσμων Πλοήγησης -->
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Αρχική</a></li>
-        <li><a href="about.html">Σχετικά</a></li>
         <li><a href="lessons.html">Μαθήματα</a></li>
         <li><a href="blog/index.html">Blog</a></li>
+        <li class="dropdown">
+            <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                Εργαλειοθήκη
+                <span class="arrow">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" id="dropdownMenu">
+                <li><a href="about.html">Οδηγός</a></li>
+                <li><a href="glossary.html">Γλωσσάρι</a></li>
+                <li><a href="quiz_test_final.html">Τέστ</a></li>
+            </ul>
+        </li>
+
+
         <li><a href="contact.html">Επικοινωνία</a></li>
     </ul>
 
     <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
-    <div class="hamburger">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </button>
 </nav>
-
 <!-- Κύριο περιεχόμενο σελίδας -->
 <main class="main-content">
     <h1>Πολιτική Προστασίας Προσωπικών Δεδομένων</h1>

@@ -54,10 +54,11 @@
 <!-- Cookie Consent Banner -->
 <div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;z-index:1000;">
     Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας.
-    <a href="cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
+    <a href="../cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
     <button id="accept">Αποδοχή</button>
     <button id="reject">Απόρριψη</button>
 </div>
+
 <!-- Πλοήγηση (Navigation Menu) -->
 <nav class="navigation">
     <!-- Λογότυπο -->
@@ -67,15 +68,34 @@
             <div class="logo-slogan">Joins Knowledge</div>
         </a>
     </div>
+
     <!-- Λίστα Συνδέσμων Πλοήγησης -->
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">Αρχική</a></li>
-        <li><a href="../about.html">Σχετικά</a></li>
         <li><a href="../lessons.html">Μαθήματα</a></li>
         <li><a href="../blog/index.html">Blog</a></li>
+        <li class="dropdown">
+            <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                Εργαλειοθήκη
+                <span class="arrow">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" id="dropdownMenu">
+                <li><a href="../about.html">Οδηγός</a></li>
+                <li><a href="../glossary.html">Γλωσσάρι</a></li>
+                <li><a href="../quiz_test_final.html">Τέστ</a></li>
+            </ul>
+        </li>
+
+
         <li><a href="../contact.html">Επικοινωνία</a></li>
     </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
+
+    <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
 <main class="main-content">
