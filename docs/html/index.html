@@ -35,6 +35,11 @@
     <button id="reject">Απόρριψη</button>
 </div>
 
+<div class="lang-switch" style="position: absolute; top: 90px; right: 20px; z-index: 999;">
+    <button onclick="switchLang('el')">🇬🇷 El</button>
+    <button onclick="switchLang('en')">🇬🇧 En</button>
+</div>
+
 <!-- Πλοήγηση (Navigation Menu) -->
 <nav class="navigation">
     <!-- Λογότυπο -->
@@ -46,24 +51,59 @@
     </div>
 
     <!-- Λίστα Συνδέσμων Πλοήγησης -->
+
     <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Αρχική</a></li>
-        <li><a href="lessons.html">Μαθήματα</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <li>
+            <a href="index.html">
+                <span class="lang-el">Αρχική</span>
+                <span class="lang-en" style="display: none;">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="lessons.html">
+                <span class="lang-el">Μαθήματα</span>
+                <span class="lang-en" style="display: none;">Lessons</span>
+            </a>
+        </li>
+        <li>
+            <a href="blog/index.html">
+                <span class="lang-el">Ιστολόγιο</span>
+                <span class="lang-en" style="display: none;">Blog</span>
+            </a>
+        </li>
         <li class="dropdown">
             <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
-                Εργαλειοθήκη
+                <span class="lang-el">Εργαλειοθήκη</span>
+                <span class="lang-en" style="display: none;">Toolkit</span>
                 <span class="arrow">&#9662;</span>
             </button>
             <ul class="dropdown-content" id="dropdownMenu">
-                <li><a href="about.html">Οδηγός</a></li>
-                <li><a href="glossary.html">Γλωσσάρι</a></li>
-                <li><a href="quiz_test_final.html">Τέστ</a></li>
+                <li>
+                    <a href="about.html">
+                        <span class="lang-el">Οδηγός</span>
+                        <span class="lang-en" style="display: none;">Guide</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="glossary.html">
+                        <span class="lang-el">Γλωσσάρι</span>
+                        <span class="lang-en" style="display: none;">Glossary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="quiz_test_final.html">
+                        <span class="lang-el">Τέστ</span>
+                        <span class="lang-en" style="display: none;">Test</span>
+                    </a>
+                </li>
             </ul>
         </li>
-
-
-        <li><a href="contact.html">Επικοινωνία</a></li>
+        <li>
+            <a href="contact.html">
+                <span class="lang-el">Επικοινωνία</span>
+                <span class="lang-en" style="display: none;">Contact</span>
+            </a>
+        </li>
     </ul>
 
     <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
@@ -76,8 +116,15 @@
 
 <!-- Κεντρική Ηρωική Ενότητα (Hero Section) -->
 <header class="hero-section">
-    <h1>Καλωσήρθες στο Ψηφιακό Εργαστήρι!</h1>
-    <p>Για την Εκπαίδευσή σου στον Σχεδιασμό Ιστοσελίδων και Εφαρμογών με Κώδικα.</p>
+
+    <div class="lang-el">
+        <h1>Καλωσήρθες στο Ψηφιακό Εργαστήρι!</h1>
+        <p>Για την Εκπαίδευσή σου στον Σχεδιασμό Ιστοσελίδων και Εφαρμογών με Κώδικα.</p>
+    </div>
+    <div class="lang-en" style="display:none;">
+        <h1>Welcome to the Digital Workshop!</h1>
+        <p>For your Training in Web and Application Design with Code.</p>
+    </div>
 
 
     <!-- Εικόνα Ηρωικής Ενότητας -->
@@ -85,12 +132,9 @@
 </header>
 
 <div class="instructor-message" style="max-width: 1200px; margin: 40px auto; padding: 20px; background: #f0f4f8; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: 'Georgia', serif; color: #333;">
-    <div class="lang-buttons">
-        <button onclick="switchLang('el')">GR</button>
-        <button onclick="switchLang('en')">EN</button>
-    </div>
+
     <!-- ΕΛΛΗΝΙΚΟ ΚΕΙΜΕΝΟ -->
-    <div id="lang-el">
+    <div class="lang-el">
         <h2 style="color: #1976d2; margin-bottom: 20px; text-align: center;">Ψηφιακό Εργαστήρι - Σχεδιασμός Ιστοσελίδων και Εφαρμογών</h2>
         <p style="text-align: right;"><em>Αθήνα, Μάιος 2025</em></p>
         <p>Αγαπητοί Εκπαιδευόμενοι και Συνάδελφοι,</p>
@@ -105,7 +149,7 @@
     </div>
 
     <!-- ENGLISH TEXT -->
-    <div id="lang-en" class="hidden">
+    <div class="lang-en hidden">
         <h2 style="color: #1976d2; margin-bottom: 20px; text-align: center;">Digital Workshop – Website and Application Design</h2>
         <p style="text-align: right;"><em>Athens, May 2025</em></p>
         <p>Dear Trainees and Colleagues,</p>
@@ -122,81 +166,115 @@
 
 <!-- Ενότητα: Τι θα μάθετε -->
 <section class="what-you-learn" style="position: relative;">
-    <h2 style="display: inline-block; margin-right: 15px;">Μάθε με Πράξη</h2>
+    <h2 style="display: inline-block; margin-right: 15px;">
+        <span class="lang-el">Μάθε με Πράξη</span>
+        <span class="lang-en" style="display: none;">Learn by Doing</span>
+    </h2>
     <p class="section-subtitle">
-        Από τις πρώτες γραμμές κώδικα μέχρι την υλοποίηση πλήρως responsive σχεδίων – ξεκίνα την πορεία σου στον ψηφιακό κόσμο.
+        <span class="lang-el">
+            Από τις πρώτες γραμμές κώδικα μέχρι την υλοποίηση πλήρως responsive σχεδίων – ξεκίνα την πορεία σου στον ψηφιακό κόσμο.
+        </span>
+        <span class="lang-en" style="display: none;">
+            From your first lines of code to building fully responsive layouts – start your journey into the digital world.
+        </span>
     </p>
+
+    <!-- Κουμπί για όλα τα μαθήματα -->
     <div style="text-align:center; margin-bottom: 24px;">
         <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
-        <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
-          <!-- SVG εικονίδιο βέλους ή κατάλληλο icon -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-            <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-            <span class="btn-text" style="vertical-align: middle; color: #fff;">Ανακάλυψε όλα τα Μαθήματα</span>
-            <div class="btn-subtext" style="font-size: 0.7em; color: #ddd;">10+ μαθήματα, νέο περιεχόμενο κάθε μήνα</div>
+            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span class="btn-text" style="vertical-align: middle; color: #fff;">
+                <span class="lang-el">Ανακάλυψε όλα τα Μαθήματα</span>
+                <span class="lang-en" style="display: none;">Explore All Lessons</span>
+            </span>
+            <div class="btn-subtext" style="font-size: 0.7em; color: #ddd;">
+                <span class="lang-el">10+ μαθήματα, νέο περιεχόμενο κάθε μήνα</span>
+                <span class="lang-en" style="display: none;">10+ lessons, new content every month</span>
+            </div>
         </a>
     </div>
 
+    <!-- Θεματολογία -->
     <div class="learning-topics" style="margin-top: 20px;">
-
-        <!-- Θέμα: HTML5 -->
         <a href="topics/html5-topic.html" class="topic-link">
             <div class="topic">
                 <h3>HTML5</h3>
-                <p>Δημιουργία της δομής ιστοσελίδας με HTML5.</p>
+                <p>
+                    <span class="lang-el">Δημιουργία της δομής ιστοσελίδας με HTML5.</span>
+                    <span class="lang-en" style="display: none;">Build the structure of a webpage with HTML5.</span>
+                </p>
             </div>
         </a>
 
-        <!-- Θέμα: CSS3 & Flexbox -->
         <a href="topics/css3-flexbox-topic.html" class="topic-link">
             <div class="topic">
                 <h3>CSS3 & Flexbox</h3>
-                <p>Μορφοποίηση και responsive σχεδιασμός με CSS.</p>
+                <p>
+                    <span class="lang-el">Μορφοποίηση και responsive σχεδιασμός με CSS.</span>
+                    <span class="lang-en" style="display: none;">Styling and responsive layout with CSS.</span>
+                </p>
             </div>
         </a>
 
-        <!-- Θέμα: JavaScript -->
         <a href="topics/javascript-topic.html" class="topic-link">
             <div class="topic">
                 <h3>JavaScript</h3>
-                <p>Διαδραστικότητα και λογική με client-side scripting.</p>
+                <p>
+                    <span class="lang-el">Διαδραστικότητα και λογική με client-side scripting.</span>
+                    <span class="lang-en" style="display: none;">Interactivity and logic with client-side scripting.</span>
+                </p>
             </div>
         </a>
 
-        <!-- Θέμα: PHP & SQL -->
         <a href="topics/php-sql-topic.html" class="topic-link">
             <div class="topic">
                 <h3>PHP & SQL</h3>
-                <p>Διαχείριση backend και βάσεων δεδομένων.</p>
+                <p>
+                    <span class="lang-el">Διαχείριση backend και βάσεων δεδομένων.</span>
+                    <span class="lang-en" style="display: none;">Backend and database management.</span>
+                </p>
             </div>
         </a>
     </div>
+
     <!-- Σύνδεσμος προς το Τεστ -->
     <div style="text-align:center; margin-bottom: 24px;">
         <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
-          <span class="btn-icon">
-            <!-- SVG εικονίδιο βιβλίου (ή ό,τι άλλο θες) -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
-            </svg>
-          </span>
-            <span class="btn-text">Δείξε τι Ξέρεις</span>
+            <span class="btn-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+                </svg>
+            </span>
+            <span class="btn-text">
+                <span class="lang-el">Δείξε τι Ξέρεις</span>
+                <span class="lang-en" style="display: none;">Show What You Know</span>
+            </span>
         </a>
     </div>
 </section>
+
 
 <!-- Υποσέλιδο (Footer) -->
 <footer class="footer">
     <div class="footer-links">
         <p>
-            <a href="terms-of-use.html" class="legal-link">Όροι</a>
-            <a href="privacy-notice.html" class="legal-link">Δεδομένα</a>
-            <a href="cookies-notice.html" class="legal-link">Cookies</a>
-            <a href="business-info.html" class="legal-link">Πληροφορίες</a>
+            <!-- Ελληνικά -->
+            <a href="terms-of-use.html" class="legal-link lang-el">Όροι</a>
+            <a href="privacy-notice.html" class="legal-link lang-el">Δεδομένα</a>
+            <a href="cookies-notice.html" class="legal-link lang-el">Cookies</a>
+            <a href="business-info.html" class="legal-link lang-el">Πληροφορίες</a>
+
+            <!-- Αγγλικά -->
+            <a href="terms-of-use.html" class="legal-link lang-en" style="display:none;">Terms</a>
+            <a href="privacy-notice.html" class="legal-link lang-en" style="display:none;">Privacy</a>
+            <a href="cookies-notice.html" class="legal-link lang-en" style="display:none;">Cookies</a>
+            <a href="business-info.html" class="legal-link lang-en" style="display:none;">Information</a>
         </p>
     </div>
 
@@ -207,23 +285,30 @@
         <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
             <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
         </a>
-        <a href="https://youtube.com" target="_blank"  rel="noopener noreferrer" class="social-link">
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
             <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
         </a>
     </div>
 
-    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+    <!-- Μήνυμα πνευματικών δικαιωμάτων -->
+    <p class="lang-el" style="display:none;">© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+    <p class="lang-en" style="display:none;">© 2025 Educational Website. All rights reserved.</p>
 </footer>
+
 
 <!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
 <a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
 <script>
     function switchLang(lang) {
-        document.getElementById('lang-el').classList.add('hidden');
-        document.getElementById('lang-en').classList.add('hidden');
-        document.getElementById('lang-' + lang).classList.remove('hidden');
+        const elLangs = document.querySelectorAll('.lang-el');
+        const enLangs = document.querySelectorAll('.lang-en');
+
+        elLangs.forEach(el => el.style.display = lang === 'el' ? 'inline' : 'none');
+        enLangs.forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
     }
 </script>
+
 
 <!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
 <script src="../js/script.js"></script>
