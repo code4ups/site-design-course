@@ -36,8 +36,8 @@
 </div>
 
 <div class="lang-switch" style="position: absolute; top: 90px; right: 20px; z-index: 999;">
-    <button onclick="switchLang('el')">🇬🇷 El</button>
-    <button onclick="switchLang('en')">🇬🇧 En</button>
+    <button onclick="switchLang('el')">El</button>
+    <button onclick="switchLang('en')">En</button>
 </div>
 
 <!-- Πλοήγηση (Navigation Menu) -->
@@ -115,21 +115,46 @@
 </nav>
 
 <!-- Κεντρική Ηρωική Ενότητα (Hero Section) -->
+
 <header class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-content lang-el">
+            <h1>Ψηφιακό Εργαστήρι</h1>
+            <p>Σχεδιασμός Ιστοσελίδων και Εφαρμογών
+            <div style="text-align:center; margin-bottom: 24px;">
+                <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
+            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+                    <span class="btn-text" style="vertical-align: middle; color: #fff;">
+                <span class="lang-el">Η Αποστολή σου Ξεκινά!</span>
+            </span>
+                </a>
+            </div>
+        </div>
 
-    <div class="lang-el">
-        <h1>Καλωσήρθες στο Ψηφιακό Εργαστήρι!</h1>
-        <p>Για την Εκπαίδευσή σου στον Σχεδιασμό Ιστοσελίδων και Εφαρμογών με Κώδικα.</p>
+        <div class="hero-content lang-en" style="display:none;">
+            <h1>Digital Workshop</h1>
+            <h2>Website and Application Design</h2>
+            <div style="text-align:center; margin-bottom: 24px;">
+                <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
+            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+                    <span class="btn-text" style="vertical-align: middle; color: #fff;">
+                <span class="lang-en" style="display: none;">Your Mission Begins!</span>
+            </span>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="lang-en" style="display:none;">
-        <h1>Welcome to the Digital Workshop!</h1>
-        <p>For your Training in Web and Application Design with Code.</p>
-    </div>
 
-
-    <!-- Εικόνα Ηρωικής Ενότητας -->
-    <img src="../images/website_building.jpg" alt="Κατασκευή Ιστοσελίδας" class="hero-image">
 </header>
+
 
 <div class="instructor-message" style="max-width: 1200px; margin: 40px auto; padding: 20px; background: #f0f4f8; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: 'Georgia', serif; color: #333;">
 
@@ -168,7 +193,7 @@
 <section class="what-you-learn" style="position: relative;">
     <h2 style="display: inline-block; margin-right: 15px;">
         <span class="lang-el">Μάθε με Πράξη</span>
-        <span class="lang-en" style="display: none;">Learn by Doing</span>
+        <span class="lang-en" style="display: none;">Learn by Practice</span>
     </h2>
     <p class="section-subtitle">
         <span class="lang-el">
@@ -252,8 +277,8 @@
                 </svg>
             </span>
             <span class="btn-text">
-                <span class="lang-el">Δείξε τι Ξέρεις</span>
-                <span class="lang-en" style="display: none;">Show What You Know</span>
+                <span class="lang-el">Δοκίμασε τα Όριά σου</span>
+                <span class="lang-en" style="display: none;">Test Your Limits</span>
             </span>
         </a>
     </div>

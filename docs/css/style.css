@@ -10,7 +10,7 @@
 
 /* Ρύθμιση βασικού φόντου και χρώματος κειμένου */
 body {
-    background-color: #f9f9f9;
+    background-color: #005f73;
     color: #333333;
     line-height: 1.6; /* Απόσταση μεταξύ γραμμών */
 }
@@ -314,27 +314,65 @@ pre, .code-sample {
 /* ------------------ Κεντρική Ηρωική Ενότητα (Hero Section) ------------------ */
 
 .hero-section {
+    position: relative;
+    background-image: url('../images/hero_background.jpg'); /* Η εικόνα που επέλεξες */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Πλήρες ύψος οθόνης */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Σκοτεινό φίλτρο πάνω από την εικόνα */
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 4rem 2rem;
-    background-color: #e0fbfc;
 }
 
-.hero-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
-.hero-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.hero-content p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.hero-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.hero-btn:hover {
+    background-color: #145ea8;
 }
 
-/* Εικόνα στην Ηρωική Ενότητα */
-.hero-image {
-    max-width: 70%;
-    height: auto;
-    border-radius: 10px;
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
 }
+
 
 /* ------------------ Ενότητα "Τι θα μάθετε" ------------------ */
 
