@@ -177,9 +177,24 @@
       width: 100%;
       text-align: center;
     }
+    #showAllPostsBtn {
+      display: block;
+      margin: 1.5rem auto 3rem auto; /* απόσταση πάνω και κάτω */
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
     @media (max-width: 600px) {
       .blog-header h1 {
-        font-size: 2.2rem;
+        font-size: 1.4rem; /* Μικρότερο μέγεθος για κινητά */
+        line-height: 1.3;  /* Καλύτερο ύψος γραμμής */
+        padding: 0 1rem;   /* Εσωτερικό padding για να μην κολλάει στις άκρες */
+        word-wrap: break-word; /* Σπάσιμο λέξεων αν χρειάζεται */
       }
       .blog-header .subtitle {
         font-size: 1.4rem;
@@ -187,6 +202,7 @@
       }
       .blog-header {
         margin: 3rem auto 2rem auto;
+        padding-top: 70px; /* Προσαρμόζεις ανάλογα το ύψος του nav */
       }
     }
 
@@ -255,11 +271,11 @@
 <div class="hero-section">
   <div class="hero-overlay">
     <div class="blog-header hero-content">
-      <h1>Απογειώστε τις Ιδέες σας με Web Design & Development</h1>
+      <h1>Απογειώστε το WebDev σας</h1>
       <p class="subtitle">
-        Μαθήματα και Νέα που θα σας βοηθήσουν να φτάσετε το έργο σας σε νέα ύψη,
-        εμπνευσμένα από την τεχνολογία καινοτομίας του <span class="nowrap">Falcon 9</span>.
+        Μαθήματα και Νέα εμπνευσμένα από τον <span class="nowrap">Falcon 9</span>.
       </p>
+
 
       <!-- Αναζήτηση με λέξη-κλειδί και Φίλτρο με tags -->
       <div class="search-filter-block">
