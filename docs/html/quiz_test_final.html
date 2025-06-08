@@ -2,6 +2,8 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Κουίζ Πληροφορικής</title>
   <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
@@ -25,41 +27,11 @@
     .correct { color: #27ae60; font-weight: bold; }
     .incorrect { color: #c0392b; font-weight: bold; }
     .explanation { color: #555; margin-top: 6px; font-size: 0.97em; }
-    .score-success {
-      color: green;
-      font-weight: bold;
-    }
-    .score-fail {
-      color: red;
-      font-weight: bold;
-    }
+    .score-success { color: green; font-weight: bold; }
+    .score-fail { color: red; font-weight: bold; }
     #themeSelect { display: block; margin: 0 auto 32px auto; font-size: 1.1em; padding: 6px 14px; border-radius: 4px; border: 1px solid #bbb; background: #f2f2f2; color: #2c3e50; width: 80%; max-width: 600px; box-sizing: border-box; }
-    @media (max-width: 600px) {
-      .container {
-        max-width: 100vw;         /* Να πιάνει όλο το πλάτος της οθόνης */
-        padding: 10px 3vw;        /* Μικρότερο padding για κινητά */
-        margin: 16px auto;        /* Λιγότερο margin */
-        border-radius: 10px;      /* Λίγο μικρότερη στρογγύλευση */
-      }
-      h1, h2 {
-        font-size: 1.2rem;        /* Πιο μεγάλο μέγεθος τίτλου για κινητό */
-      }
-      .question-title {
-        font-size: 1rem;
-      }
-      .submit-btn {
-        font-size: 1rem;
-        padding: 10px 18px;
-      }
-      #themeSelect {
-        font-size: 1rem;
-        padding: 6px 8px;
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-
   </style>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}

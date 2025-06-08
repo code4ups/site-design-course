@@ -302,20 +302,8 @@ pre, .code-sample {
     .hamburger {
         display: flex;
     }
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: #e3f2fd;
-        border-radius: 0 0 8px 8px;
-        margin-top: 0;
-        padding: 0;
-        z-index: 1000;
-    }
-    .dropdown-content a {
-        color: #1976d2;
-        padding-left: 30px;
-    }
 }
+
 /* ------------------ Κεντρική Ηρωική Ενότητα (Hero Section) ------------------ */
 
 .hero-section {

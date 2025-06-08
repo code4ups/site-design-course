@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburgerIcon = hamburger.querySelector('i');     // Επιλογή εικονιδίου μέσα στο κουμπί
 
     hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('active');
+        navLinks.classList.toggle('open');
 
         if (hamburgerIcon.classList.contains('fa-bars')) {
             hamburgerIcon.classList.remove('fa-bars');
