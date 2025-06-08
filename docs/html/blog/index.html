@@ -15,29 +15,53 @@
   <style>
     .blog-header {
       text-align: center;
-      margin: 3rem 0 2rem 0;
+      margin: 4rem auto 3rem auto;  /* Περισσότερο πάνω περιθώριο για να "αναπνέει" το κείμενο */
+      max-width: 800px;              /* Περιορισμός πλάτους ώστε να μην απλώνει πολύ σε μεγάλες οθόνες */
+      padding: 0 1rem;               /* Εσωτερικό padding για μικρές οθόνες */
+      color: white;                  /* Αν το background του hero είναι σκούρο */
     }
+
 
     .blog-header h1 {
       font-size: 2.8rem;
-      color: #0077b6; /* όμορφο θαλασσί, ταιριάζει με web design */
+      background: linear-gradient(90deg, #1976d2, #90caf9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
       margin-bottom: 0.3rem;
       font-weight: 700;
     }
 
     .blog-header .subtitle {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
       font-size: 1.2rem;
-      color: #555;
+      color: #e0e0e0;
       font-style: italic;
       font-weight: 400;
       margin-top: 0;
+      line-height: 1.5;
+      text-align: center;
+      text-shadow: 0 0 3px rgba(0,0,0,0.4);
     }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
 
     .post-list {
       max-width: 800px;
       margin: 0 auto 3rem auto;
       padding: 0 1rem;
     }
+
+    #postList {
+      display: none;
+      padding-top: 2rem;
+    }
+
     .post-item {
       background: #f0f4f8;
       border-radius: 8px;
@@ -111,7 +135,7 @@
 
     /* Στυλ για το μπλοκ αναζήτησης/φίλτρων ώστε να ταιριάζει με τα άρθρα */
     .search-filter-block {
-      background: #f0f4f8; /* ίδιο με .post-item */
+      background: rgba(148, 148, 155, 0.35);
       border-radius: 8px;
       margin-bottom: 1.5rem;
       padding: 1.5rem 1.2rem;
@@ -125,7 +149,7 @@
     .search-filter-block:hover,
     .search-filter-block:focus-within {
       box-shadow: 0 4px 18px rgba(0,0,0,0.13);
-      background: #eafcfd;
+      background: rgba(0, 118, 181, 0.22);
     }
 
     .search-filter-block input[type="text"]#searchInput {
@@ -154,8 +178,18 @@
       text-align: center;
     }
     @media (max-width: 600px) {
-      .post-item { padding: 1rem 0.5rem; }
+      .blog-header h1 {
+        font-size: 2.2rem;
+      }
+      .blog-header .subtitle {
+        font-size: 1.4rem;
+        max-width: 90%;
+      }
+      .blog-header {
+        margin: 3rem auto 2rem auto;
+      }
     }
+
   </style>
   <!-- Consent Mode default (στο head) -->
   <script>
@@ -218,16 +252,26 @@
   </button>
 </nav>
 
-<div class="blog-header">
-  <h1>Blog Web Design & Development</h1>
-    <p class="subtitle">Πρακτικά μαθήματα και νέα για web designers και developers</p>
+<div class="hero-section">
+  <div class="hero-overlay">
+    <div class="blog-header hero-content">
+      <h1>Απογειώστε τις Ιδέες σας με Web Design & Development</h1>
+      <p class="subtitle">
+        Μαθήματα και Νέα που θα σας βοηθήσουν να φτάσετε το έργο σας σε νέα ύψη,
+        εμπνευσμένα από την τεχνολογία καινοτομίας του <span class="nowrap">Falcon 9</span>.
+      </p>
+
+      <!-- Αναζήτηση με λέξη-κλειδί και Φίλτρο με tags -->
+      <div class="search-filter-block">
+        <input type="text" id="searchInput" placeholder="Αναζήτηση άρθρων...">
+        <div id="tagsFilter"></div>
+      </div>
+      <button id="showAllPostsBtn">Δες όλα τα άρθρα</button>
+    </div>
+  </div>
 </div>
 
-<!-- Αναζήτηση με λέξη-κλειδί και Φίλτρο με tags -->
-<div class="search-filter-block">
-  <input type="text" id="searchInput" placeholder="Αναζήτηση άρθρων...">
-  <div id="tagsFilter"></div>
-</div>
+
 
 <div class="post-list" id="postList">
   <!-- Τα άρθρα θα φορτωθούν δυναμικά εδώ -->
@@ -268,11 +312,13 @@
       const response = await fetch('posts.json');
       allPosts = await response.json();
       renderTagsFilter(allPosts);
-      renderPosts(allPosts);
+      // ΑΦΑΙΡΕΣΕ ή σχολίασε την παρακάτω γραμμή
+      // renderPosts(allPosts);
     } catch (error) {
       document.getElementById('postList').textContent = 'Δεν ήταν δυνατή η φόρτωση των άρθρων.';
     }
   }
+
 
   // Εμφάνιση φίλτρων tags
   function renderTagsFilter(posts) {
@@ -294,17 +340,50 @@
     allBtn.textContent = 'Όλα';
     allBtn.className = 'tag-label';
     allBtn.style.background = '#888';
-    allBtn.onclick = () => renderPosts(allPosts);
+    allBtn.onclick = () => {
+      // Καθαρίζουμε το πεδίο αναζήτησης
+      document.getElementById('searchInput').value = '';
+
+      // Εμφανίζουμε όλα τα άρθρα
+      renderPosts(allPosts);
+    };
     tagsFilter.appendChild(allBtn);
+
   }
+
+  document.getElementById('showAllPostsBtn').addEventListener('click', () => {
+    // Καθαρίζουμε το πεδίο αναζήτησης
+    document.getElementById('searchInput').value = '';
+
+    // Εμφανίζουμε όλα τα άρθρα
+    renderPosts(allPosts);
+  });
 
   // Εμφάνιση άρθρων (με τη σειρά και το στυλ που έχεις)
   function renderPosts(posts) {
     const postList = document.getElementById('postList');
     postList.innerHTML = '';
+
+    if (posts.length === 0) {
+      postList.style.display = 'none';
+      postList.textContent = 'Δεν βρέθηκαν άρθρα.';
+      return;
+    }
+
+    postList.style.display = 'block';
+
     posts.forEach(post => {
       const postItem = document.createElement('div');
       postItem.className = 'post-item';
+
+      // Μετά την εμφάνιση των άρθρων, κάνε scroll
+      // Κάνουμε scroll με offset ώστε να φαίνεται και το πεδίο αναζήτησης
+      setTimeout(() => {
+        const yOffset = -330; // Προσαρμόστε το ύψος ανάλογα με το μέγεθος του πεδίου αναζήτησης
+        const y = postList.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }, 100);
+      // Μικρή καθυστέρηση για να ολοκληρωθεί το render
 
       // Εικόνα άρθρου
       if (post.image) {
@@ -323,7 +402,7 @@
       postTitle.textContent = post.title;
       postItem.appendChild(postTitle);
 
-      // Εμφάνιση συγγραφέα
+      // Συγγραφέας
       const postAuthor = document.createElement('div');
       postAuthor.className = 'post-author';
       postAuthor.innerHTML = '<span class="by-label">By:</span> ' + (post.author || "Άγνωστος");
@@ -360,23 +439,44 @@
     });
   }
 
+
   // Φιλτράρισμα με tag
   function filterPostsByTag(tag) {
+    // Καθαρίζουμε το πεδίο αναζήτησης
+    document.getElementById('searchInput').value = '';
+
     const filtered = allPosts.filter(post => post.tags && post.tags.includes(tag));
     renderPosts(filtered);
   }
+
 
   // Αναζήτηση με λέξη-κλειδί
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchInput').addEventListener('input', function() {
       const q = this.value.trim().toLowerCase();
+      if (q.length < 2) {
+        const postList = document.getElementById('postList');
+        postList.innerHTML = '<p>Πληκτρολογήστε τουλάχιστον 2 χαρακτήρες για αναζήτηση.</p>';
+        postList.style.display = 'block';
+        return;
+      }
+      // Αν το κείμενο είναι κενό ή πολύ μικρό, μην εμφανίζεις άρθρα
+      if (q.length < 3) {
+        // Κρύψε τα άρθρα ή εμφάνισε μήνυμα "Πληκτρολογήστε τουλάχιστον 2 χαρακτήρες"
+        document.getElementById('postList').innerHTML = '';
+        document.getElementById('postList').style.display = 'none';
+        return;
+      }
+
       const filtered = allPosts.filter(post =>
               post.title.toLowerCase().includes(q) ||
               post.summary.toLowerCase().includes(q) ||
               (post.tags && post.tags.some(tag => tag.toLowerCase().includes(q)))
       );
+
       renderPosts(filtered);
     });
+
   });
 
   loadPosts();

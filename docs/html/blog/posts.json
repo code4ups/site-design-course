@@ -5,7 +5,7 @@
     "url": "post4.html",
     "date": "2025-06-01",
     "image": "../../images/website.png",
-    "tags": ["GitHub Pages", "Φιλοξενία", "Web Development", "Repository", "Git"],
+    "tags": ["GitHub", "Repository", "Git"],
     "author": "Π.Ι.Κ."
   },
   {
@@ -14,7 +14,7 @@
     "url": "post3.html",
     "date": "2025-05-30",
     "image": "../../images/coding.png",
-    "tags": ["Javascript", "Web Development", "Programming", "Code"],
+    "tags": ["Javascript", "Code"],
     "author": "Π.Ι.Κ."
   },
   {
@@ -23,7 +23,7 @@
     "url": "post2.html",
     "date": "2025-05-29",
     "image": "../../images/responsive_design.png",
-    "tags": ["CSS", "Flexbox", "Responsive"],
+    "tags": ["CSS", "Flexbox"],
     "author": "Π.Ι.Κ."
   },
   {
@@ -32,7 +32,7 @@
     "url": "post1.html",
     "date": "2025-05-28",
     "image": "../../images/website_building.jpg",
-    "tags": ["HTML5", "Βασικά", "Web Development"],
+    "tags": ["HTML5"],
     "author": "Π.Ι.Κ."
   }
 ]

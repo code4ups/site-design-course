@@ -327,6 +327,8 @@ pre, .code-sample {
 }
 
 .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); /* Σκοτεινό φίλτρο πάνω από την εικόνα */
     padding: 40px;
     width: 100%;
@@ -336,18 +338,32 @@ pre, .code-sample {
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-size: 2.8rem;
+    background: linear-gradient(90deg, #1976d2, #90caf9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    max-width: 700px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 0;
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0,0,0,0.4);
 }
 .hero-btn {
     margin-top: 20px;
