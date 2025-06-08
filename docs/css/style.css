@@ -218,19 +218,21 @@ pre, .code-sample {
 
 .dropdown-content {
     display: none;
+    list-style: none; /* Αφαιρεί τις κουκίδες */
     position: absolute;
     top: 100%;
     left: 0;
     min-width: 190px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    border-radius: 0 0 8px 8px;
+    border-radius: 16px;
     z-index: 1000;
     padding: 8px 0;
 }
 
 .dropdown-content li {
     width: 100%;
+    list-style: none;
 }
 
 .dropdown-content a {
@@ -250,12 +252,15 @@ pre, .code-sample {
 .dropdown:hover .dropdown-content,
 .dropdown:focus-within .dropdown-content {
     display: block;
+    border-radius: 16px;
+
 }
 
 /* Για να λειτουργεί και με κλικ σε κινητά/tablet */
 @media (hover: none) {
     .dropdown .dropbtn:focus + .dropdown-content {
-        display: block;
+        border-radius: 16px; /* Στρογγυλές και οι 4 γωνίες */   display: block;
+
     }
 }
 
@@ -994,7 +999,7 @@ main p {
     background-color: #1976d2;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 16px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
