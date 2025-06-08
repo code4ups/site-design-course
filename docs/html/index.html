@@ -122,33 +122,36 @@
             <h1>Ψηφιακό Εργαστήρι</h1>
             <p>Σχεδιασμός Ιστοσελίδων και Εφαρμογών
             <div style="text-align:center; margin-bottom: 24px;">
-                <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
-            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-                    <span class="btn-text" style="vertical-align: middle; color: #fff;">
-                <span class="lang-el">Η Αποστολή σου Ξεκινά!</span>
-            </span>
-                </a>
-            </div>
+            <!-- Κουμπί -->
+            <a id="startMissionBtn-el" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none; cursor: pointer;">
+    <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+                <span class="btn-text" style="vertical-align: middle; color: #fff;">
+        <span class="lang-el">Η Αποστολή σου Ξεκινά!</span>
+    </span>
+            </a>
+
+        </div>
         </div>
 
         <div class="hero-content lang-en" style="display:none;">
             <h1>Digital Workshop</h1>
             <h2>Website and Application Design</h2>
             <div style="text-align:center; margin-bottom: 24px;">
-                <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
-            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
+                <a id="startMissionBtn-en" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none; cursor: pointer;">
+    <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
                     <span class="btn-text" style="vertical-align: middle; color: #fff;">
-                <span class="lang-en" style="display: none;">Your Mission Begins!</span>
-            </span>
+        <span class="lang-en">Your Mission Begins!</span>
+    </span>
                 </a>
+
             </div>
         </div>
     </div>
@@ -171,6 +174,27 @@
         <p>Μέσα από αυτό το υλικό δεν προετοιμάζεστε μόνο για να περάσετε μια εξέταση. Προετοιμάζεστε για να αναλάβετε τον ρόλο σας ως σύγχρονοι δημιουργοί του διαδικτύου.</p>
         <p>Εύχομαι η γνώση να γίνει εργαλείο, η προσπάθεια να σας δικαιώσει και αυτή η πορεία να είναι μόνο η αρχή ενός πολύ μεγαλύτερου ταξιδιού.</p>
         <p style="margin-top: 30px;">Με εκτίμηση και πίστη στις δυνατότητές σας,<br>Ο Εκπαιδευτής σας<br>Π.Ι.Κ.</p>
+        <button class="accept-mission-btn" id="acceptMissionBtn-el">Αποδέξου την Πρόκληση!</button>
+        <div style="text-align:center; margin: 12px 0;">
+            <span class="lang-el" style="font-weight: bold; color: #1976d2;">ή</span>
+            <span class="lang-en" style="display: none; font-weight: bold; color: #1976d2;">or</span>
+        </div>
+        <!-- ΝΕΟ ΚΟΥΜΠΙ -->
+        <div style="text-align:center; margin-top: 18px;">
+            <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
+                <span class="btn-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+                    </svg>
+                </span>
+                <span class="btn-text">
+                    <span class="lang-el">Δοκίμασε τα Όριά σου!</span>
+                    <span class="lang-en" style="display: none;">Test Your Limits</span>
+                </span>
+            </a>
+        </div>
     </div>
 
     <!-- ENGLISH TEXT -->
@@ -186,10 +210,33 @@
         <p>Through this material, you are not only preparing to pass an exam. You are preparing to take your place as modern creators of the web.</p>
         <p>May knowledge become your tool, may your efforts prove worthwhile, and may this path be only the beginning of a much greater journey.</p>
         <p style="margin-top: 30px;">With respect and confidence in your abilities,<br>Your Instructor<br>P.J.K.</p>
+        <button class="accept-mission-btn" id="acceptMissionBtn-en">Accept the Challenge!</button>
+        <div style="text-align:center; margin: 12px 0;">
+            <span class="lang-el" style="display:none; font-weight: bold; color: #1976d2;">ή</span>
+            <span class="lang-en" style="font-weight: bold; color: #1976d2;">or</span>
+        </div>
+        <!-- ΝΕΟ ΚΟΥΜΠΙ -->
+        <div style="text-align:center; margin-top: 18px;">
+            <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
+                <span class="btn-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+                    </svg>
+                </span>
+                <span class="btn-text">
+                    <span class="lang-el" style="display: none;">Δοκίμασε τα Όριά σου</span>
+                    <span class="lang-en">Test Your Limits!</span>
+                </span>
+            </a>
+        </div>
     </div>
+
 </div>
 
 <!-- Ενότητα: Τι θα μάθετε -->
+<!--
 <section class="what-you-learn" style="position: relative;">
     <h2 style="display: inline-block; margin-right: 15px;">
         <span class="lang-el">Μάθε με Πράξη</span>
@@ -204,7 +251,7 @@
         </span>
     </p>
 
-    <!-- Κουμπί για όλα τα μαθήματα -->
+
     <div style="text-align:center; margin-bottom: 24px;">
         <a href="lessons.html" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none;">
             <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
@@ -223,7 +270,7 @@
         </a>
     </div>
 
-    <!-- Θεματολογία -->
+
     <div class="learning-topics" style="margin-top: 20px;">
         <a href="topics/html5-topic.html" class="topic-link">
             <div class="topic">
@@ -266,7 +313,7 @@
         </a>
     </div>
 
-    <!-- Σύνδεσμος προς το Τεστ -->
+
     <div style="text-align:center; margin-bottom: 24px;">
         <a href="quiz_test_final.html" class="main-button fancy-btn" target="_blank" rel="noopener noreferrer" role="button">
             <span class="btn-icon">
@@ -283,7 +330,7 @@
         </a>
     </div>
 </section>
-
+-->
 
 <!-- Υποσέλιδο (Footer) -->
 <footer class="footer">
@@ -399,6 +446,60 @@
         acceptBtn.addEventListener('click', () => updateConsent('accepted'));
         rejectBtn.addEventListener('click', () => updateConsent('rejected'));
     })();
+</script>
+
+<!-- Κουμπί για την εμφάνιση μηνύματος εκπαιδευτή -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Κουμπιά αποστολής
+        let greekBtn = document.getElementById('startMissionBtn-el');
+        let englishBtn = document.getElementById('startMissionBtn-en');
+        let instructorMsg = document.querySelector('.instructor-message');
+        let elMsg = instructorMsg.querySelector('.lang-el');
+        let enMsg = instructorMsg.querySelector('.lang-en');
+
+        if (greekBtn) {
+            greekBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                instructorMsg.classList.add('show');
+                elMsg.classList.remove('hidden');
+                enMsg.classList.add('hidden');
+                setTimeout(function () {
+                    instructorMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 250);
+            });
+        }
+
+        if (englishBtn) {
+            englishBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                instructorMsg.classList.add('show');
+                elMsg.classList.add('hidden');
+                enMsg.classList.remove('hidden');
+                setTimeout(function () {
+                    instructorMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 250);
+            });
+        }
+
+        // Κουμπιά αποδοχής πρόκλησης
+        let elBtn = document.getElementById('acceptMissionBtn-el');
+        let enBtn = document.getElementById('acceptMissionBtn-en');
+
+        if (elBtn) {
+            elBtn.addEventListener('click', function () {
+                window.location.href = 'lessons.html';
+            });
+        }
+
+        if (enBtn) {
+            enBtn.addEventListener('click', function () {
+                window.location.href = 'lessons.html';
+            });
+        }
+    });
+
+
 </script>
 
 </body>
