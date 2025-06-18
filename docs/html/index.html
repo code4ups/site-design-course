@@ -133,6 +133,22 @@
         <span class="lang-el">Η Αποστολή σου Ξεκινά!</span>
     </span>
             </a>
+            <div style="text-align:center; margin-top: 18px;">
+                <div class="facebook-group-announcement" style="background: none; color: #f3fdff; border-radius: 8px; padding: 10px 16px; display: inline-block; margin-bottom: 8px;">
+                    <strong>ΝΕΟ!</strong> Η ομάδα μας στο Facebook είναι έτοιμη να σε υποδεχτεί.<br>
+                </div>
+                <br>
+                <a href="https://www.facebook.com/groups/digitalworkshop4" target="_blank" rel="noopener noreferrer" class="main-button fancy-btn" style="margin-top:8px;">
+        <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+                    <span class="btn-text" style="vertical-align: middle; color: #fff;">
+            Γίνε μέλος της!
+        </span>
+                </a>
+            </div>
 
         </div>
         </div>
@@ -142,19 +158,34 @@
             <h2>Website and Application Design</h2>
             <div style="text-align:center; margin-bottom: 24px;">
                 <a id="startMissionBtn-en" class="main-button fancy-btn" style="vertical-align: middle; font-size: 0.9em; padding: 6px 14px; text-decoration: none; cursor: pointer;">
-    <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </span>
+            <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
                     <span class="btn-text" style="vertical-align: middle; color: #fff;">
-        <span class="lang-en">Your Mission Begins!</span>
-    </span>
+                <span class="lang-en">Your Mission Begins!</span>
+            </span>
                 </a>
-
+                <!-- Facebook group announcement (EN) -->
+                <div style="text-align:center; margin-top: 18px;">
+                    <div class="facebook-group-announcement" style="background: none; color: #f3fdff; border-radius: 8px; padding: 10px 16px; display: inline-block; margin-bottom: 8px;">
+                        <strong>NEW!</strong> Our Facebook group is ready to welcome you.<br>
+                    </div>
+                    <br>
+                    <a href="https://www.facebook.com/groups/digitalworkshop4" target="_blank" rel="noopener noreferrer" class="main-button fancy-btn" style="margin-top:8px;">
+                <span class="btn-icon" style="vertical-align: middle; margin-right: 6px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                        <span class="btn-text" style="vertical-align: middle; color: #fff;">
+                    Join us!
+                </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
 </header>
 
@@ -351,9 +382,10 @@
     </div>
 
     <div class="social-media-links">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
-            <img src="../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        <a id="facebook-link" href="https://www.facebook.com/groups/digitalworkshop4" target="_blank" rel="noopener noreferrer" class="social-link" title="Συνδεθείτε με την ομάδα digitalworkshop4 στο Facebook. Ζητήστε συμμετοχή!">
+            <img src="../images/facebook-icon.png" alt="Facebook Group" class="social-icon">
         </a>
+        <!-- Άλλα social links -->
         <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
             <img src="../images/tiktok-icon.png" alt="TikTok" class="social-icon">
         </a>
@@ -361,6 +393,7 @@
             <img src="../images/youtube-icon.png" alt="YouTube" class="social-icon">
         </a>
     </div>
+
 
     <!-- Μήνυμα πνευματικών δικαιωμάτων -->
     <p class="lang-el" style="display:none;">© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
@@ -372,12 +405,22 @@
 <a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
 
 <script>
-    function switchLang(lang) {
-        const elLangs = document.querySelectorAll('.lang-el');
-        const enLangs = document.querySelectorAll('.lang-en');
+    function setFooterFacebookTitle(lang) {
+        var facebookLink = document.getElementById('facebook-link');
+        if (!facebookLink) return;
+        if (lang === 'en') {
+            facebookLink.title = 'Join the digitalworkshop4 group on Facebook. Request to join!';
+        } else {
+            facebookLink.title = 'Συνδεθείτε με την ομάδα digitalworkshop4 στο Facebook. Ζητήστε συμμετοχή!';
+        }
+    }
 
-        elLangs.forEach(el => el.style.display = lang === 'el' ? 'inline' : 'none');
-        enLangs.forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
+    function switchLang(lang) {
+        // Εμφάνιση/απόκρυψη ελληνικών-αγγλικών
+        document.querySelectorAll('.lang-el').forEach(el => el.style.display = (lang === 'el' ? '' : 'none'));
+        document.querySelectorAll('.lang-en').forEach(el => el.style.display = (lang === 'en' ? '' : 'none'));
+        // Αλλαγή τίτλου στο Facebook link
+        setFooterFacebookTitle(lang);
     }
 </script>
 
