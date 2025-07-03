@@ -1,11 +1,11 @@
 <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
   <!-- Main Logo -->
-  <text x="200" y="60" text-anchor="middle" style="font-family: 'Poppins', Arial, sans-serif; font-size: 42px; font-weight: 600;">
+  <text x="200" y="60" text-anchor="middle" style="font-family: 'Poppins', Arial, sans-serif; font-size: 54px; font-weight: 600;">
     <tspan fill="#333333">PanJK</tspan><tspan fill="#1f5582" dx="8">CMS</tspan>
   </text>
   
   <!-- Subtitle - AI Purple -->
-  <text x="200" y="95" text-anchor="middle" style="font-family: 'Poppins', Arial, sans-serif; font-size: 18px; font-weight: 400; fill: #9c27b0; letter-spacing: 1px;">
+  <text x="200" y="105" text-anchor="middle" style="font-family: 'Poppins', Arial, sans-serif; font-size: 24px; font-weight: 400; fill: #9c27b0; letter-spacing: 1px;">
     Joins Knowledge
   </text>
   
