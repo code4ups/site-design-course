@@ -129,7 +129,6 @@ pre, .code-sample {
     flex-direction: column; /* Στοιχίζει κάθετα */
     align-items: center;    /* Κεντράρει οριζόντια */
     text-decoration: none;
-    color: #fff;
     margin-bottom: 1.2rem;
     text-align: center; /* Κεντράρει το περιεχόμενο */
 }
@@ -138,8 +137,10 @@ pre, .code-sample {
     height: 100px;
     width: auto;
     margin-right: 15px; /* Απόσταση μεταξύ εικόνας και κειμένου */
-    border-radius: 8px; /* Μικρή στρογγύλευση πάντα */
+    margin-top: 15px; /* Απόσταση μεταξύ εικόνας και κειμένου */
+    border-radius: 16px; /* Μικρή στρογγύλευση πάντα */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    background-color: #ffffff;
 }
 
 .logo-text {
@@ -303,6 +304,15 @@ pre, .code-sample {
         display: flex;
     }
 }
+
+@media (max-width: 600px) {
+    .logo-image {
+        height: 50px; /* Μικρότερο μέγεθος σε κινητά */
+        margin-right: 10px;
+    }
+
+}
+
 
 /* ------------------ Κεντρική Ηρωική Ενότητα (Hero Section) ------------------ */
 
