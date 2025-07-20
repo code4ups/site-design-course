@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εισαγωγή στη JavaScript – Blog | Εκπαιδευτικός Ιστότοπος</title>
+    <link rel="icon" type="image/png" href="../../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700,400&display=swap" rel="stylesheet">
+    <style>
+        .blog-article-main {
+            max-width: 800px;
+            margin: 2.5rem auto 2rem auto;
+            padding: 2.2rem 1.5rem 2rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+        }
+        .back-to-blog {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #0077b6;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-to-blog:hover {
+            color: #005f73;
+            text-decoration: underline;
+        }
+        .blog-article-main h1 {
+            color: #005f73;
+            margin-bottom: 0.8em;
+        }
+        .blog-article-main .post-date {
+            color: #666;
+            font-size: 0.98em;
+            margin-bottom: 1.5em;
+        }
+        .blog-article-main img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1.5em 0;
+            display: block;
+        }
+        .blog-article-main h2 {
+            color: #0077b6;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+        }
+        .blog-article-main pre, .blog-article-main .code-sample {
+            background: #f5f7fa;
+            border-radius: 6px;
+            padding: 12px 8px;
+            margin: 18px 0;
+            font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+            font-size: 1em;
+            overflow-x: auto;
+        }
+        .post-author {
+            font-size: 0.93em;
+            color: #888;
+            margin-bottom: 0.3em;
+        }
+        .post-author .by-label {
+            font-style: italic;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .blog-article-main { padding: 1.2rem 0.3rem; }
+        }
+    </style>
+    <!-- Consent Mode default (στο head) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;z-index:1000;">
+    Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας.
+    <a href="../cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
+    <button id="accept">Αποδοχή</button>
+    <button id="reject">Απόρριψη</button>
+</div>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+    <!-- Λογότυπο -->
+    <div class="logo-block">
+        <a href="../index.html" class="logo-link">
+            <img src="../../images/logo_complete.svg" alt="PanJKCMS Logo" class="logo-image" />
+        </a>
+    </div>
+
+    <!-- Λίστα Συνδέσμων Πλοήγησης -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Αρχική</a></li>
+        <li><a href="../lessons.html">Μαθήματα</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="dropdown">
+            <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+                Εργαλειοθήκη
+                <span class="arrow">&#9662;</span>
+            </button>
+            <ul class="dropdown-content" id="dropdownMenu">
+                <li><a href="../about.html">Οδηγός</a></li>
+                <li><a href="../glossary.html">Γλωσσάρι</a></li>
+                <li><a href="../quiz_test_final.html">Τέστ</a></li>
+            </ul>
+        </li>
+
+
+        <li><a href="../contact.html">Επικοινωνία</a></li>
+    </ul>
+
+    <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<main class="blog-article-main">
+    <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    <h1>Εισαγωγή στην Python</h1>
+    <div class="post-date"><em>Ημερομηνία δημοσίευσης: 2025-07-20</em></div>
+    <div class="post-author"><span class="by-label">By:</span> Π.Ι.Κ.</div>
+    <img src="../../images/coding_py.jpg" alt="Εκμάθηση Python">
+    <p>
+        Η Python είναι μια από τις πιο δημοφιλείς και φιλικές προς τον χρήστη γλώσσες προγραμματισμού. Είναι ιδανική για αρχάριους, αλλά ταυτόχρονα εξαιρετικά ισχυρή για προχωρημένες εφαρμογές, όπως τεχνητή νοημοσύνη, ανάλυση δεδομένων και ανάπτυξη ιστοσελίδων.
+    </p>
+    <h2>Γιατί να μάθεις Python;</h2>
+    <ul>
+        <li>Εύκολη σύνταξη που μοιάζει με την αγγλική γλώσσα.</li>
+        <li>Μεγάλη κοινότητα και πληθώρα εκπαιδευτικού υλικού.</li>
+        <li>Ευρεία χρήση σε επιστήμη δεδομένων, web development και αυτοματοποίηση.</li>
+    </ul>
+    <h2>Παράδειγμα: Εκτύπωση μηνύματος</h2>
+    <pre>
+print("Καλώς ήρθες στην Python!")
+    </pre>
+    <p>
+        Ο παραπάνω κώδικας εκτυπώνει ένα απλό μήνυμα στην οθόνη. Η Python είναι εξαιρετική για τα πρώτα βήματα στον προγραμματισμό, καθώς είναι κατανοητή και σαφής.
+    </p>
+    <h2>Τι μπορείς να κάνεις με την Python;</h2>
+    <ul>
+        <li>Ανάπτυξη εφαρμογών γραμμής εντολών και GUI.</li>
+        <li>Web development με Flask ή Django.</li>
+        <li>Ανάλυση δεδομένων με Pandas και NumPy.</li>
+        <li>Μηχανική μάθηση με Scikit-learn ή TensorFlow.</li>
+        <li>Αυτοματισμούς και scripts για καθημερινές εργασίες.</li>
+    </ul>
+    <h2>Συμπέρασμα</h2>
+    <p>
+        Η Python είναι η τέλεια επιλογή για να ξεκινήσεις τον προγραμματισμό. Με απλό συντακτικό, τεράστιες δυνατότητες και κοινότητα που υποστηρίζει τους αρχάριους, είναι η γλώσσα που σε βοηθά να φτάσεις μακριά — από την πρώτη σου γραμμή κώδικα ως τα πιο σύνθετα projects!
+    </p>
+    <div style="margin-top:2.5em;">
+        <a href="index.html" class="back-to-blog">&larr; Επιστροφή στη λίστα άρθρων</a>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <p>
+            <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+            <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+            <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+            <a href="../business-info.html" class="legal-link">Πληροφορίες</a>
+        </p>
+    </div>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <!-- Προσθήκη Instagram -->
+        <a id="facebook-link" href="https://www.facebook.com/code4ups" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Facebook - Code4ups">
+            <img src="../../images/facebook-icon.png" alt="Facebook Group" class="social-icon">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://youtube.com" target="_blank"  rel="noopener noreferrer" class="social-link">
+            <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+        </a>
+    </div>
+    <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+<script src="../../js/script.js"></script>
+<script>
+    (function() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept');
+        const rejectBtn = document.getElementById('reject');
+
+        function updateConsent(consent) {
+            localStorage.setItem('cookieConsent', consent);
+
+            // Ενημέρωση Google Consent Mode
+            if(window.gtag) {
+                if(consent === 'accepted') {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'analytics_storage': 'granted'
+                    });
+                } else {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'analytics_storage': 'denied'
+                    });
+                }
+            }
+
+            banner.style.display = 'none';
+
+            if(consent === 'accepted') {
+                loadAnalytics();
+            }
+        }
+
+        function loadAnalytics() {
+            if(window.gtag) return; // Αν έχει φορτωθεί ήδη
+
+            const script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-XN66TXYPFV";
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+
+            gtag('js', new Date());
+            gtag('config', 'G-XN66TXYPFV', { 'anonymize_ip': true });
+        }
+
+        const consent = localStorage.getItem('cookieConsent');
+        if(consent === 'accepted') {
+            loadAnalytics();
+        } else if(consent === 'rejected') {
+            updateConsent('rejected');
+        } else {
+            banner.style.display = 'block';
+        }
+
+        acceptBtn.addEventListener('click', () => updateConsent('accepted'));
+        rejectBtn.addEventListener('click', () => updateConsent('rejected'));
+    })();
+</script>
+</body>
+</html>

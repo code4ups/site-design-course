@@ -34,5 +34,15 @@
     "image": "../../images/website_building.jpg",
     "tags": ["HTML5"],
     "author": "Π.Ι.Κ."
+  },
+  {
+    "title": "Εισαγωγή στην Python",
+    "summary": "Μάθε τα βασικά της Python, της πιο φιλικής και ισχυρής γλώσσας προγραμματισμού για αρχάριους και επαγγελματίες. Παραδείγματα, εφαρμογές και λόγοι να ξεκινήσεις σήμερα.",
+    "url": "post5.html",
+    "date": "2025-07-20",
+    "image": "../../images/coding_py.jpg",
+    "tags": ["Python", "Programming"],
+    "author": "Π.Ι.Κ."
   }
+
 ]
