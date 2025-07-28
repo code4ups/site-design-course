@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python – Εισαγωγή στον Προγραμματισμό</title>
+  <link rel="icon" type="image/png" href="../../images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../../images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <!-- Για γραμματοσειρά Λογότυπου άλλαξε το Poppins σε Montserrat, Roboto ή Lato -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700,400&display=swap" rel="stylesheet">
+  <!-- Consent Mode default (στο head) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;z-index:1000;">
+  Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας.
+  <a href="../cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
+  <button id="accept">Αποδοχή</button>
+  <button id="reject">Απόρριψη</button>
+</div>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <!-- Λογότυπο -->
+  <div class="logo-block">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo_complete.svg" alt="PanJKCMS Logo" class="logo-image" />
+    </a>
+  </div>
+
+  <!-- Λίστα Συνδέσμων Πλοήγησης -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li class="dropdown">
+      <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+        Εργαλειοθήκη
+        <span class="arrow">&#9662;</span>
+      </button>
+      <ul class="dropdown-content" id="dropdownMenu">
+        <li><a href="../about.html">Οδηγός</a></li>
+        <li><a href="../glossary.html">Γλωσσάρι</a></li>
+        <li><a href="../quiz_test_final.html">Τέστ</a></li>
+      </ul>
+    </li>
+
+
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+
+  <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Κύριο Περιεχόμενο -->
+<main class="main-content">
+
+  <h1>Python – Εισαγωγή στον Προγραμματισμό</h1>
+  <p>
+    Η <strong>Python</strong> είναι μία από τις πιο δημοφιλείς και εύχρηστες γλώσσες προγραμματισμού στον κόσμο.
+    Χρησιμοποιείται για ανάπτυξη εφαρμογών, ανάλυση δεδομένων, τεχνητή νοημοσύνη, web development και πολλά άλλα.
+    Ο καθαρός και απλός συντακτικός της κανόνας την καθιστά ιδανική για αρχάριους αλλά και για επαγγελματίες.
+  </p>
+
+  <section class="topic-content">
+    <h2>Τι είναι η Python;</h2>
+    <p>
+      Η <strong>Python</strong> είναι μια <em>διερμηνευόμενη</em>, <em>δυναμική</em> γλώσσα προγραμματισμού υψηλού επιπέδου.
+    </p>
+    <ul>
+      <li>Είναι απλή και ευανάγνωστη – μοιάζει με την αγγλική γλώσσα.</li>
+      <li>Εκτελείται γραμμή-γραμμή (interpreted language), χωρίς compilation.</li>
+      <li>Διαθέτει μεγάλη κοινότητα και άπειρες βιβλιοθήκες (π.χ. NumPy, Pandas, Django).</li>
+      <li>Χρησιμοποιείται από μεγάλες εταιρείες (Google, Netflix, NASA).</li>
+    </ul>
+  </section>
+
+  <section class="topic-content">
+    <h2>Απλό Παράδειγμα Python</h2>
+    <pre class="code-sample">
+# Αυτό είναι το πρώτο σου πρόγραμμα Python
+name = input("Πώς σε λένε; ")
+print("Γεια σου, " + name + "!")
+        </pre>
+    <p>
+      Η Python χρησιμοποιεί τη συνάρτηση <code>input()</code> για να πάρει δεδομένα από τον χρήστη
+      και τη συνάρτηση <code>print()</code> για να εμφανίσει αποτελέσματα στην οθόνη.
+    </p>
+  </section>
+
+  <section class="topic-content">
+    <h2>Βασικές Έννοιες στην Python</h2>
+    <ul>
+      <li><strong>Μεταβλητές:</strong> Αποθηκεύουν τιμές χωρίς να χρειάζεται να δηλώσεις τύπο (<code>x = 10</code>).</li>
+      <li><strong>Συναρτήσεις:</strong> Ορίζονται με <code>def</code> και οργανώνουν τον κώδικα.</li>
+      <li><strong>Δομές Ελέγχου:</strong> <code>if</code>, <code>for</code>, <code>while</code> για αποφάσεις και επαναλήψεις.</li>
+      <li><strong>Λίστες & Dictionaries:</strong> Βασικές δομές δεδομένων της Python.</li>
+    </ul>
+  </section>
+
+  <section class="topic-content">
+    <h2>Πώς να ξεκινήσεις με Python</h2>
+    <ol>
+      <li>Κατέβασε την Python από το <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">επίσημο site</a>.</li>
+      <li>Χρησιμοποίησε έναν απλό editor (VS Code, PyCharm, ή ακόμα και το IDLE της Python).</li>
+      <li>Άνοιξε ένα νέο αρχείο <code>.py</code> και ξεκίνα να γράφεις κώδικα.</li>
+    </ol>
+  </section>
+
+  <section class="topic-content">
+    <h2>Άσκηση για Εξάσκηση</h2>
+    <p>Γράψε ένα πρόγραμμα Python που:</p>
+    <ol>
+      <li>Ρωτάει το όνομά σου και την ηλικία σου.</li>
+      <li>Υπολογίζει σε ποιο έτος θα γίνεις 100 χρονών.</li>
+      <li>Εκτυπώνει ένα μήνυμα με αυτή την πληροφορία.</li>
+    </ol>
+
+    <p><strong>Παράδειγμα:</strong></p>
+    <pre class="code-sample">
+name = input("Πώς σε λένε; ")
+age = int(input("Πόσο χρονών είσαι; "))
+
+year_100 = 2025 - age + 100
+print(name + ", θα γίνεις 100 χρονών το έτος " + str(year_100))
+        </pre>
+  </section>
+
+  <section class="topic-content">
+    <h2>Συχνά Λάθη Αρχαρίων στην Python</h2>
+    <ul>
+      <li>Ξεχνούν την εσοχή (indentation) – η Python απαιτεί σωστή στοίχιση.</li>
+      <li>Χρησιμοποιούν λάθος εισαγωγικά ή μπερδεύουν το <code>=</code> με το <code>==</code>.</li>
+      <li>Ξεχνούν να μετατρέψουν τύπους δεδομένων (π.χ. <code>int()</code> σε αριθμούς).</li>
+    </ul>
+  </section>
+
+  <section class="topic-content">
+    <h2>Χρήσιμες Πηγές για Python</h2>
+    <ul>
+      <li><a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Python.org Documentation</a></li>
+      <li><a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">W3Schools – Python Tutorial</a></li>
+      <li><a href="https://realpython.com/" target="_blank" rel="noopener noreferrer">Real Python – Άρθρα & Μαθήματα</a></li>
+    </ul>
+  </section>
+
+  <!-- Εκπαιδευτικό Βίντεο -->
+  <div class="video-container">
+    <iframe width="560" height="315"
+            src="https://www.youtube-nocookie.com/embed/rfscVS0vtbw"
+            title="Εισαγωγή στην Python"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+    </iframe>
+  </div>
+
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Πληροφορίες</a>
+    </p>
+  </div>
+
+  <div class="social-media-links">
+    <a id="facebook-link" href="https://www.facebook.com/code4ups" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Facebook - Code4ups">
+      <img src="../../images/facebook-icon.png" alt="Facebook Group" class="social-icon">
+    </a>
+    <!-- Προσθήκη Instagram -->
+    <a href="https://www.instagram.com/panjk_cms" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Instagram – PanJKCMS">
+      <img src="../../images/instagram-icon.png" alt="Instagram" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon" />
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon" />
+    </a>
+  </div>
+
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+<script>
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept');
+    const rejectBtn = document.getElementById('reject');
+
+    function updateConsent(consent) {
+      localStorage.setItem('cookieConsent', consent);
+
+      // Ενημέρωση Google Consent Mode
+      if(window.gtag) {
+        if(consent === 'accepted') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+        } else {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+      }
+
+      banner.style.display = 'none';
+
+      if(consent === 'accepted') {
+        loadAnalytics();
+      }
+    }
+
+    function loadAnalytics() {
+      if(window.gtag) return; // Αν έχει φορτωθεί ήδη
+
+      const script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-XN66TXYPFV";
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-XN66TXYPFV', { 'anonymize_ip': true });
+    }
+
+    const consent = localStorage.getItem('cookieConsent');
+    if(consent === 'accepted') {
+      loadAnalytics();
+    } else if(consent === 'rejected') {
+      updateConsent('rejected');
+    } else {
+      banner.style.display = 'block';
+    }
+
+    acceptBtn.addEventListener('click', () => updateConsent('accepted'));
+    rejectBtn.addEventListener('click', () => updateConsent('rejected'));
+  })();
+</script>
+</body>
+</html>
