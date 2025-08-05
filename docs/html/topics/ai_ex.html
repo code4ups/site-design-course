@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Άσκηση – Web Development AI-Powered </title>
+  <link rel="icon" type="image/png" href="../../images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../../images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- Για γραμματοσειρά Λογότυπου άλλαξε το Poppins σε Montserrat, Roboto ή Lato -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ειδικό στυλ μόνο για το παράδειγμα της άσκησης */
+    .js-demo-section {
+      background: #f8fafd;
+      border-left: 4px solid #007BFF;
+      padding: 18px 18px 8px 18px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .js-demo-section p {
+      margin-bottom: 0.5em;
+    }
+    .highlight {
+      background: #ffe082;
+      color: #333;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .removed {
+      text-decoration: line-through;
+      color: #b71c1c;
+    }
+    /* Πίνακας εννοιών */
+    .concept-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      font-size: 1em;
+    }
+    .concept-table th, .concept-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .concept-table th {
+      background: #e3f2fd;
+      color: #005599;
+      font-weight: bold;
+    }
+    .concept-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    @media (max-width: 700px) {
+      .btn-row { flex-direction: column; gap: 10px; }
+      .concept-table, .concept-table th, .concept-table td { font-size: 0.94em; }
+    }
+  </style>
+  <!-- Consent Mode default (στο head) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+</head>
+<body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;z-index:1000;">
+  Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας.
+  <a href="../cookies-notice.html" style="color:#4CAF50; text-decoration:underline; margin-left:8px;">Μάθετε περισσότερα</a>
+  <button id="accept">Αποδοχή</button>
+  <button id="reject">Απόρριψη</button>
+</div>
+
+<!-- Πλοήγηση (Navigation Menu) -->
+<nav class="navigation">
+  <!-- Λογότυπο -->
+  <div class="logo-block">
+    <a href="../index.html" class="logo-link">
+      <img src="../../images/logo_complete.svg" alt="PanJKCMS Logo" class="logo-image" />
+    </a>
+  </div>
+
+  <!-- Λίστα Συνδέσμων Πλοήγησης -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Αρχική</a></li>
+    <li><a href="../lessons.html">Μαθήματα</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li class="dropdown">
+      <button class="dropbtn" id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+        Εργαλειοθήκη
+        <span class="arrow">&#9662;</span>
+      </button>
+      <ul class="dropdown-content" id="dropdownMenu">
+        <li><a href="../about.html">Οδηγός</a></li>
+        <li><a href="../glossary.html">Γλωσσάρι</a></li>
+        <li><a href="../quiz_test_final.html">Τέστ</a></li>
+      </ul>
+    </li>
+
+
+    <li><a href="../contact.html">Επικοινωνία</a></li>
+  </ul>
+
+  <!-- Εικονίδιο Μενού Hamburger για κινητές συσκευές -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Άνοιγμα μενού">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<main class="main-content">
+  <h1>Άσκηση – Web Development AI-Powered </h1>
+
+  <p style="text-align:right; margin-bottom: 24px;">
+    <a href="../glossary.html" class="main-button fancy-btn" target="_blank" role="button">
+    <span class="btn-icon">
+      <!-- SVG εικονίδιο βιβλίου -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M4 19.5C4 20.3284 4.67157 21 5.5 21H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M19 3H7.5C6.67157 3 6 3.67157 6 4.5V19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <rect x="9" y="7" width="6" height="2" rx="1" fill="#fff"/>
+      </svg>
+    </span>
+      <span class="btn-text">Δες το Γλωσσάρι</span>
+    </a>
+  </p>
+
+  <section>
+    <h2>Τι θα μάθεις με αυτή την άσκηση</h2>
+    <ul>
+      <li>Πώς να στέλνεις αιτήματα (requests) σε ένα AI API (π.χ. OpenAI) από JavaScript.</li>
+      <li>Πώς να χειρίζεσαι την απάντηση και να την εμφανίζεις δυναμικά στο web app σου.</li>
+      <li>Πώς να οργανώνεις το front-end και το back-end για ένα AI project.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Demo: Μίνι Web App με AI API</h2>
+    <div class="js-demo-section">
+      <h3>1. Συμπλήρωσε την ερώτησή σου</h3>
+      <p>Γράψε μια ερώτηση για την AI και πάτα “Ρώτα το AI”</p>
+      <textarea id="userQuestion" placeholder="Π.χ. Δώσε μου μια ιδέα για web app..."></textarea>
+      <div class="btn-row">
+        <button id="askAI">Ρώτα το AI</button>
+        <button id="clearResponse">Καθάρισε την απάντηση</button>
+      </div>
+
+      <h3>2. Απάντηση AI</h3>
+      <div id="aiResponse" class="highlight" style="min-height: 50px; padding:10px;">
+        Η απάντηση θα εμφανιστεί εδώ.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Επεξήγηση των εννοιών</h2>
+    <div class="learning-table">
+      <table class="concept-table">
+        <tr>
+          <th>Έννοια</th>
+          <th>Περιγραφή</th>
+          <th>Παράδειγμα</th>
+        </tr>
+        <tr>
+          <td><strong>fetch()</strong></td>
+          <td>Μέθοδος JavaScript για αιτήματα HTTP σε APIs.</td>
+          <td>fetch("https://api.openai.com/...")</td>
+        </tr>
+        <tr>
+          <td><strong>API Key</strong></td>
+          <td>Μυστικός κωδικός για πρόσβαση σε υπηρεσίες AI.</td>
+          <td>Authorization: Bearer &lt;API_KEY&gt;</td>
+        </tr>
+        <tr>
+          <td><strong>JSON</strong></td>
+          <td>Μορφή δεδομένων για επικοινωνία front-end με server.</td>
+          <td>response.json()</td>
+        </tr>
+        <tr>
+          <td><strong>textarea</strong></td>
+          <td>HTML στοιχείο για εισαγωγή κειμένου από τον χρήστη.</td>
+          <td>&lt;textarea id="userQuestion"&gt;&lt;/textarea&gt;</td>
+        </tr>
+        <tr>
+          <td><strong>innerHTML</strong></td>
+          <td>Ιδιότητα για αλλαγή δυναμικού περιεχομένου.</td>
+          <td>document.getElementById("aiResponse").innerHTML</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Σύνοψη</h2>
+    <ul>
+      <li>Έμαθες πώς να στέλνεις δεδομένα σε ένα AI API και να εμφανίζεις την απάντηση.</li>
+      <li>Κατάλαβες την έννοια του fetch, JSON, API key και δυναμικής ενημέρωσης περιεχομένου.</li>
+      <li>Αυτό το project είναι η βάση για ένα chatbot ή ένα “έξυπνο” web εργαλείο.</li>
+    </ul>
+  </section>
+</main>
+
+<!-- Υποσέλιδο (Footer) -->
+<footer class="footer">
+  <div class="footer-links">
+    <p>
+      <a href="../terms-of-use.html" class="legal-link">Όροι</a>
+      <a href="../privacy-notice.html" class="legal-link">Δεδομένα</a>
+      <a href="../cookies-notice.html" class="legal-link">Cookies</a>
+      <a href="../business-info.html" class="legal-link">Πληροφορίες</a>
+    </p>
+  </div>
+  <div class="social-media-links">
+    <a id="facebook-link" href="https://www.facebook.com/code4ups" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Facebook - Code4ups">
+      <img src="../../images/facebook-icon.png" alt="Facebook Group" class="social-icon">
+    </a>
+    <!-- Προσθήκη Instagram -->
+    <a href="https://www.instagram.com/panjk_cms" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Instagram – PanJKCMS">
+      <img src="../../images/instagram-icon.png" alt="Instagram" class="social-icon">
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/tiktok-icon.png" alt="TikTok" class="social-icon">
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="../../images/youtube-icon.png" alt="YouTube" class="social-icon">
+    </a>
+  </div>
+  <p>© 2025 Εκπαιδευτικός Ιστότοπος. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<!-- Κουμπί για γρήγορη επαναφορά στην κορυφή -->
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">&#94;</a>
+
+<script>
+  /*
+    1. Συνάρτηση που αλλάζει το κείμενο (με onclick στο HTML)
+    - document: το βασικό αντικείμενο που αναπαριστά όλο το HTML της σελίδας (DOM)
+    - getElementById("myText"): μέθοδος του document που επιστρέφει το στοιχείο με id="myText"
+    - .textContent: ιδιότητα που αλλάζει το κείμενο που εμφανίζεται μέσα του
+  */
+  function changeText() {
+    document.getElementById("myText").textContent = "Το κείμενο άλλαξε με JavaScript!";
+  }
+
+  /*
+    2. Συνάρτηση που εμφανίζει alert (με onclick στο HTML)
+    - alert(): μέθοδος της JavaScript που εμφανίζει ένα παράθυρο με μήνυμα στον χρήστη
+  */
+  function showAlert() {
+    alert("Καλώς ήρθες στη σελίδα μας!");
+  }
+
+  /*
+    3. Αλλαγή κειμένου με addEventListener (χωρίς inline onclick)
+    - addEventListener: προσθέτει ακροατή συμβάντος (event listener) σε ένα στοιχείο
+    - function() {...}: ανώνυμη συνάρτηση που εκτελείται όταν συμβεί το event
+  */
+  document.getElementById("btnChangeText2").addEventListener("click", function() {
+    document.getElementById("myText2").textContent = "Το κείμενο άλλαξε με addEventListener!";
+  });
+
+  /*
+    4. Εμφάνιση alert με addEventListener
+  */
+  document.getElementById("btnAlert2").addEventListener("click", function() {
+    alert("Αυτό το alert εμφανίστηκε με addEventListener!");
+  });
+
+  /*
+    5. Επιπλέον παραδείγματα DOM
+  */
+
+  // Αλλαγή στυλ σε στοιχείο
+  document.getElementById("btnStyle").addEventListener("click", function() {
+    let el = document.getElementById("colorText"); // Δημιουργούμε μια μεταβλητή el που δείχνει στο στοιχείο με id="colorText"
+    el.style.color = "#d84315"; // Αλλάζουμε το χρώμα του κειμένου (ιδιότητα style.color)
+    el.style.backgroundColor = "#fff3e0"; // Αλλάζουμε το φόντο (ιδιότητα style.backgroundColor)
+    el.style.fontWeight = "bold"; // Κάνουμε το κείμενο έντονο (ιδιότητα style.fontWeight)
+    el.classList.add("highlight"); // Προσθέτουμε την κλάση CSS "highlight" στο στοιχείο (μέθοδος classList.add)
+  });
+
+  // Προσθήκη νέας παραγράφου στο DOM
+  document.getElementById("btnAdd").addEventListener("click", function() {
+    let newP = document.createElement("p"); // Δημιουργούμε νέο στοιχείο <p>
+    newP.textContent = "Νέα παράγραφος που προστέθηκε δυναμικά!"; // Ορίζουμε το κείμενο της παραγράφου
+    document.getElementById("extraParagraphs").appendChild(newP); // Προσθέτουμε το νέο <p> ως παιδί του div με id="extraParagraphs"
+  });
+
+  // Αφαίρεση παραγράφου από το DOM με ασφαλή τρόπο
+  document.getElementById("btnRemove").addEventListener("click", function() {
+    // Βρίσκουμε το div που περιέχει τις παραγράφους που έχουν προστεθεί δυναμικά
+    let container = document.getElementById("extraParagraphs");
+
+    // lastElementChild: Επιστρέφει το τελευταίο "στοιχείο" (Element) παιδί του container,
+    // αγνοώντας τυχόν κενά κείμενα ή άλλα nodes που δεν είναι HTML στοιχεία.
+    let last = container.lastElementChild;
+
+    // Ελέγχουμε αν υπάρχει τουλάχιστον μία παράγραφος (δηλαδή αν το last δεν είναι null)
+    if (last) {
+      // Προσθέτουμε την κλάση "removed" για οπτική ένδειξη (π.χ. διαγράμμιση, κόκκινο χρώμα)
+      last.classList.add("removed");
+
+      // setTimeout: Περιμένει 500 χιλιοστά του δευτερολέπτου (0.5 δευτερόλεπτα)
+      // πριν αφαιρέσει το στοιχείο, ώστε να προλάβει να φανεί το εφέ της κλάσης "removed"
+      setTimeout(() => {
+        // Αφαιρεί το τελευταίο στοιχείο (παράγραφο) από το DOM
+        last.remove();
+      }, 500);
+    } else {
+      // Αν δεν υπάρχουν παράγραφοι, εμφανίζουμε μήνυμα στον χρήστη
+      alert("Δεν υπάρχουν άλλες παραγράφοι για αφαίρεση!");
+    }
+  });
+
+
+</script>
+<!-- Σύνδεση του εξωτερικού αρχείου JavaScript -->
+<script src="../../js/script.js"></script>
+<script>
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept');
+    const rejectBtn = document.getElementById('reject');
+
+    function updateConsent(consent) {
+      localStorage.setItem('cookieConsent', consent);
+
+      // Ενημέρωση Google Consent Mode
+      if(window.gtag) {
+        if(consent === 'accepted') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+        } else {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+      }
+
+      banner.style.display = 'none';
+
+      if(consent === 'accepted') {
+        loadAnalytics();
+      }
+    }
+
+    function loadAnalytics() {
+      if(window.gtag) return; // Αν έχει φορτωθεί ήδη
+
+      const script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-XN66TXYPFV";
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-XN66TXYPFV', { 'anonymize_ip': true });
+    }
+
+    const consent = localStorage.getItem('cookieConsent');
+    if(consent === 'accepted') {
+      loadAnalytics();
+    } else if(consent === 'rejected') {
+      updateConsent('rejected');
+    } else {
+      banner.style.display = 'block';
+    }
+
+    acceptBtn.addEventListener('click', () => updateConsent('accepted'));
+    rejectBtn.addEventListener('click', () => updateConsent('rejected'));
+  })();
+</script>
+
+<script>
+  document.getElementById("askAI").addEventListener("click", async function() {
+    const question = document.getElementById("userQuestion").value;
+    const responseBox = document.getElementById("aiResponse");
+
+    if (!question) {
+      responseBox.innerHTML = "⚠️ Γράψε πρώτα μια ερώτηση!";
+      return;
+    }
+
+    responseBox.innerHTML = "⏳ Το AI σκέφτεται...";
+
+    try {
+      // Εδώ βάζεις το πραγματικό σου API key για OpenAI ή άλλο AI service
+      const apiKey = "ΒΑΛΕ_ΤΟ_API_KEY_ΣΟΥ_ΕΔΩ";
+
+      const result = await fetch("https://api.openai.com/v1/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: "text-davinci-003",
+          prompt: question,
+          max_tokens: 50
+        })
+      });
+
+      const data = await result.json();
+      responseBox.innerHTML = data.choices[0].text.trim();
+    } catch (error) {
+      console.error(error);
+      responseBox.innerHTML = "❌ Κάτι πήγε στραβά! Δες το console log.";
+    }
+  });
+
+  document.getElementById("clearResponse").addEventListener("click", function() {
+    document.getElementById("aiResponse").innerHTML = "";
+    document.getElementById("userQuestion").value = "";
+  });
+</script>
+
+</body>
+</html>
+
